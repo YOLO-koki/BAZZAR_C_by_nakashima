@@ -35,6 +35,7 @@
 ### 開発環境
  - このリポジトリをForkし、自分のリモートリポジトリに反映されているかを確認
  - 自分のリモートリポジトリからローカルにcloneする
+ - 「templates/comp」「templates/top」「templates/user」の中にある「sampleファイル」を削除  
  - manage.pyと同じ階層に「local_settings.py」を作成し記述
  - 自分が作業を行うブランチに移動  
    (例)ユーザー側の何かしらの機能を実装したいなら「git checkout user」でuserブランチに移動
