@@ -75,7 +75,7 @@
  - プッシュ  
  	`git push origin ブランチ名`  
 	
- - オリジンの設定
+ - オリジンの設定  
  	`git remote add オリジン名 https://github.com/xxxxx/xxxxxx.git`
 	
  - フェッチ  
