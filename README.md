@@ -74,3 +74,9 @@
 
  - プッシュ  
  	`git push origin ブランチ名`  
+	
+ - フェッチ  
+ 	`git fetch true_origin`  
+	
+ - プル  
+ 	`git pull true_origin 対象のブランチ名`
