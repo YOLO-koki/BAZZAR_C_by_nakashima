@@ -44,6 +44,14 @@
    (例)userブランチから、「ユーザーのログイン機能」を実装したい場合、「git checkout -b feature/user_login」で「feature/user_login」というブランチを切り、移動
  - runserverで「Hello User」が赤文字で表示されれば開発環境の導入は成功
 
+### 開発
+ - `git branch`で現在の位置しているブランチを確認する
+ - `git remote add true_origin https://github.com/xxxxx/xxxxxx.git`でFork元(このリポジトリ)のURLをローカルで登録しておく
+ - `git fetch true_origin`でFork元(このリポジトリ)の最新の更新情報を取得する
+ - `git pull true_origin 対象のブランチ名`で自分が作業しているブランチの最新の変更を取り込む
+ - ローカルで普通に開発を進める
+ - 適時、`git fetch true_origin`、`git pull true_origin 対象のブランチ名`で最新の更新を取り込みつつ開発
+ - 
 ## よく使うコマンド
  - リモートリポジトリから、ローカルにコードをコピー  
  	`git clone https://github.com/xxxxx/xxxxxx.git`  
