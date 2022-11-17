@@ -5,5 +5,5 @@ from .views import CoStoreDetailView
 app_name = 'top'
 urlpatterns = [
     path('', TopIndexView.as_view(), name='index'),  # トップページ
-    path('detail',CoStoreDetailView.as_view(),name="detail")
+    path('detail/',CoStoreDetailView.as_view(),name="detail")
 ]

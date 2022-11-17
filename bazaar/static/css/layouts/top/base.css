@@ -27,11 +27,14 @@ header {
 .navbar li a {
     text-decoration: none;
     color: black;
+    width: 50px;
+    white-space: nowrap
 }
+
 
 .navbar .navigationbar {
     position: absolute;
-    right: 15%;
+    right: 12%;
 }
 
 .navbar .bazaar {
