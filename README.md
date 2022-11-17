@@ -42,7 +42,7 @@
    (例)ユーザー側の何かしらの機能を実装したいなら「git checkout user」でuserブランチに移動
  - 「feature/xxx」という形でブランチを切り、「xxx」の部分は親のブランチとどんな機能を実装したかが分かるような名前にする **(あくまでも任意の名前で可)**   
    (例)userブランチから、「ユーザーのログイン機能」を実装したい場合、「git checkout -b feature/user_login」で「feature/user_login」というブランチを切り、移動
- - runserverで「Hello User」が赤文字で表示されれば開発環境の導入は成功
+ - runserverが成功すればOK
 
 ### 開発
  - `git branch`で現在の位置しているブランチを確認する
