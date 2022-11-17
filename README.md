@@ -31,7 +31,7 @@
  - 管理者機能の実装
 
 
-## 開発の具体的流れ
+## 開発の具体的な流れ
 ### 開発環境
  - このリポジトリをForkし、自分のリモートリポジトリに反映されているかを確認
  - 自分のリモートリポジトリからローカルにcloneする
@@ -42,8 +42,22 @@
    (例)ユーザー側の何かしらの機能を実装したいなら「git checkout user」でuserブランチに移動
  - 「feature/xxx」という形でブランチを切り、「xxx」の部分は親のブランチとどんな機能を実装したかが分かるような名前にする **(あくまでも任意の名前で可)**   
    (例)userブランチから、「ユーザーのログイン機能」を実装したい場合、「git checkout -b feature/user_login」で「feature/user_login」というブランチを切り、移動
- - runserverで「Hello User」が赤文字で表示されれば開発環境の導入は成功
+ - runserverが成功すればOK
 
+### 開発
+ - `git branch`で現在の位置しているブランチを確認する
+ - `git remote add true_origin https://github.com/YOLO-koki/BAZAAR.git`でFork元(本家リポジトリ)のURLをローカルで登録しておく
+ - `git fetch true_origin`でFork元(このリポジトリ)の最新のブランチをダウンロードする
+ - `git pull true_origin 対象のブランチ名`で自分が作業しているブランチに最新の更新を取り込む
+ - ローカルで普通に開発を進める
+ - 適時、`git fetch true_origin`、`git pull true_origin 対象のブランチ名`で最新の更新を取り込みつつ開発
+ - 開発が完了したら自分の担当ブランチ(top, user, admin, compのどれか)にローカルでマージする
+ - ローカルでのマージが完了したら、自分のリモートリポジトリにpushする
+ - 自分のリモートリポジトリへのpushが完了したら、本家リポジトリに「pull request」を送る
+ - 「pull request」を送ったら、必ずメンバーに報告する事
+ - リーダーはコードのレビューを行い、マージする。リーダーもマージを行ったら、必ずメンバーに報告すこと事
+ - リーダーからの報告を受けたメンバーは、自分のローカルブランチの更新を行う(fetch)
+ 
 ## よく使うコマンド
  - リモートリポジトリから、ローカルにコードをコピー  
  	`git clone https://github.com/xxxxx/xxxxxx.git`  
@@ -74,3 +88,12 @@
 
  - プッシュ  
  	`git push origin ブランチ名`  
+	
+ - オリジンの設定  
+ 	`git remote add オリジン名 https://github.com/xxxxx/xxxxxx.git`
+	
+ - フェッチ  
+ 	`git fetch true_origin`  
+	
+ - プル  
+ 	`git pull true_origin 対象のブランチ名`
