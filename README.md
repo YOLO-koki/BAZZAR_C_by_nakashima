@@ -102,5 +102,5 @@
  	`pipenv shell`
 
  - 起動する
- 	'python manage.py runserver'
+	`python manage.py runserver`
 	
