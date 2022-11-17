@@ -1,1 +1,1 @@
-# from .views import view名
+from .co_store_detail import CoStoreDetailView

@@ -1,0 +1,255 @@
+/* 全体 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ヘッダー */
+/* ナビゲーション */
+header{
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar {
+    display:flex;
+    width: 100vw;
+    height: 10vh;
+    border: solid 1px #000;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd700;
+    position: relative;
+}
+
+.navbar li a{
+    text-decoration: none;
+}
+
+.navbar .navigationbar{
+    position: absolute;
+    right: 15%;
+    width: 30%;
+}
+
+.navbar .bazaar{
+    position: absolute;
+    left: 10%;
+    font-size: 5vh;
+}
+
+.navbar ul {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    display:block;
+    margin: 10%;
+}
+
+
+/* パンくずリスト */
+.main .bread_crumbs{
+    /* padding-top: 11vh; */
+    display: flex;
+    list-style: none;
+    padding-left: 10px;
+    margin-top: -15px;
+}
+
+.main .bread_crumb{
+    margin-right: 10px;
+}
+
+.main .bread_crumbs li::after{
+    content: '>>';
+    padding-left: 0.5rem;
+    color: #4169e1;
+}
+.main .bread_crumbs li:last-child::after{
+    content: ' ';
+}
+
+/* メイン */
+.main {
+    padding: 100px;
+}
+
+.main .detail .explain{
+    display: flex;
+}
+
+.main .detail h1{
+    font-size: 40px;
+}
+
+.main .detail .stars {
+    width: 100px;
+}
+
+/* ボタン */
+.main .button {
+    font-size: 35px;
+    width: 230px;
+    height: 70px;
+    margin-left: 50vw;
+    cursor: pointer;
+}
+
+.main .feature {
+    margin-left: 40vw;
+    margin-top: -30px;
+}
+
+.main .slider {
+    
+}
+
+.main .bx-wrapper{
+    width: 300px;
+    height: 200px;
+}
+
+.main .picks {
+    margin-left: 25vw;
+    margin-top: -200px;
+}
+
+.main .picks h2{
+    display: block;
+    /* margin-top: -100px; */
+}
+
+/* おすすめの上 */
+.main .picks .top {
+    display: flex;
+    width: 15em;
+    
+}
+
+.main .picks .top-left {
+    display: flex;
+    width: 500px;
+    margin-right: 20px;
+}
+
+.main .picks .top-left p{
+    display: block;
+    margin-left: 15px;
+    width: 15em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.main .picks .top-right {
+    display: flex;
+    width: 500px;
+}
+
+.main .picks .top-right p {
+    display: block;
+    margin-left: 15px;
+    width: 15em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* おすすめの下 */
+.main .picks .under {
+    display: flex;
+    width: 15em;
+    margin-top: 30px;
+}
+
+.main .picks .under-left {
+    display: flex;
+    width: 500px;
+    margin-right: 20px;
+}
+
+.main .picks .under-left p{
+    display: block;
+    margin-left: 15px;
+    width: 15em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.main .picks .under-right {
+    display: flex;
+    width: 500px;
+}
+
+.main .picks .under-right p {
+    display: block;
+    margin-left: 15px;
+    width: 15em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+.main .kutikomi {
+    margin-top: 50px;
+    border: 1px solid #dcdcdc;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main .kutikomi a {
+    display: inline-block;
+    margin-left: 700px;
+}
+
+.main .kutikomi .review-header {
+    background-color: #fffacd;
+    border-bottom: solid 1px#dcdcdc;
+    border-bottom: #dcdcdc;
+}
+
+.main .kutikomi .profile{
+    display: flex;
+    margin-left: 20px;
+}
+
+.main .kutikomi .reviews {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.main .kutikomi .review {
+    margin-left: 40px;
+    margin-right: 40px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* レビュー星 */
+.stars span{
+    display: flex;               /* 要素をフレックスボックスにする */
+    flex-direction: row-reverse; /* 星を逆順に並べる */
+    justify-content: flex-end;   /* 逆順なので、左寄せにする */
+}
+
+.stars input[type='radio']{
+    display: none;               /* デフォルトのラジオボタンを非表示にする */
+}
+
+.stars label{
+    color: #D2D2D2;              /* 未選択の星をグレー色に指定 */
+    font-size: 20px;             /* 星の大きさを20pxに指定 */
+    padding: 0 2px;              /* 左右の余白を2pxに指定 */
+    cursor: pointer;             /* カーソルが上に乗ったときに指の形にする */
+}
+
+.stars input[type='radio']:checked ~ label{
+  color: #F8C601;              /* 選択された星以降をすべて黄色にする */
+}
+
+

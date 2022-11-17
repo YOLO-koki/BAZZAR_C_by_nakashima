@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>店舗詳細</title>
+    <link rel="stylesheet" href="{% static 'css\top\style_co_store_detail.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('.slider').bxSlider({
+                    auto: true,
+                    pause: 5000,
+             });
+            });
+    </script>
+
+</head>
+<body>
+    <header>
+        <!-- ナビゲーション -->
+        <div class="navbar">
+            <ul class="bazaar">
+                <li>
+                    <a href="#">BAZAAR</a>
+                </li>
+            </ul>
+            <ul class="navigationbar">
+                <li><a href="#">お問い合わせ</a></li>
+                <li><a href="#">新規登録/ログイン</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class = "main">
+            <!-- パンくずリスト -->
+            <div class="bread_crumbs">
+                <li class="bread_crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="top">トップ</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="bread_crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="detail">店舗詳細</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </div>
+            
+            <!-- 予約ボタン -->
+            <button class = "button" onclick="location.href='#'">今すぐ予約</button>
+            
+            <div class = "detail">
+                <div class = "explain">
+                    <h1>大原食堂</h1>
+                    <div class = "stars">
+                        <img src="{% static '/media/review02.png' %}" alt="" width="100px">
+                    </div>
+                </div>
+                <p>金沢市せｄｒｆｔｇｙふｊ</p>
+            </div>
+            <div class = "feature">
+                <h2>特徴がないのが特徴！白ごはん専門店！</h2>
+                <p>石川県金沢市にある大原食堂は創業２００年目を迎える老舗白ごはん専門店である。今まで・・・・・・・・</p>
+            </div>
+            <div class="slider">
+                <img src="{% static '/media/dinner.jpg' %}" alt="" class = "image">
+                <img src="{% static '/media/dinner.jpg' %}" alt="" class = "image">
+            </div>
+
+            <div class = "picks">
+                <h2>当店のおススメ</h2>
+                <div class = "top">
+                    <div class = "top-left">
+                        <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                        <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
+                    </div>
+
+                    <div class = "top-right">
+                        <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                        <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
+                    </div>
+                </div>
+                <div class = "under">
+                    <div class = "under-left">
+                        <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                        <p>白米です。</p>
+                    </div>
+                    <div class = "under-right">
+                        <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                        <p>白米です。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "kutikomi">
+                <div class = "review-header">
+                    <h1>口コミ</h1>
+                    <p>53件</p>
+                <a href="#" target="_blank"><p>口コミを書く（会員登録が必要です）</p></a>
+                </div>
+
+                <div class = "reviews">
+                    <div class = "profile">
+                        <p>さいきょうさん</p>
+                        <img src="{% static '/media/review03.png' %}" alt="" width="100px">
+                    </div>
+                    <div class = "review">
+                        <p>くぁｗせｄｒｆｔｇｙふじこｌｐ；くぁｗせｄｒｆｔｇｙふじこｌｐ；くぁｗせｄｒｆｔｇｙふじこｌｐ；くぁｗせｄｒｆｔｇｙふじこｌｐ；</p>
+                    </div>
+                    </div>
+            </div>
+
+
+        </div>
+    </main>
+</body>
+</html>
