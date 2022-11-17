@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'top'
 urlpatterns = [
-    path('', views.TopIndexView.as_view(),name = 'index'),#トップページ
-    ]
+    path('', views.TopIndexView.as_view(), name='index'),  # トップページ
+]
