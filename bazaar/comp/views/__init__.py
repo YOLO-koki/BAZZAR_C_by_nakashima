@@ -1,1 +1,1 @@
-# from .views import view名
+from .compindex_views import CompIndexView

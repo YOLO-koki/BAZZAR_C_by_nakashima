@@ -1,1 +1,1 @@
-# from .views import view名
+from .topindex_views import TopIndexView
