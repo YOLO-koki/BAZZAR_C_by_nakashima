@@ -3,4 +3,4 @@ from django.views.generic import TemplateView
 
 #トップページview
 class CompIndexView(TemplateView):
-    template_name: str = "layout/comp/base.html"
+    template_name: str = "comp/index.html"
