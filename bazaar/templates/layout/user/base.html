@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="../../static/css/user/user_style.css">
+        <script src="../../static/js/user/script.js"></script>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <header>
+            <!-- ナビゲーション -->
+            <div class="navbar">
+                <ul class="bazaar">
+                    <li>
+                        <a href="#">BAZAAR</a>
+                    </li>
+                </ul>
+                <ul class="navigationbar">
+                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="#">新規登録/ログイン</a></li>
+                </ul>
+            </div>
+        </header>
+        {% block contents %}{% endblock %}
+</html>s
