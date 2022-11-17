@@ -97,3 +97,10 @@
 	
  - プル  
  	`git pull true_origin 対象のブランチ名`
+
+ - 仮想環境に入る
+ 	`pipenv shell`
+
+ - 起動する
+ 	'python manage.py runserver'
+	
