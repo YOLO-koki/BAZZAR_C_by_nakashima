@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\layouts\user\base.css' %}">
+    {% block head %}{% endblock %}
+</head>
+    <body>
+        <header>
+            <!-- ナビゲーション -->
+            <div class="navbar">
+                <ul class="bazaar">
+                    <li>
+                        <a href="#">BAZAAR</a>
+                    </li>
+                </ul>
+                <ul class="navigationbar">
+                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="#">新規登録/ログイン</a></li>
+                </ul>
+            </div>
+            {% block header %}{% endblock %}
+        </header>
+            
+        {% block contents %}{% endblock %}
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <body>
+</html>
+
