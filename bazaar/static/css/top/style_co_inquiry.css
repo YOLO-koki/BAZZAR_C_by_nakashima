@@ -109,9 +109,16 @@ header{
     outline: none;
 }
 
-.main .inquiry_contents .inquiry_name {
+.main .inquiry_contents .inquiry_area form .inquiry_name {
     line-height: 4;
+    margin-left: 198px;
 }
+
+.main .inquiry_contents .inquiry_area form .inquiry_email {
+    margin-left: 85px;
+}
+
+
 
 .main .inquiry_contents button {
     width: 60px;
