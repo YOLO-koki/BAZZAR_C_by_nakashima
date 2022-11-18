@@ -1,2 +1,2 @@
-from .compindex_views import CompIndexView
-from .compmypage_views import CompMypageView
+from .comp_index_views import CompIndexView
+from .comp_mypage_views import CompMypageView
