@@ -1,0 +1,30 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}事業者マイページ{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/comp/style_bo_mypage.css' %}">
+{% endblock %}
+{% block contents %}
+<!-- メイン -->
+<main>
+    <div class="main">
+        <div class="welcome">
+            <div class="welcome_detail">
+                <h2 class="welcome_message">ようこそ、事業者さん。</h2>
+                <div class="about_me">
+                    <p><a href="#">予約一覧</a></p>
+                    <p><a href="#">店舗詳細</a></p>
+                    <p><a href="#">削除要請</a></p>
+                </div>
+            </div>
+            <div class="welcome_area"></div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>

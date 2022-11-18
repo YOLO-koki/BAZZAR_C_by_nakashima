@@ -1,7 +1,10 @@
 from django.urls import path
-from . import views
+from .views import CompIndexView
+from .views import CompMypageView
+
 
 app_name = 'comp'
 urlpatterns = [
-    path('', views.CompIndexView.as_view(),name = 'index'),#トップページ
-    ]
+    path('', CompIndexView.as_view(), name='index'),  # トップページ
+    path('mypage/',CompMypageView.as_view(), name='mypage'),  # マイページ
+]
