@@ -5,4 +5,4 @@ from django.views.generic import TemplateView
 
 
 class TopIndexView(TemplateView):
-    template_name: str = "top/index.html"
+    template_name: str = "top/co_toppage.html"
