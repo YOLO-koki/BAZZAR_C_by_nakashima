@@ -4,4 +4,5 @@ from . import views
 app_name = 'comp'
 urlpatterns = [
     path('', views.CompIndexView.as_view(), name='index'),  # トップページ
+    path('login/', views.CompLoginView.as_view(), name='login'),  # ログイン機能
 ]
