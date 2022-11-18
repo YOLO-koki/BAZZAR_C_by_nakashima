@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import TopIndexView
-from .views import CoStoreDetailView
+from . import views
 
 app_name = 'top'
 urlpatterns = [
-    path('', TopIndexView.as_view(), name='index'),  # トップページ
-    path('detail/',CoStoreDetailView.as_view(),name="detail")
+    path('', views.TopIndexView.as_view(), name='index'),  # トップページ
+    path('detail/',views.CoStoreDetailView.as_view(),name="detail")
 ]
+

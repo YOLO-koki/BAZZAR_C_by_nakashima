@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-#トップページview
+# トップページview
+
+
 class CompIndexView(TemplateView):
+
     template_name: str = "comp/index.html"
+
