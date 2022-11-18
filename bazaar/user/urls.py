@@ -13,5 +13,5 @@ urlpatterns = [
     path('userRegist/', UserRegistView.as_view(), name='userRegist'),
     path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
     path('userLogin/',UserLoginView.as_view(),name='userLogin'),
-    path('userMailSend/',UserMailSendView.as_view(),name='userMailSend')
+    path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     ]
