@@ -1,0 +1,43 @@
+{% extends '../layouts/top/base.html' %}
+{% load static %}
+
+{% block title %}お問い合わせページ{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/top/style_co_inquiry.css' %}">
+</head>
+{% endblock %}
+
+{% block contents %}
+    <main>
+        <div class = "main">
+
+            <h1>お問い合わせ</h1>
+            <div class = "inquiry_contents">
+                <div class = "inquiry_area">
+                    <form method="post" action = "">
+                        {% csrf_token %}
+                        {{form.non_field_errors}}
+                        
+                        {% for field in form %}
+                            <div class = "form_group">
+                                <label for = "{{field.id_for_label}}" class = "form_label">
+                                    <p>{{field.label_tag}}</p>
+                                </label>
+                                <div class = "form_field">
+                                    {{field}}
+                                    {{field.errors}}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <button type="submit" name = "submitbutton">次へ</button>
+                    </form>
+                </div>
+                    
+            </div>
+
+        </div>
+    </main>
+
+{% endblock %}

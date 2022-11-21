@@ -1,0 +1,35 @@
+{% extends '../layouts/top/base.html' %}
+
+{% load static %}
+
+{% block title %}会員または事業者の選択{% endblock %}
+
+{% block head %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="{% static 'css/top/style_toplogin.css' %}">
+{% endblock %}
+
+{% block contents %}
+<div class="main">
+    <h1 class="login">ログイン</h1>
+    <div class="choice_area">
+        <div class="user business">
+            <a href="{% url 'comp:index' %}">
+                <p>個人事業主の方はこちらから</p>
+                <div class="common_user"></div>
+            </a>
+        </div>
+        <div class="user member">
+            <a href="{% url 'user:index' %}">
+                <p>一般会員の方はこちらから</p>
+                <div class="common_user"></div>
+            </a>
+        </div>
+    </div>
+    <div class="video_area">
+        <video src="{% static 'videos\Chop - 11638.mp4' %}" id="cooking_video" poster="../../images/dinner.jpg" webkit-playsinline playsinline muted autoplay loop>
+            <p>動画を再生できる環境ではありません。</p>
+        </video>
+    </div>
+</div>
+{% endblock %}

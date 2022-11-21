@@ -102,5 +102,10 @@
  	`pipenv shell`
 
  - 起動する
+<<<<<<< HEAD
 	`python manage.py runserver`
+=======
+ 	'python manage.py runserver'
+
+>>>>>>> 1b744c7aa4c594073ec020edeb15a9563478e1e2
 	
