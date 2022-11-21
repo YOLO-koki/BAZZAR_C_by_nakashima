@@ -35,11 +35,14 @@
             <form action="" method="post" class="loginForm">
                 <div class="inputArea">
                     <label>{{ f.bp_id.label }}</label>
-                    {{ f.bp_id.widget }}
+                    {{ f.bp_id }}
                 </div>
                 <div class="inputArea">
-                    <label>{{ f.password.label }}</label>
-                    {{ f.password.widget }}
+                    <div class="password">
+                        <label>{{ f.password.label }}</label>
+                        <p class="forget_password"><a href="#">パスワードを忘れた</a></p>
+                    </div>
+                    {{ f.password }}
                 </div>
                 <div class="inputArea">
                     <button type="submit" class="button_login">ログイン</button>

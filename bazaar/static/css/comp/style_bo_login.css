@@ -86,6 +86,15 @@ header {
     margin-top: 10px;
 }
 
+.password {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password .forget_password {
+    font-size: small;
+}
+
 .inputArea:nth-child(3) .button_login {
     font-weight: bold;
     color: azure;
