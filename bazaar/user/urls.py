@@ -10,7 +10,7 @@ from .views import UserMypageView
 app_name = 'user'
 urlpatterns = [
     path('', UserIndexView.as_view(),name = 'index'),#トップページ
-    path('usermypage/', UserIndexView.as_view(),name = 'mypage'),#トップページ
+    path('usermypage/', UserMypageView.as_view(),name = 'mypage'),#トップページ
     path('userCheck/', UserCheckView.as_view(), name='userCheck'),
     path('userRegist/', UserRegistView.as_view(), name='userRegist'),
     path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
