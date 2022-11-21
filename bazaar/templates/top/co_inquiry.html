@@ -15,23 +15,22 @@
 
             <h1>お問い合わせ</h1>
             <div class = "inquiry_contents">
-                <p>お問い合わせ内容</p>
                 <div class = "inquiry_area">
                     <form method="post" action = "">
-                        <div class = "textarea">
-                            <textarea name = inquiry placeholder="お問い合わせ内容を入力してください。"></textarea>
-                        </div>
-
-                        <div class = "inquiry_name">
-                            <label for="name">お名前：</label>
-                            <input type = "text" name = "name" id = "name">
-                        </div>
-
-                        <div class = "inquiry_email">
-                            <label for="email">返信用メールアドレス：</label>
-                            <input type = "mail" name = "email" id = "email">
-                        </div>
-
+                        {% csrf_token %}
+                        {{form.non_field_errors}}
+                        
+                        {% for field in form %}
+                            <div class = "form_group">
+                                <label for = "{{field.id_for_label}}" class = "form_label">
+                                    <p>{{field.label_tag}}</p>
+                                </label>
+                                <div class = "form_field">
+                                    {{field}}
+                                    {{field.errors}}
+                                </div>
+                            </div>
+                        {% endfor %}
                         <button type="submit" name = "submitbutton">次へ</button>
                     </form>
                 </div>

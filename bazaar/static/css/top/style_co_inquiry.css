@@ -1,78 +1,3 @@
-/* 全体 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ヘッダー */
-/* ナビゲーション */
-header{
-    position: fixed;
-    z-index: 999;
-}
-
-.navbar {
-    display:flex;
-    width: 100vw;
-    height: 10vh;
-    border: solid 1px #000;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffd700;
-    position: relative;
-}
-
-.navbar li a{
-    text-decoration: none;
-}
-
-.navbar .navigationbar{
-    position: absolute;
-    right: 15%;
-    width: 35%;
-}
-
-.navbar .bazaar{
-    position: absolute;
-    left: 10%;
-    font-size: 5vh;
-}
-
-.navbar ul {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar ul li {
-    display:block;
-    margin: 10%;
-}
-
-
-/* パンくずリスト */
-/* .main .bread_crumbs{
-    padding-top: 11vh;
-    display: flex;
-    list-style: none;
-    padding-left: 10px;
-    margin-top: -15px;
-}
-
-.main .bread_crumb{
-    margin-right: 10px;
-}
-
-.main .bread_crumbs li::after{
-    content: '>>';
-    padding-left: 0.5rem;
-    color: #4169e1;
-}
-.main .bread_crumbs li:last-child::after{
-    content: ' ';
-} */
-
 /* メイン */
 .main {
     padding: 100px;
@@ -97,21 +22,28 @@ header{
     margin-left: 175px;
 }
 
-
-.main .inquiry_contents .inquiry_area .textarea{
-    text-align: center;
-}
-
-.main .inquiry_contents .inquiry_area .textarea textarea{
+#id_Inquiry {
     resize: none;
     width: 800px;
     height: 250px;
     outline: none;
 }
 
-.main .inquiry_contents .inquiry_area form .inquiry_name {
-    line-height: 4;
-    margin-left: 198px;
+#id_inquiry_email {
+    width: 200px;
+}
+
+.main .inquiry_contents .inquiry_area form .form_group .form_label p label{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.main .inquiry_contents .inquiry_area form .form_group .form_field{
+    margin-left: 260px;
+}
+
+.main .inquiry_contents .inquiry_area form p{
+    line-height: 2;
 }
 
 .main .inquiry_contents .inquiry_area form .inquiry_email {
