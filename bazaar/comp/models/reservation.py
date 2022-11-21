@@ -1,9 +1,11 @@
 from django.db import models
+from user.models.users import User
 from .business_person import Business_person
 from .memu import Menu
 
 class Reservation(models.Model):
    bp_id=models.ForeignKey(Business_person,to_field='bp_id',verbose_name='事業者ID',on_delete=models.PROTECT) 
+   user_id=models.ForeignKey(User,to_field='user_id',verbose_name='ユーザーID',on_delete=models.PROTECT,null=True,blank=True)
    menu1=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー1',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_1')
    menu2=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー2',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_2')
    menu3=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー3',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_3')
