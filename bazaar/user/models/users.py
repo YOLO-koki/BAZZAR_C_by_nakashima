@@ -1,4 +1,5 @@
 from django.db import models
+
 class User(models.Model):
     user_id=models.CharField(verbose_name='ユーザーID',max_length=16,primary_key=True)
     password=models.CharField(verbose_name='パスワード',max_length=20)

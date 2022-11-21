@@ -1,5 +1,5 @@
 from django.db import models
-from user.models.user import User
+from user.models.users import User
 from .business_person import Business_person
 from .memu import Menu
 
