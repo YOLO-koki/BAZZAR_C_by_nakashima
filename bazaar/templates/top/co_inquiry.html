@@ -16,7 +16,7 @@
             <h1>お問い合わせ</h1>
             <div class = "inquiry_contents">
                 <div class = "inquiry_area">
-                    <form method="post" action = "">
+                    <form method="post" action="{% url 'top:checkinquiry' %}">
                         {% csrf_token %}
                         {{form.non_field_errors}}
                         
