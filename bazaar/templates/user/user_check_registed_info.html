@@ -8,31 +8,29 @@
    <h1>登録内容確認</h1>
    <div>
    <form action="" method="post">
-         <input type="hidden" name="name" value="">
-         <input type="hidden" name="sex" value="">
-         <input type="hidden" name="email" value="">
-         <input type="hidden" name="tel" value="">
+         <input type="hidden" name="name" value="{{ id }}">
+         <input type="hidden" name="sex" value=" {{ psw }}">
+         <input type="hidden" name="email" value="{{ mail }}">
+         <input type="hidden" name="tel" value="{{ phone }}">
          <p>登録内容はこちらで宜しいでしょうか？<br>よろしければ「送信する」ボタンを押して下さい。</p>
          <div>
              <div>
-                 <label>お名前</label>
-                 <p></p>
+                 <label>お名前: {{ id }}</label>
+                 
              </div>
              <div>
-                 <label>性別</label>
-                 <p></p>
+                 <label>性別: {{ psw }}</label>
+                
              </div>
              <div>
-                 <label>メールアドレス</label>
-                 <p></p>
+                 <label>メールアドレス: {{ mail }}</label> 
              </div>
              <div>
-                 <label>電話番号</label>
-                 <p></p>
+                 <label>電話番号:{{ phone }}</label>
              </div>
          </div>   
          <div id="fbtn">
-             <input type="button" value="内容を修正する" href="#">
+             <input type="button" value="内容を修正する" href="{% url 'user:userRegist' %}">
              <button type="submit" name="submit">登録</button>
          </div>
     </form>
