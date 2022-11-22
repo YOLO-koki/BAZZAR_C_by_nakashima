@@ -8,4 +8,4 @@ from ..forms import InquiryForm
 class CoInquiryForm(FormView):
     template_name = "top/co_inquiry.html"
     form_class = InquiryForm
-    success_url = reverse_lazy('top:co_toppage')
+    success_url = reverse_lazy('top:checkinquiry')

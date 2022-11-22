@@ -1,0 +1,56 @@
+/* メイン */
+.main {
+    padding: 100px;
+}
+
+.main .check_inquiry_contents h3{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area {
+    margin-left: 175px;
+    margin-right: 200px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area h4{
+    margin-bottom: 15px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area .check_inquiry_text {
+    width: 1150px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area .check_inquiry_text p{
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-right: 220px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area .check_inquiry_name{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area .check_inquiry_email{
+    margin-bottom: 20px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area button {
+    margin-left: 800px;
+}
+
+.main .check_inquiry_contents .check_inquiry_area button {
+    width: 70px;
+    height: 30px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+hr {
+    background-color: 	#808080;
+}
