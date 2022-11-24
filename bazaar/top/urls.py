@@ -3,7 +3,7 @@ from .views import TopIndexView
 from .views import CoStoreDetailView
 from .views import CoInquiryForm
 from .views import TopLoginView
-from .views import CoCheckInquiryInfoView
+from .views import CoCheckInquiryInfoView, sent_email
 
 app_name = 'top'
 urlpatterns = [
@@ -12,4 +12,5 @@ urlpatterns = [
     path('topinquiry/',CoInquiryForm.as_view(),name="inquiry"),#問い合わせ
     path('login/',TopLoginView.as_view(),name="login"),#ログインページ
     path('topcheckinquiry/',CoCheckInquiryInfoView.as_view(),name="checkinquiry"),#問い合わせ内容確認
+    path('sent_email/',sent_email,name="sent_email"),#問い合わせ内容確認
 ]
