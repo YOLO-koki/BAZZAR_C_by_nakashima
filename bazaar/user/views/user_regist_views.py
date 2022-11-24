@@ -1,19 +1,11 @@
-from django.views.generic import TemplateView
 from django.shortcuts import render
 
+# Create your views here.
+from django.views.generic import FormView
+from django.urls import reverse_lazy
+from ..forms import RegisterForm
 
-class UserRegistView(TemplateView):
-
-    template_name= "user/user_create_account.html"
-    
-    def movepage(request):
-        if request.POST:
-             regiInfo = {
-           'id': request.POST["id"],
-           'psw': request.POST["psw"],
-           'name': request.POST["name"],
-           'mail': request.POST["mail"],
-           'phone': request.POST["phone"],
-        }
-             return render(request, 'user/user_check_registed_info.html', regiInfo)
-
+class CreateAccountView(FormView):
+    template_name = "user/user_create_account.html"
+    form_class = RegisterForm
+    success_url = reverse_lazy('user/user_check_registed_info.html')

@@ -55,7 +55,7 @@
 .dummyArea1 {
     background-color: azure;
     padding-top: 30px;
-    border-radius: 1rem;
+    border-radius: 0.5em;
     width: 330px;
     height: 220px;
     margin: 0 auto;
@@ -98,7 +98,7 @@
     height: 100%;
     background-color: lightskyblue;
     opacity: 0.8;
-    border-radius: 1rem;
+    border-radius: 0.5em;
     z-index: -1;
 }
 
