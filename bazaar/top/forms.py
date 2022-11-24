@@ -10,3 +10,5 @@ class InquiryForm(forms.Form):
         if '@' not in Inquiry_email:
             raise forms.ValidationError('@を含んだメールアドレスにしてください')
         return Inquiry_email
+
+
