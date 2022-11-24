@@ -5,24 +5,26 @@
 <link rel="stylesheet" href="{% static 'css\user\user_style.css' %}">{% endblock %}
 {% block contents %}
 {% block contents %}
-    <main>
-       <div class="main">
-         <h1 class="yLogin">ユーザーログイン</h1>
-            <form id="userLoginForm">
-               <label id="userformlabel">ID:</label><input id="userforms" type="text" title="id"><br>
-               <label  id="userformlabel">パスワード:</label><input id="userforms" type="password" ><br>
-               <a id="forgot" href="#">パスワードを忘れた</a>
-               <p class="btn"><input type="submit" value="ログイン"></p><br>
-             </form>
-             <a id="register" href="{% url 'userRegist'%}">新規登録はコチラ</a>
-       </div>
-        <!-- 動画 -->
-        <div class="video_area">
-            <video src="../../static/videos/Chop - 11638.mp4" id="cooking_video" poster="../../images/dinner.jpg" webkit-playsinline playsinline muted autoplay loop>
-                <p>動画を再生できる環境ではありません。</p>
-            </video>
-        </div>
-    </main>
+<main>
+    <div class="main">
+        <h1 class="yLogin">ユーザーログイン</h1>
+        <form id="userLoginForm">
+            <label id="userformlabel">ID:</label><input id="userforms" type="text" title="id"><br>
+            <label id="userformlabel">パスワード:</label><input id="userforms" type="password"><br>
+            <a id="forgot" href="#">パスワードを忘れた</a>
+            <p class="btn"><input type="submit" value="ログイン"></p><br>
+        </form>
+        <a id="register" href="{% url 'userRegist'%}">新規登録はコチラ</a>
+    </div>
+    <!-- 動画 -->
+    <div class="video_area">
+        <video src="../../static/videos/Chop - 11638.mp4" id="cooking_video" poster="../../images/dinner.jpg"
+            webkit-playsinline playsinline muted autoplay loop>
+            <p>動画を再生できる環境ではありません。</p>
+        </video>
+    </div>
+</main>
 </body>
+
 </html>
 {% endblock %}
