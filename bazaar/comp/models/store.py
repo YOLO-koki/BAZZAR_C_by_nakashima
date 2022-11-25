@@ -1,5 +1,5 @@
 from django.db import models
-#from .business_person import Business_person
+# from .business_person import Business_person
 from accounts.models import CustomUser
 
 class Store(models.Model):
