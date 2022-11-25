@@ -3,22 +3,23 @@ import sys
 import pathlib
 currentdir = pathlib.Path(__file__).resolve().parent
 sys.path.append(str(currentdir)+"..comp/")
-from comp.models.business_person import Business_person
-from.models.users import User 
+# from comp.models.business_person import Business_person
+# from.models.users import User 
+from accounts.models import CustomUser
 import re
 from django.core.exceptions import ValidationError
 
 
 class LoginBusiness_personForm(forms.ModelForm):
     class Meta:
-        model = Business_person
-        fields = ('bp_id', 'password')
+        model = CustomUser
+        fields = ('userid', 'password')
         labels = {
-            'bp_id': 'ユーザーID',
+            'userid': 'ユーザーID',
             'password': 'パスワード',
         }
         widgets = {
-            'bp_id': forms.TextInput,
+            'userid': forms.TextInput,
             'password': forms.TextInput,
         }
 

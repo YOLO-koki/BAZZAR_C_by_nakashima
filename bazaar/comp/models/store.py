@@ -1,8 +1,10 @@
 from django.db import models
-from .business_person import Business_person
+#from .business_person import Business_person
+from accounts.models import CustomUser
 
 class Store(models.Model):
-    bp_id=models.ForeignKey(Business_person,to_field='bp_id',verbose_name='事業者ID',on_delete=models.PROTECT)
+    store_id = models.AutoField(verbose_name='storeid',primary_key=True)
+    bp_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='事業者ID',on_delete=models.PROTECT)
     store_name=models.CharField(verbose_name='店舗名',max_length=30)
     adress=models.CharField(verbose_name='住所',max_length=80)
     seat=models.IntegerField(verbose_name='席数')

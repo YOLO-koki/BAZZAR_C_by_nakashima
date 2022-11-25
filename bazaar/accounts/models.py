@@ -32,4 +32,3 @@ class CustomUser(AbstractUser,PermissionsMixin):
     class Meta():
         verbose_name_plural = 'CustomUser'
 
-
