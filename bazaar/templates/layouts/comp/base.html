@@ -20,8 +20,8 @@
                     </li>
                 </ul>
                 <ul class="navigationbar">
-                    <li><a href="#">お問い合わせ</a></li>
-                    <li><a href="#">新規登録/ログイン</a></li>
+                    <li><a href="{% url 'top:inquiry' %}">お問い合わせ</a></li>
+                    <li><a href="{% url 'top:login' %}">新規登録/ログイン</a></li>
                 </ul>
             </div>
             {% block header %}{% endblock %}

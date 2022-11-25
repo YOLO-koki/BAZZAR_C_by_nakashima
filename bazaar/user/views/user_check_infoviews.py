@@ -3,14 +3,13 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
-from ..forms import RegisterForm
 
 class CheckRegiInfoView(TemplateView):
     template_name = "user/user_check_registed_info.html"
 
     def __init__(self):
         self.params = {
-        'user_id':'',
+        'userId':'',
         'password':'',
         'name':'',
         'mail':'',
@@ -18,7 +17,7 @@ class CheckRegiInfoView(TemplateView):
         }
     
     def post(self, request):
-        user_id = request.POST["user_id"]
+        user_id = request.POST["userId"]
         password = request.POST["password"]
         name = request.POST["name"]
         mail = request.POST["mail"]
