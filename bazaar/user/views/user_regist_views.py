@@ -8,4 +8,4 @@ from ..forms import RegisterForm
 class CreateAccountView(FormView):
     template_name = "user/user_create_account.html"
     form_class = RegisterForm
-    success_url = reverse_lazy('user/user_check_registed_info.html')
+    success_url = reverse_lazy(("user_check_registed_info.html"))
