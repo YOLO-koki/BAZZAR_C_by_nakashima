@@ -1,0 +1,26 @@
+.main {
+    padding-top: 10vh;
+    background-color: palegoldenrod;
+    height: 100vh;
+}
+
+.signup_login {
+    padding-top: 4rem;
+    padding-left: 8rem;
+    padding-bottom: 3rem;
+}
+
+.guide {
+    width: 80vw;
+    height: 50vh;
+    margin: 0 auto;
+    /* border: solid 1px black; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guide p {
+    font-size: 30px;
+}

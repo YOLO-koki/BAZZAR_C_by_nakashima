@@ -1,0 +1,672 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}事業者新規登録{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/comp/style_bo_signup.css' %}">
+{% endblock %}
+
+{% block contents %}
+<!-- メイン -->
+<main>
+    <div class="main">
+        <h1 class="signup">事業者新規登録</h1>
+        <div class="forms_area">
+            <form action="{% url 'comp:check_registed_info' %}" method="get">
+                {% csrf_token %}
+                <table class="forms">
+                    <tr>
+                        <td>定休日：</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="sunday">日曜日</option>
+                                <option value="monday">月曜日</option>
+                                <option value="tuesday">火曜日</option>
+                                <option value="wednesday">水曜日</option>
+                                <option value="thursday">木曜日</option>
+                                <option value="friday">金曜日</option>
+                                <option value="saturday">土曜日</option>
+                                <option value="none">なし</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>予約詳細設定：</td>
+                        <td>
+                            <table class="reservation_setting">
+                                <tr>
+                                    <th></th>
+                                    <th>日曜日</th>
+                                    <th>月曜日</th>
+                                    <th>火曜日</th>
+                                    <th>水曜日</th>
+                                    <th>木曜日</th>
+                                    <th>金曜日</th>
+                                    <th>土曜日</th>
+                                </tr>
+                                <tr>
+                                    <td><strong>1時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>7時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>9時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>10時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>11時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>12時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>13時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>14時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>15時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>16時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>17時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>18時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td><strong>19時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>20時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>21時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>22時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>23時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>24時</strong></td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                    <td>
+                                        <input type="number" name="" id="">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>店舗紹介写真</td>
+                        <td><input type="file" name="" id="" class="shop_image"></td>
+                    </tr>
+                    <tr>
+                        <td>店舗紹介文</td>
+                        <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+                    </tr>
+                    <tr class="menu_input">
+                        <td>メニュー</td>
+                        <td>
+                            <div class="menu_area">
+                                <table>
+                                    <tr>
+                                        <td>名称</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>写真</td>
+                                        <td><input type="file"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>値段</td>
+                                        <td><input type="number"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="button_area">
+                    <div class="dummy"></div>
+                    <button type="submit" class="next">次へ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>
