@@ -19,6 +19,7 @@ USERTYPE_DEFAULT = USERTYPE_USER
 
 class CustomUser(AbstractUser,PermissionsMixin):
     #ユーザーと事業者共通で必要
+    #userid 主キー　１６桁
     userid = models.CharField(verbose_name='userid',max_length=16,primary_key=True,unique=True)
     username = models.CharField(verbose_name='name',max_length=20,unique=True)
     #Trueが一般ユーザー,Falseが事業者

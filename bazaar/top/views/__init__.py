@@ -3,3 +3,4 @@ from .top_index_views import TopIndexView
 from .co_inquiry import CoInquiryForm
 from .top_login_views import TopLoginView
 from .co_check_inquiry_info import CoCheckInquiryInfoView
+from .test_views import TestView
