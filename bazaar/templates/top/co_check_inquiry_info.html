@@ -18,20 +18,22 @@
                 <h3>以下の内容でお間違いないでしょうか。</h3>
                 <div class = "check_inquiry_area">
                     <h4>お問い合わせ内容</h4>
-                    <form method="post" action="{% url 'top:sent_email' %}">
+                    <form method="post" action="{% url 'top:inquiryperfect' %}">
                         {% csrf_token %}
                         <div class = "check_inquiry_text">
                             <p>{{ inquiry }}</p>
+                            <p><input type = "hidden" name = "inquiry" value={{inquiry}}></p>
                         </div>
                         <hr>
                         <div class = "check_inquiry_name">
                             <p>お名前：{{ inquiry_name }}</p>
+                            <p><input type = "hidden" name = "inquiry_name" value={{inquiry_name}}></p>
                         </div>
 
                         <div class = "check_inquiry_email">
                             <p>返信用メールアドレス：{{ inquiry_email }}</p>
+                            <p><input type = "hidden" name = "inquiry_email" value={{inquiry_email}}></p>
                         </div>
-                        <p>{{message}}</p>
                         <button type="submit" name = "submitbutton">送信</button>
                     </form>
                 </div>
