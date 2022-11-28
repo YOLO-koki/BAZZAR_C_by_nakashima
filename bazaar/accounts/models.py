@@ -19,8 +19,8 @@ USERTYPE_DEFAULT = USERTYPE_USER
 
 class CustomUser(AbstractUser,PermissionsMixin):
     #ユーザーと事業者共通で必要
-    userid = models.CharField(verbose_name='userid',primary_key=True,unique=True)
-    username = models.CharField(verbose_name='name', max_length=20,unique=True)
+    userid = models.CharField(verbose_name='userid',max_length=16,primary_key=True,unique=True)
+    username = models.CharField(verbose_name='name',max_length=20,unique=True)
     #Trueが一般ユーザー,Falseが事業者
     usertype = models.BooleanField(verbose_name='usertype',blank=True, null=True,default=True)
     password = models.CharField(verbose_name='password', max_length=128)

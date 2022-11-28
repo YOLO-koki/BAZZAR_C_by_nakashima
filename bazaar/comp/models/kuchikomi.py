@@ -7,6 +7,6 @@ from .store import Store
 
 class Kuchikomi(models.Model):
    store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT) 
-   user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',on_delete=models.PROTECT)
+   user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',max_length=16,on_delete=models.PROTECT)
    score=models.IntegerField(verbose_name='評価点数')
    impression=models.TextField(verbose_name='評価内容',max_length=2000)

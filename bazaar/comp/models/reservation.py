@@ -7,7 +7,7 @@ from .store import Store
 
 class Reservation(models.Model):
    store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT) 
-   user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',on_delete=models.PROTECT,null=True,blank=True)
+   user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',max_length=16,on_delete=models.PROTECT,null=True,blank=True)
    menu1=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー1',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_1')
    menu2=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー2',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_2')
    menu3=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー3',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_3')
