@@ -1,17 +1,16 @@
 from django.urls import path
 from .views import (
-    CompIndexView,
     CompLoginView,
     CompSignupView,
     CompCheckRegistedInfoView,
     CompSendURLView,
     CompResetPasswordView,
     CompUpdatePasswordView,
+    CompMypageView,
 )
-
 app_name = 'comp'
 urlpatterns = [
-    path('', CompIndexView.as_view(), name='index'),  # トップページ
+    path('mypage/', CompMypageView.as_view(), name='mypage'),  # マイページ
     path('login/', CompLoginView.as_view(), name='login'),  # ログイン機能
     path('signup/', CompSignupView.as_view(), name='signup'),  # 新規登録機能
     path('check_registed_info/', CompCheckRegistedInfoView.as_view(), name='check_registed_info'),  # 登録内容確認

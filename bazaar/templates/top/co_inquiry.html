@@ -1,0 +1,44 @@
+{% extends '../layouts/top/base.html' %}
+{% load static %}
+
+{% block title %}お問い合わせページ{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/top/style_co_inquiry.css' %}">
+</head>
+{% endblock %}
+
+{% block contents %}
+    <main>
+        <div class = "main">
+
+            <h1>お問い合わせ</h1>
+            <div class = "inquiry_contents">
+                <p>お問い合わせ内容</p>
+                <div class = "inquiry_area">
+                    <form method="post" action = "">
+                        <div class = "textarea">
+                            <textarea name = inquiry placeholder="お問い合わせ内容を入力してください。"></textarea>
+                        </div>
+
+                        <div class = "inquiry_name">
+                            <label for="name">お名前：</label>
+                            <input type = "text" name = "name" id = "name">
+                        </div>
+
+                        <div class = "inquiry_email">
+                            <label for="email">返信用メールアドレス：</label>
+                            <input type = "mail" name = "email" id = "email">
+                        </div>
+
+                        <button type="submit" name = "submitbutton">次へ</button>
+                    </form>
+                </div>
+                    
+            </div>
+
+        </div>
+    </main>
+
+{% endblock %}

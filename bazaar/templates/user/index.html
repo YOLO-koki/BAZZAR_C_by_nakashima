@@ -1,1 +1,9 @@
-aaaaaaaaaaaaaa
+{% extends '../layouts/top/base.html' %}
+
+{% load static %}
+
+{% block contents %}
+<h1 style="padding-top: 10vh;">HELLO</h1>
+<a href="{% url 'user:index' %}">top</a>
+<a href="{% url 'comp:index' %}">comp</a>
+{% endblock %}

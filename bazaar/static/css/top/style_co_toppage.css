@@ -1,0 +1,193 @@
+/* 全体 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ヘッダー */
+/* ナビゲーション */
+header{
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar {
+    display:flex;
+    width: 100vw;
+    height: 10vh;
+    border: solid 1px #000;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd700;
+    position: relative;
+}
+
+.navbar li a{
+    text-decoration: none;
+}
+
+.navbar .navigationbar{
+    position: absolute;
+    right: 15%;
+}
+
+.navbar .bazaar{
+    position: absolute;
+    left: 10%;
+    font-size: 5vh;
+}
+
+.navbar ul {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    display:block;
+    margin: 10%;
+}
+
+/* 検索欄 */
+.search{
+    /* margin-top: 10vh; */
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    background-color: #fff;
+    box-shadow: 0 10px 10px 0 rgba(151, 148, 148, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.searchbox{
+    border: solid 1px #999;
+    border-radius: 20px;
+    padding: 5px 5px;
+    width: 80%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search_icon{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    font-size: 1.5rem;
+}
+
+.search input{
+    border: none;
+    display: block;
+    width: 94%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+/* .search input::placeholder{
+    padding-left: 2%;
+} */
+
+.search input:focus{
+    outline: 0;
+}
+
+
+.main {
+    padding-top: 10vh;
+}
+
+/* 都道府県（チェックボックス） */
+.checkboxies {
+    border-radius: 0.5rem;
+    width: 31rem;
+    height: 30rem;
+    /* padding: 2em; */
+    position:fixed;
+    background-color: #e4e3e3;
+    box-shadow: 0 0 10px 10px rgba(151, 148, 148, 0.5);
+    margin-top: 15vh;
+    margin-left: 2vw;
+}
+
+.search_checkboxies{
+    margin-top: 6%;
+    margin-left: 6%;
+    position: relative;
+}
+
+.area{
+    /* border: solid 1px #000; */
+    width: 50%;
+    margin-top: 5%;
+}
+
+.area:nth-child(1){
+    position: absolute;
+}
+.area:nth-child(2){
+    position: absolute;
+    transform: translateX(100%);
+}
+.area:nth-child(3){
+    position: absolute;
+    transform: translateY(100%);
+}
+.area:nth-child(4){
+    position: absolute;
+    transform: translateY(280%);
+    /* background-color: #000; */
+}
+.area:nth-child(5){
+    position: absolute;
+    transform: translateY(300%);
+    /* background-color: #000; */
+}
+.area:nth-child(6){
+    position: absolute;
+    transform: translateX(100%) translateY(150%);
+}
+
+.area .prefecture{
+    margin-left: 10%;
+}
+
+.three_checkboxies {
+    display:flex;
+}
+
+.checkbox{
+    margin-left: 0.5rem;
+}
+
+
+/* 店舗一覧 */
+.contents {
+    width: 60em;
+    padding: 2em;
+    margin-top: 10vh;
+    margin-left: 35%;
+}
+
+.contents a.content {
+    display:block;
+}
+
+.contents a.content img {
+    display:block;
+    width: 30%;
+    height:30%;
+}
+
+.contents a.content .text{
+    margin-left: 20px;
+}
+
+.contents a.content {
+    display:flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
