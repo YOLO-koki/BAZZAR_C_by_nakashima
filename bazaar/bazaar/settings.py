@@ -125,5 +125,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+# アダプターの指定
+#ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
+
 
 
