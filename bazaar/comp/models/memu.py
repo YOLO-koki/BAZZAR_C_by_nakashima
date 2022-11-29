@@ -1,8 +1,11 @@
 from django.db import models
-from .business_person import Business_person
+#from .business_person import Business_person
+
+from accounts.models import CustomUser
+from .store import Store
 
 class Menu(models.Model):
-   bp_id=models.ForeignKey(Business_person,to_field='bp_id',verbose_name='事業者ID',on_delete=models.PROTECT)
+   store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT)
    menu_name=models.CharField(verbose_name='メニュー名',max_length=50)
    size=models.CharField(verbose_name='サイズ',max_length=3) 
    price=models.IntegerField(verbose_name='値段')
