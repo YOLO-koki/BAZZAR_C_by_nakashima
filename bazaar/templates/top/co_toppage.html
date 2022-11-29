@@ -1,11 +1,14 @@
+{% extends '../layouts/top/base.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="ja">
 
+{% block title %}トップページ{% endblock %}
+
+{% block head %}
+
 <head>
-    <meta charset="UTF-8">
-    <title>トップ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/top/style_co_toppage.css' %}">
 </head>
 
@@ -34,6 +37,19 @@
             </div>
         </div>
     </header>
+    {% endblock %}
+
+    {% block contents %}
+    {% block header %}
+
+    <div class="search">
+        <div class="searchbox">
+            <ion-icon name="search-outline" class="search_icon"></ion-icon>
+            <input type="text" name="" id="" placeholder="フリーワード検索">
+        </div>
+    </div>
+
+    {% endblock %}
 
     <main>
         <div class="main">
@@ -403,9 +419,153 @@
         </div>
     </main>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <<<<<<< HEAD <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+        </script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <body>
+        <body>
 
 </html>
+=======
+<!-- 店舗一覧 -->
+<div class="contents">
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+    <a class="content" href="#">
+        <img src="{% static '/media/dinner.jpg' %}" alt="dinner">
+        <span class="text">
+            <h3 class="title">Title</h3>
+            <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis quo
+                voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo fugiat aut eos
+                quis. Earum natus soluta nisi</div>
+        </span>
+    </a>
+</div>
+</div>
+</main>
+{% endblock %}
+>>>>>>> df8dccade3921918b97506a661fa79af75226a70
