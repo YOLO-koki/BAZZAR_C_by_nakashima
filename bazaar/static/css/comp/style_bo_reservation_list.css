@@ -1,0 +1,70 @@
+.main {
+    padding-top: 10vh;
+    /* background-color: palegoldenrod; */
+}
+
+.list_area {
+    /* border: solid 2px blue; */
+    padding-top: 5%;
+    margin: 0 auto;
+    text-align: center;
+    width: 80vw;
+    min-height: 100%;
+}
+
+.list {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* .list tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+.list tr:nth-child(odd) {
+    background-color: whitesmoke;
+} */
+
+.list tr:nth-of-type(n+2) {
+    cursor: pointer;
+    /* border-bottom: solid 1px black; */
+}
+
+.list tr:nth-of-type(n+2):nth-child(even) {
+    background-color: aliceblue;
+    border-bottom: solid 0.5px white;
+    border-top: solid 0.5px white;
+}
+
+.list tr:nth-of-type(n+2):nth-child(odd) {
+    background-color: whitesmoke;
+    border-bottom: solid 0.5px white;
+    border-top: solid 0.5px white;
+}
+
+.list tr:nth-of-type(n+2):hover {
+    background-color: lightcyan;
+    border-bottom: solid 0.5px red;
+    border-top: solid 1px red;
+}
+
+.list td, .list th {
+    /* width: 25%; */
+    text-align: center;
+    padding: 15px 0;
+    /* border: solid 0.5px black; */
+}
+
+.list tr th {
+    text-align: center;
+    background-color: lightblue;
+    border-bottom: solid 3px #000;
+    border-top: 3px solid #000;
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    color: black;
+}

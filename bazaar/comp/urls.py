@@ -7,6 +7,8 @@ from .views import (
     CompResetPasswordView,
     CompUpdatePasswordView,
     CompMypageView,
+    CompReservationListView,
+    CompReservationDetailView,
 )
 app_name = 'comp'
 urlpatterns = [
@@ -17,4 +19,6 @@ urlpatterns = [
     path('send_url/', CompSendURLView.as_view(), name='send_url'),  # URL送信案内
     path('reset_password/', CompResetPasswordView.as_view(), name='reset_password'),  # パスワードリセットURL送信
     path('update_password/', CompUpdatePasswordView.as_view(), name='update_password'),  # パスワード更新
+    path('reservation_list/', CompReservationListView.as_view(), name='reservation_list'),  # 予約一覧
+    path('reservation_detail/', CompReservationDetailView.as_view(), name='reservation_detail'),  # 予約詳細
 ]

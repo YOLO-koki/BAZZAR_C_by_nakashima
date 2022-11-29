@@ -1,0 +1,53 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}
+予約詳細
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\style_bo_reservation_detail.css' %}">
+{% endblock %}
+
+{% block contents %}
+<main>
+    <div class="main">
+        <div class="reservation_detail_area">
+            <h1 class="reservation_detail_text">予約詳細</h1>
+            <table class="reservation_detail">
+                <tr>
+                    <td>代表者名</td>
+                    <td>sadfasdf</td>
+                </tr>
+                <tr>
+                    <td>メールアドレス</td>
+                    <td>test@example.com</td>
+                </tr>
+                <tr>
+                    <td>人数</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>事前予約メニュー</td>
+                    <td>
+                        <div class="reservation_menu">
+                            <p>卵かけご飯：1</p>
+                            <p>卵かけご飯：1</p>
+                            <p>卵かけご飯：1</p>
+                            <p>卵かけご飯：1</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="back">
+                <p><a href="{% url 'comp:reservation_list' %}">戻る</a></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}
+予約一覧
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\style_bo_reservation_list.css' %}">
+{% endblock %}
+
+{% block contents %}
+<main>
+    <div class="main">
+        <div class="list_area">
+            <table class="list">
+                <tr>
+                    <th>番号</th>
+                    <th>代表者名</th>
+                    <th>日付</th>
+                    <th>時間</th>
+                    <th>人数</th>
+                </tr>
+
+                <tr>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}"
+                            class="link">aasdfasdsadasdasdfasdasddsfaadsasdaf</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
+                </tr>
+
+                <tr>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
+                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>
