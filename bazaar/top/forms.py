@@ -33,10 +33,10 @@ def send_email(abc):
     message = "お問い合わせ内容:{0}\nお名前:{1}\nメールアドレス:{2}".format(inquiry,inquiry_name,inquiry_email)
     from_email = 'admin@example.com'
     to_list = [
-        'test@example.com'
+        'test@example.com' #宛先
     ]
     cc_list = [
-        inquiry_email
+        inquiry_email #共有したいメールアドレス
     ]
 
     message = EmailMessage(body = message, from_email = from_email, to = to_list, cc = cc_list)
