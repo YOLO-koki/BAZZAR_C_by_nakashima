@@ -14,10 +14,11 @@
     <div class="main">
         <h1 class="login">事業者ログイン</h1>
         {% with form as f %}
-        <form action="" method="post" class="loginForm">
+        <form method="post" class="loginForm">
+            {% csrf_token %}
             <div class="inputArea">
-                <label>{{ f.bp_id.label }}</label>
-                {{ f.bp_id }}
+                <label>{{ f.userid.label }}</label>
+                {{ f.userid }}
             </div>
             <div class="inputArea">
                 <div class="password">
@@ -41,7 +42,6 @@
             </div>
         </form>
         {% endwith %}
-
         <!-- 動画 -->
         <div class="video_area">
             <video src="{% static '/videos/Chop - 11638.mp4' %}" id="cooking_video" poster="../../images/dinner.jpg"

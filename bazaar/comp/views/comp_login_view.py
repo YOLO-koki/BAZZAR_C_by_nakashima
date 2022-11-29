@@ -1,10 +1,12 @@
-from django.views.generic import TemplateView, FormView
-from comp.forms import LoginBusiness_personForm
+from comp.forms import LoginCustomUserForm
+from django.contrib.auth.views import LoginView
+from django.views.generic import FormView
+from django.urls import reverse_lazy
 
 # ログイン機能
 
 
-class CompLoginView(FormView):
+class CompLoginView(LoginView):
     template_name: str = 'comp/bo_login.html'
-    form_class = LoginBusiness_personForm
-    success_url = 'comp:index'
+    form_class = LoginCustomUserForm
+    success_url = reverse_lazy('comp:index')

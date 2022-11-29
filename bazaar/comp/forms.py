@@ -1,22 +1,20 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
-from accounts.models import CustomUser
+from django.contrib.auth import get_user_model
 
+CustomUser = get_user_model()
 
-class LoginBusiness_personForm(forms.ModelForm):
-
+class LoginCustomUserForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['usertype'].initial = False
+
+        self.fields['userid'].widget = forms.TextInput(attrs={'required': 'true'})
+        self.fields['password'].widget = forms.TextInput(attrs={'required': 'true'})
 
     class Meta:
         model = CustomUser
-        fields = ('userid', 'password')
+        fields = ('userid', 'password',)
         labels = {
             'userid': '事業者ID',
             'password': 'パスワード',
-        }
-        widgets = {
-            'userid': forms.TextInput,
-            'password': forms.TextInput,
         }
