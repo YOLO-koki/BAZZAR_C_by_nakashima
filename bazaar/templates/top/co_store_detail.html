@@ -5,7 +5,8 @@
 {% block head %}
 <head>
     <link rel="stylesheet" href="{% static 'css/top/style_co_store_detail.css' %}">
-    
+
+    <!-- スライドする写真 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -18,6 +19,7 @@
              });
             });
     </script>
+    
 </head>
 {% endblock %}
 
@@ -44,6 +46,7 @@
             <!-- 予約ボタン -->
             <button class = "button" onclick="location.href='#'">今すぐ予約</button>
             
+            <!-- 店舗について -->
             <div class = "detail">
                 <div class = "explain">
                     <h1>大原食堂</h1>
@@ -57,11 +60,14 @@
                 <h2>特徴がないのが特徴！白ごはん専門店！</h2>
                 <p>石川県金沢市にある大原食堂は創業２００年目を迎える老舗白ごはん専門店である。今まで・・・・・・・・</p>
             </div>
+
+            <!-- スライドする写真 -->
             <div class="slider">
                 <img src="{% static '/media/dinner.jpg' %}" alt="" class = "image">
                 <img src="{% static '/media/dinner.jpg' %}" alt="" class = "image">
             </div>
 
+            <!-- 商品の説明 -->
             <div class = "picks">
                 <h2>当店のおススメ</h2>
                 <div class = "top">
@@ -87,6 +93,7 @@
                 </div>
             </div>
 
+            <!-- 口コミ -->
             <div class = "kutikomi">
                 <div class = "review-header">
                     <h1>口コミ</h1>
