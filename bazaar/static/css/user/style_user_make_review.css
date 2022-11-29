@@ -1,0 +1,144 @@
+/* 全体 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ヘッダー */
+/* ナビゲーション */
+header{
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar {
+    display:flex;
+    width: 100vw;
+    height: 10vh;
+    border: solid 1px #000;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd700;
+    position: relative;
+}
+
+.navbar li a{
+    text-decoration: none;
+}
+
+.navbar .navigationbar{
+    position: absolute;
+    right: 15%;
+    width: 30%;
+}
+
+.navbar .bazaar{
+    position: absolute;
+    left: 10%;
+    font-size: 5vh;
+}
+
+.navbar ul {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    display:block;
+    margin: 10%;
+}
+
+
+/* パンくずリスト */
+.main .bread_crumbs{
+    /* padding-top: 11vh; */
+    display: flex;
+    list-style: none;
+    padding-left: 10px;
+    margin-top: -15px;
+}
+
+.main .bread_crumb{
+    margin-right: 10px;
+}
+
+.main .bread_crumbs li::after{
+    content: '>>';
+    padding-left: 0.5rem;
+    color: #4169e1;
+}
+.main .bread_crumbs li:last-child::after{
+    content: ' ';
+}
+
+/* レビュー星 */
+.stars span{
+    display: flex;               /* 要素をフレックスボックスにする */
+    flex-direction: row-reverse; /* 星を逆順に並べる */
+    justify-content: flex-end;   /* 逆順なので、左寄せにする */
+    margin-top: -40px;
+}
+
+.stars input[type='radio']{
+    display: none;               /* デフォルトのラジオボタンを非表示にする */
+}
+
+.stars label{
+    color: #D2D2D2;              /* 未選択の星をグレー色に指定 */
+    font-size: 20px;             /* 星の大きさを20pxに指定 */
+    padding: 0 2px;              /* 左右の余白を2pxに指定 */
+    cursor: pointer;             /* カーソルが上に乗ったときに指の形にする */
+}
+
+.stars input[type='radio']:checked ~ label{
+  color: #F8C601;              /* 選択された星以降をすべて黄色にする */
+}
+
+/* メイン */
+.main {
+    padding: 100px;
+}
+
+.main .review_contents .signup {
+    margin-left: 800px;
+    margin-top: -50px;
+}
+
+.main .review_contents .signup p{
+    margin-top: 10px;
+}
+
+.main .review_contents form {
+    line-height: 4;
+    
+}
+
+.main .review_contents form .impressions {
+    display: flex;
+}
+
+.main .review_contents form .impressions textarea{
+    width: 500px;
+    height: 150px;
+    resize: none;
+    margin-top: 20px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.main .review_contents button {
+    width: 60px;
+    margin-left: 1000px;
+}
+
+.main .review_contents form button {
+    width: 70px;
+    height: 30px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}

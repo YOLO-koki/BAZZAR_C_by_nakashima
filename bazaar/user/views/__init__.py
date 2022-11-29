@@ -5,3 +5,4 @@ from .user_loginviews import UserLoginView
 from .user_mail_sendviews import UserMailSendView
 from .user_index_views import UserIndexView
 from .user_mypageviews import UserMypageView
+from .user_kutikomi_view import UserKutikomiView
