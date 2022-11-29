@@ -1,5 +1,9 @@
 from django.db import models 
 from .business_person import Business_person
+import sys
+import pathlib
+currentdir = pathlib.Path(__file__).resolve().parent
+sys.path.append(str(currentdir)+"..user/")
 from user.models.users import User
 
 class Kuchikomi(models.Model):

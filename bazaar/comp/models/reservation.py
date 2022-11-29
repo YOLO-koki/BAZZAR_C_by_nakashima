@@ -1,4 +1,8 @@
 from django.db import models
+import sys
+import pathlib
+currentdir = pathlib.Path(__file__).resolve().parent
+sys.path.append(str(currentdir)+"..user/")
 from user.models.users import User
 from .business_person import Business_person
 from .memu import Menu
