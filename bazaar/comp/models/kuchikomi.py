@@ -1,6 +1,10 @@
 from django.db import models 
 # from .business_person import Business_person
-# from user.models.users import User
+# import sys
+import pathlib
+currentdir = pathlib.Path(__file__).resolve().parent
+#sys.path.append(str(currentdir)+"..user/")
+#from user.models.users import User
 
 from accounts.models import CustomUser
 from .store import Store
