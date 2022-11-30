@@ -26,6 +26,7 @@ class LoginBusiness_personForm(forms.ModelForm):
 class KutikomiForm(forms.ModelForm):
     class Meta:
         model = 
+        fields = ('')
 
        
 
