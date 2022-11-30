@@ -29,7 +29,7 @@
                 </div>
                 
                 <form method="post" action = "">
-
+                    {% csrf_token %}
                     <!-- 評価選択 -->
 
                     <!-- <div class = "review">
@@ -44,7 +44,6 @@
                     </div> -->
 
                     <div class = "stars">
-                        {% csrf_token %}
                         {{ form.as_p }}
                         <!-- <p>評価</p>
                         <span>

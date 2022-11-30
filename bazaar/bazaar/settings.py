@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'user',
     'top',
     'comp',
+    'accounts',
 ]
 
 MIDDLEWARE = [
