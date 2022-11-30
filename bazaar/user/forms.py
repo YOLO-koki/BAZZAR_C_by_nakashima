@@ -23,16 +23,27 @@ class LoginBusiness_personForm(forms.ModelForm):
             'password': forms.TextInput,
         }
 
-class KutikomiForm(forms.ModelForm):
-    class Meta:
-        model = 
-        fields = ('')
+
+
+class RegisterForm(forms.Form):
+    userId=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
+    password=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
+    rePassword=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
+    name=forms.CharField(label='名前',max_length=20)
+    mail=forms.EmailField(label='メールアドレス',max_length=40)
+    phone = forms.CharField(label='電話番号' ,max_length = 16)
+
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('rePassword')
+        if password != confirm_password:
+            self.add_error(
+               field='rePassword',
+               error=ValidationError('パスワードが一致しません'))
+        return cleaned_data
 
        
 
         
-# stars_list = [('1','星１'),('2','星２'),('3','星３'),('4','星４'),('5','星５')]
-
-# class KutikomiForm(forms.Form):
-#     stars = forms.CharField(label="評価",required=True,widget=forms.RadioSelect)
-#     impressions = forms.CharField(label="感想",required=True)
