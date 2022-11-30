@@ -123,6 +123,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#USER_MODELの指定
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # アダプターの指定

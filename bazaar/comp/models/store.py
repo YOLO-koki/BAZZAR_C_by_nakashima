@@ -2,11 +2,15 @@ from django.db import models
 # from .business_person import Business_person
 from accounts.models import CustomUser
 
+#店舗のModel
 class Store(models.Model):
+    #store_idが主キー
     store_id = models.AutoField(verbose_name='storeid',primary_key=True)
     bp_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='事業者ID',max_length=16,on_delete=models.PROTECT)
     store_name=models.CharField(verbose_name='店舗名',max_length=30)
+    #CustomUserのほうが事業者の住所,Storeのほうが店舗の住所.
     adress=models.CharField(verbose_name='住所',max_length=80)
+    #seatが店全体の席数。seat_reservationableが時間ごとに予約可能な席数
     seat=models.IntegerField(verbose_name='席数')
     seat_reservationable=models.ImageField(verbose_name='予約可能な席数')
     bussiness_hours=models.TimeField(verbose_name='営業時間')

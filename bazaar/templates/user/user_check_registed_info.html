@@ -7,38 +7,20 @@
 <main>
    <h1>登録内容確認</h1>
    <div>
-   <form method="post" action="{% url 'user:userMailSend' %}">
+   <form method="post" action="{% url 'user:userCheck'  %}">
          {% csrf_token %}
-         <input type="hidden" name="user_id" value="{{user_id}}">
-         <input type="hidden" name="password" value="{{password}}">
-         <input type="hidden" name="name" value="{{name}}">
-         <input type="hidden" name="mail" value="{{mail}}">
-         <input type="hidden" name="phone" value="{{phone}}">
+         {% for field in form %}
+               {{ field.as_hidden }}
+        {% endfor %}
          <p>登録内容はこちらで宜しいでしょうか？<br>よろしければ「登録」ボタンを押して下さい。</p>
-         <div>
             <table>
+                {% for field in form %}
                 <tr>
-                    <th><label>ID:</label></th>
-                    <td>{{user_id}}</td>
+                    <th>{{ field.label_tag }}</th>
+                    <td>{{ field.value }}</td>
                 </tr>
-                <tr>
-                    <th><label>パスワード:</label></th>
-                    <td>{{password}}</td>
-                </tr>
-                <tr>
-                    <th><label>名前:</label></th>
-                    <td>{{name}}</td>
-                </tr>
-                <tr>
-                    <th><label>メールアドレス:</label></th>
-                    <td>{{mail}}</td>
-                </tr>
-                <tr>
-                    <th><label>電話番号:</label></th>
-                    <td>{{phone}}</td>
-                </tr>
+                {% endfor %}
             </table>
-         </div>   
          <div id="fbtn">
              <button class="back" type="button" onclick="history.back()">内容を修正する</button>
              <button class="submit" type="submit">登録</button>
