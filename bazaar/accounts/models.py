@@ -5,7 +5,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.hashers import make_password
 
 
-"""
+"""試作品
 class UserType(models.Model):
     
     typename = models.CharField(verbose_name='ユーザ種別',
@@ -24,7 +24,9 @@ alphanumeric = RegexValidator(
 '''
 
 class CustomUserManager(BaseUserManager):
-
+    """
+    ユーザーを作るときにEmailは絶対に必要
+    """
     def _create_user(self, userid, mail,password,  **extra_fields):
         if not mail:
             raise ValueError('Emailを入力して下さい')
@@ -38,8 +40,7 @@ class CustomUserManager(BaseUserManager):
     
 
     """
-    Custom user model manager where mail is the unique identifiers
-    for authentication instead of userids.
+
     """
     def create_user(self,userid, mail, password, **extra_fields):
 
@@ -49,7 +50,7 @@ class CustomUserManager(BaseUserManager):
 
     def create_superuser(self,userid, mail, password, **extra_fields):
         """
-        Create and save a SuperUser with the given mail and password.
+
         """
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
@@ -72,6 +73,7 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     username = models.CharField(verbose_name='name',max_length=20)
     #Trueが一般ユーザー,Falseが事業者
     usertype = models.BooleanField(verbose_name='usertype',default=True)
+    #一般ユーザー、事業者、両方必要
     password = models.CharField(verbose_name='password', max_length=128)
     mail=models.EmailField(verbose_name='mail',max_length=40)
     phone=models.CharField(verbose_name='tel',max_length=11,blank=True, null=True)
@@ -96,5 +98,4 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
 
     class Meta():
         verbose_name_plural = 'CustomUser'
-
-
+        

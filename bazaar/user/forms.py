@@ -50,4 +50,3 @@ class KutikomiForm(forms.ModelForm):
     class Meta:
         model = Kuchikomi
         fields = ('bp_id','user_id','score','impression',)
-

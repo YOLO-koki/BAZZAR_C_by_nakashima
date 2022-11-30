@@ -2,38 +2,28 @@
 {% load static %}
 {% block title %}登録内容確認{% endblock %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css\user\user_style.css' %}">{% endblock %}
+<link rel="stylesheet" href="{% static 'css\user\userCheck.css' %}">{% endblock %}
 {% block contents %}
 <main>
    <h1>登録内容確認</h1>
    <div>
-   <form action="" method="post">
-         <input type="hidden" name="name" value="">
-         <input type="hidden" name="sex" value="">
-         <input type="hidden" name="email" value="">
-         <input type="hidden" name="tel" value="">
-         <p>登録内容はこちらで宜しいでしょうか？<br>よろしければ「送信する」ボタンを押して下さい。</p>
-         <div>
-             <div>
-                 <label>お名前</label>
-                 <p></p>
-             </div>
-             <div>
-                 <label>性別</label>
-                 <p></p>
-             </div>
-             <div>
-                 <label>メールアドレス</label>
-                 <p></p>
-             </div>
-             <div>
-                 <label>電話番号</label>
-                 <p></p>
-             </div>
-         </div>   
+   <form method="post" action="{% url 'user:userCheck'  %}">
+         {% csrf_token %}
+         {% for field in form %}
+               {{ field.as_hidden }}
+        {% endfor %}
+         <p>登録内容はこちらで宜しいでしょうか？<br>よろしければ「登録」ボタンを押して下さい。</p>
+            <table>
+                {% for field in form %}
+                <tr>
+                    <th>{{ field.label_tag }}</th>
+                    <td>{{ field.value }}</td>
+                </tr>
+                {% endfor %}
+            </table>
          <div id="fbtn">
-             <input type="button" value="内容を修正する" href="#">
-             <button type="submit" name="submit">登録</button>
+             <button class="back" type="button" onclick="history.back()">内容を修正する</button>
+             <button class="submit" type="submit">登録</button>
          </div>
     </form>
    </div>
