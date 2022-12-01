@@ -4,6 +4,7 @@ from .views.password_reset_views import PasswordReset
 from .views.password_reset_send_views import PasswordResetDone
 from .views.password_reset_confim_views import PasswordResetConfirm
 from .views.password_reset_complete_views import PasswordResetComplete
+from .views.Atest_views import TestView
 
 app_name ='accounts'
 
@@ -14,5 +15,7 @@ urlpatterns =[
     path('password_reset/done/', PasswordResetDone.as_view(), name='password_reset_done'),#パスワードリセット用のメールを送信しましたページ
     path('password_reset/confirm/<uidb64>/<token>/', PasswordResetConfirm.as_view(), name='password_reset_confirm'),#新パスワード入力用ページ
     path('password_reset/complete/', PasswordResetComplete.as_view(), name='password_reset_complete'),#パスワード更新完了ページ
+    path('test/', TestView.as_view(), name='test'),#テスト用
+
 ]
       
