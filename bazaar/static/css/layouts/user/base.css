@@ -31,7 +31,7 @@ header {
     white-space: nowrap
 }
 
-.navbar li {
+.navbar li p {
     text-decoration: none;
     color: black;
     width: 50px;

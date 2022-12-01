@@ -24,7 +24,7 @@ header {
     position: relative;
 }
 
-.navbar li {
+.navbar li p {
     text-decoration: none;
     color: white;
 }

@@ -12,6 +12,7 @@ from .views import (
 )
 app_name = 'comp'
 urlpatterns = [
+    
     path('mypage/<str:userid>', CompMypageView.as_view(), name='mypage'),  # マイページ
     path('login/', CompLoginView.as_view(), name='login'),  # ログイン機能
     path('signup/', CompSignupView.as_view(), name='signup'),  # 新規登録機能
