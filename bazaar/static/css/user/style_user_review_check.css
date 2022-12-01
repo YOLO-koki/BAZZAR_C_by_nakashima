@@ -1,0 +1,65 @@
+/* メイン */
+.main {
+    padding: 100px;
+}
+
+.main .user_review_check {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.main .user_review_check form{  
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 700px;
+    line-height: 3;
+}
+
+tr th {
+    line-height: 3;
+}
+th {
+    width: 100px;
+}
+
+
+/* 星 */
+.main .user_review_check form .check_review img{  
+    margin-left: 50px;
+    margin-top: -32px;
+}
+
+
+.main .user_review_check .button {
+    margin-top: 15px;
+    margin-left: 800px;
+    display: flex;
+}
+
+.main .user_review_check .button {
+    margin-top: 15px;
+    margin-left: 800px;
+}
+
+
+.main .user_review_check .button .submitbutton button{
+    width: 60px;
+    height: 30px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+.main .user_review_check .button .backbutton button{
+    width: 60px;
+    height: 30px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-left: 10px;
+}
+

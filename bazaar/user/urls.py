@@ -6,6 +6,9 @@ from .views import UserLoginView
 from .views import UserMailSendView
 from .views import UserIndexView
 from .views import UserMypageView
+from .views import UserKutikomiView
+from .views import UserCheckKutikomiView
+from .views import UserReviewPerfectView
 
 app_name = 'user'
 urlpatterns = [
@@ -16,4 +19,8 @@ urlpatterns = [
     path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
     path('userLogin/',UserLoginView.as_view(),name='userLogin'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
+    path('userKutikomi/',UserKutikomiView.as_view(),name='userKutikomi'),#口コミ
+    path('userCheckKutikomi/',UserCheckKutikomiView.as_view(),name='userCheckKutikomi'),#口コミ確認
+    path('userReviewPerfect/',UserReviewPerfectView.as_view(),name='userReviewPerfect'),#口コミ送信完了
+
     ]
