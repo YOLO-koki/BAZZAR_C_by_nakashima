@@ -125,7 +125,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = 'top:index'
+
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'

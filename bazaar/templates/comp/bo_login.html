@@ -13,8 +13,11 @@
 <main>
     <div class="main">
         <h1 class="login">事業者ログイン</h1>
+        {% if error %}
+        {{ error }}
+        {% endif %}
         {% with form as f %}
-        <form method="post" class="loginForm">
+        <form method="post" class="loginForm" action="{% url 'comp:login' %}">
             {% csrf_token %}
             <div class="inputArea">
                 <label>{{ f.userid.label }}</label>
