@@ -1,3 +1,4 @@
+<!--{% extends 'comp/base.html' %}-->
 {% extends '../layouts/comp/base.html' %}
 
 {% load static %}
@@ -6,4 +7,6 @@
 <h1 style="padding-top: 10vh;">HELLO</h1>
 <a href="{% url 'user:index' %}">user</a>
 <a href="{% url 'top:index' %}">top</a>
+<a href="{% url 'comp:mypage' %}">mypage</a>
+
 {% endblock %}

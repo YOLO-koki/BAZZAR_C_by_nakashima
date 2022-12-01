@@ -1,0 +1,14 @@
+{% extends '../layouts/top/base.html' %}
+
+{% load static %}
+
+{% block contents %}
+{% if user.usertype == Ture %}
+    <h1 style="padding-top: 10vh;">USER</h1>
+    <h1 style="padding-top: 10vh;">{{ user.username }}</h1>
+
+{% else %}
+    <h1 style="padding-top: 10vh;">COMP</h1>
+    <h1 style="padding-top: 10vh;">{{ user.username }}</h1>
+{% endif %}
+{% endblock %}
