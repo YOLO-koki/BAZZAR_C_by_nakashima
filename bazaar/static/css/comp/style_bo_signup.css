@@ -1,0 +1,99 @@
+.main {
+    padding-top: 10vh;
+    /* background-color: palegoldenrod; */
+}
+
+.signup {
+    padding-top: 4rem;
+    padding-left: 8rem;
+    padding-bottom: 3rem;
+}
+
+.forms_area {
+    margin: 0 auto;
+    width: 95vw;
+    /* border: solid 2px #000; */
+}
+
+table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    background-color: #000;
+}
+
+.forms_area>form>table {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.reservation_setting {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.forms {
+    text-align: center;
+}
+
+tr {
+    border: solid 2px black;
+    text-align: center;
+    /* height: 50px; */
+    background-color: azure;
+}
+
+/* tr>td:nth-child(1) {
+    width: 100px;
+} */
+
+td {
+    /* border: solid 2px black; */
+}
+
+.reservation_setting td {
+    /* border: solid 2px blue; */
+    width: 5rem;
+}
+
+.reservation_setting {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.menu_area {
+    margin: 0 auto;
+}
+
+input {
+    width: 50px;
+}
+
+.shop_image {
+    width: 300px;
+}
+
+.menu_input input {
+    width: 300px;
+}
+
+textarea {
+    width: 80%;
+}
+
+.button_area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next {
+    width: 70px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cyan;
+    border-radius: 1rem;
+}
