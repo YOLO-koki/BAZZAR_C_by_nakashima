@@ -5,7 +5,10 @@ from .memu import Menu
 from accounts.models import CustomUser
 from .store import Store
 
+#予約のModel
+
 class Reservation(models.Model):
+   #store_id,user_id,timeの合同主キー
    store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT) 
    user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',max_length=16,on_delete=models.PROTECT,null=True,blank=True)
    menu1=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー1',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_1')

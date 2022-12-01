@@ -49,7 +49,9 @@
             <!-- 店舗について -->
             <div class = "detail">
                 <div class = "explain">
-                    <h1>大原食堂</h1>
+                    <!-- <h1>{{object.store_name}}</h1> -->
+                    <h1>おおはら</h1>
+
                     <div class = "stars">
                         <img src="{% static '/media/review02.png' %}" alt="" width="100px">
                     </div>
@@ -98,7 +100,7 @@
                 <div class = "review-header">
                     <h1>口コミ</h1>
                     <p>53件</p>
-                <a href="#" target="_blank"><p>口コミを書く（会員登録が必要です）</p></a>
+                <a href="{% url 'user:userKutikomi' %}" target="_blank"><p>口コミを書く（会員登録が必要です）</p></a>
                 </div>
 
                 <div class = "reviews">

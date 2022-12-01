@@ -4,7 +4,8 @@ import pathlib
 currentdir = pathlib.Path(__file__).resolve().parent
 sys.path.append(str(currentdir)+"..comp/")
 # from comp.models.business_person import Business_person
-# from.models.users import User 
+# from.models.users import User
+from comp.models.kuchikomi import Kuchikomi
 from accounts.models import CustomUser
 import re
 from django.core.exceptions import ValidationError
@@ -45,5 +46,7 @@ class RegisterForm(forms.Form):
         return cleaned_data
 
        
-
-        
+class KutikomiForm(forms.ModelForm):
+    class Meta:
+        model = Kuchikomi
+        fields = ('store_id','user_id','score','impression',)

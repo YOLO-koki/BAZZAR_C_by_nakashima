@@ -11,36 +11,20 @@
 
 {% block contents %}
     <main>
+        <h1>ユーザー新規登録</h1>
+        <div id="test">
+        <form method="post">
         <div class = "main">
-
-            <h1>ユーザー新規登録</h1>
-            <div class = "inquiry_contents">
-                <div class = "inquiry_area">
-                    <form method="post" action="{% url 'user:userCheck' %}">
-                        <div class = "form_group">
-                            <table>
-                               {% csrf_token %}
-                               {{form.non_field_errors}}
-                               {% for field in form %}
-                                <tr>
-                                <th><label>{{field.label_tag}}</label></th>
-                                <td>
-                                    {{field}}
-                                </td>
-                                <td>
-                                    {{field.errors}}
-                                </td>
-                                </tr>
-                                {% endfor %}
-                          </table>
-                       </div>
-                        <input type="submit" name = "submitbutton" value="次へ"></button>
-                    </form>
-                </div>
-                    
-            </div>
-
+             <div class = "inquiry_area">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+             </div>
         </div>
+        <div id="fbtn">
+            <button type="submit" name = "submitbutton">　次へ　</button>
+        </div>
+    </form>
+</div>
     </main>
 
-{% endblock %}
+{% endblock %}n
