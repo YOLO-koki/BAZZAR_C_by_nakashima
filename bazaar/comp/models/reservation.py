@@ -6,6 +6,7 @@ from accounts.models import CustomUser
 from .store import Store
 
 #予約のModel
+
 class Reservation(models.Model):
    #store_id,user_id,timeの合同主キー
    store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT) 

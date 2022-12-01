@@ -1,0 +1,37 @@
+.main {
+    padding-top: 10vh;
+    /* background-color: palegoldenrod; */
+}
+
+.reservation_detail_area {
+    min-height: 100%;
+}
+
+.reservation_detail_text {
+    padding-top: 4rem;
+    padding-left: 8rem;
+    padding-bottom: 3rem;
+}
+
+.reservation_detail {
+    margin: 0 auto;
+}
+
+.reservation_detail td {
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+
+.reservation_detail tr>td:first-child {
+    text-align: center;
+}
+
+.reservation_menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.back {
+    /* border: solid 2px black; */
+    text-align: center;
+}
