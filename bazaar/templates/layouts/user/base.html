@@ -22,7 +22,7 @@
                 <ul class="navigationbar">
                     <li><a href="{% url 'top:inquiry' %}">お問い合わせ</a></li>
                     {% if user.is_authenticated %}
-                    <p>{{ user.username }}でログイン中</p>
+                    <li><p>{{ user.username }}でログイン中</p></li>
                     {% else %}
                     <li><a href="{% url 'top:login' %}">新規登録/ログイン</a></li>
                     {% endif %}
