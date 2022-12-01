@@ -1,4 +1,5 @@
 from .comp_login_view import CompLoginView
+from .comp_logout_view import CompLogoutView
 from .comp_signup_view import CompSignupView
 from .comp_check_registed_info_view import CompCheckRegistedInfoView
 from .comp_send_url_view import CompSendURLView

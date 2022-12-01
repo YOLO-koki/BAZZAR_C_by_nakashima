@@ -53,6 +53,13 @@
 
     <main>
         <div class="main">
+
+            {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+            {% endif %}
+
             <!-- 都道府県（チェックボックス） -->
             <div class="checkboxies">
                 <div class="search_checkboxies">

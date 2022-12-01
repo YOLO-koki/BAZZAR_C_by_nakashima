@@ -9,11 +9,13 @@ from .views import (
     CompMypageView,
     CompReservationListView,
     CompReservationDetailView,
+    CompLogoutView,
 )
 app_name = 'comp'
 urlpatterns = [
     path('mypage/<str:userid>', CompMypageView.as_view(), name='mypage'),  # マイページ
     path('login/', CompLoginView.as_view(), name='login'),  # ログイン機能
+    path('logout/', CompLogoutView.as_view(), name='logout'),  # ログアウト機能
     path('signup/', CompSignupView.as_view(), name='signup'),  # 新規登録機能
     path('check_registed_info/', CompCheckRegistedInfoView.as_view(), name='check_registed_info'),  # 登録内容確認
     path('send_url/', CompSendURLView.as_view(), name='send_url'),  # URL送信案内
