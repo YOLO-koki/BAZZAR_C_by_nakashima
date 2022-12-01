@@ -24,7 +24,7 @@
                 <div class="inputArea">
                     <div class="password">
                         <label>{{ f.password.label }}</label>
-                        <p class="forget_password"><a href="#">パスワードを忘れた</a></p>
+                        <p class="forget_password"><a href="{% url 'accounts:password_reset' %}">パスワードを忘れた</a></p>
                     </div>
                     {{ f.password }}
                 </div>
@@ -55,7 +55,6 @@
     </main>
     {% endblock %}
 
-</body>
 
 
 
