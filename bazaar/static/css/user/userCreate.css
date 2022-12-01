@@ -3,7 +3,12 @@ h1{
     padding-top: 12vh;
     padding-left: 5vh; 
 }
+#test{
+    text-align: center;
+}
 form {
+    display: inline-block;
+    width: 600px;
     padding: 30px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -24,7 +29,6 @@ form > div {
     vertical-align: middle;
     border: 1px solid #dddddd;
     margin-top: 20px;
-    margin-bottom: 15px;
     padding: 20px;
 }
 form > div > div {
@@ -47,7 +51,6 @@ form > div input[type=text], form > div input[type=email],form > div input[type=
     max-width: 405px;
     float: right;
     height: 38px;
-    padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
@@ -60,7 +63,6 @@ form > div input[type=text], form > div input[type=email],form > div input[type=
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    margin: 0 15px;
 }
 
 input[type=radio] {
@@ -76,33 +78,7 @@ input[type=radio] {
     padding-right: 15px;
     padding-left: 15px;
 }
-button {
-    display: block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    margin: 0 auto;
-}
 
-button {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
-}
 body > div > a > button {
     margin-left: 0;
     margin: 0 auto;
@@ -166,20 +142,32 @@ input + div, select + div, textarea + div {
     color: red;
     margin-bottom: -10px;
 }
-.error-form {
-    border-color: #fb9a93 !important;
-}
+
 
 #fbtn {
     background-color: #fff;
-    width: 40%;
-    margin-left: 550px;
     border: none;
+    margin-top: 0px;
 }
 
 label{
   display: inline-block;
-  text-align: right;
-  width: 200px;
-  margin:7px;
+  text-align: left;
+  width: 600px;
+  margin-right: 100px;
+}
+li{
+    clear: both;
+    width: 450px;
+    text-align: left;
+    margin-left: 30px;
+}
+span{
+    width: 600px;
+    text-align: left;
+}
+.helptext{
+    display: inline-block;
+   width: 500px;
+   text-align: left; 
 }
