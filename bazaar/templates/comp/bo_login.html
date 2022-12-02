@@ -16,6 +16,11 @@
         {% if error %}
         {{ error }}
         {% endif %}
+        {% if message %}
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endif %}
         {% with form as f %}
         <form method="post" class="loginForm" action="{% url 'comp:login' %}">
             {% csrf_token %}
