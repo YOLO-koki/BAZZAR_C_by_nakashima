@@ -16,8 +16,14 @@
         {% if error %}
         {{ error }}
         {% endif %}
-        {% with form as f %}
+        {% if message %}<!--"ログアウトしました"などを表示させる-->
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% with form as f %}<!--formを'f'に代入-->
         <form method="post" class="loginForm" action="{% url 'comp:login' %}">
+            <!--useridとpasswordでユーザー認証-->
             {% csrf_token %}
             <div class="inputArea">
                 <label>{{ f.userid.label }}</label>
@@ -26,6 +32,7 @@
             <div class="inputArea">
                 <div class="password">
                     <label>{{ f.password.label }}</label>
+                    <!--パスワードを忘れた場合はパスワードリセットページに飛ぶ-->
                     <p class="forget_password"><a href="{% url 'comp:reset_password' %}">パスワードを忘れた</a></p>
                 </div>
                 {{ f.password }}
@@ -37,6 +44,7 @@
 
             <div class="createArea">
                 <div class="createPageRoute">
+                    <!--登録していない場合は新規登録ページに飛ぶ-->
                     <p class="message">
                         新規登録は<a href="#">こちら</a>から
                     </p>

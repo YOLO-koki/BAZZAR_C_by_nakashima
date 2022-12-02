@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from accounts.backends import CompBackend
 from django.urls import reverse_lazy, reverse
+from django.contrib.auth import get_user_model
 
 # ログイン機能
 
@@ -22,13 +23,17 @@ class CompLoginView(View):
         data = [userid, password]
         form = LoginCustomUserForm(self.request, data=data)
         user = CompBackend.authenticate(self=CompBackend, userid=userid, password=password)
+        # username = get_user_model().objects.get(pk=userid).username
 
         if user:
-            login(request=self.request, user=user)
+            #ログインに成功した場合
+            #login(request=self.request, user=user, backend='accounts.backends.CompBackend')
+            login(request=self.request, user=user,)
             # return render(request=self.request, template_name=template_name)
             return redirect(to=reverse('comp:mypage', args=[userid]))
             
         else:
+            #ログインに失敗した場合
             form = LoginCustomUserForm(self.request.POST)
             return render(request=self.request, template_name='comp/bo_login.html', context={'form': form, 'error': 'パスワードかユーザーIDが間違っています。'})
     
