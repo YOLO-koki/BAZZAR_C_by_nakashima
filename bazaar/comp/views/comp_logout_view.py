@@ -1,7 +1,10 @@
 from django.contrib.auth.views import LogoutView
+from django.views.generic import FormView
+from ..forms import LoginCustomUserForm
 
-class CompLogoutView(LogoutView):
-    template_name: str = 'top/co_toppage.html'
+class CompLogoutView(LogoutView, FormView):
+    template_name: str = 'comp/bo_login.html'
+    form_class = LoginCustomUserForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
