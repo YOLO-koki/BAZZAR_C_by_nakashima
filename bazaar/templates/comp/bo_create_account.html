@@ -17,7 +17,14 @@
         <div class = "main">
              <div class = "inquiry_area">
                       {% csrf_token %}
-                      {{ form.as_p }}
+                      {% with form as f %}
+                <label> {{ f.userid.label }}</label>{{ f.userid }}
+                <label> {{ f.password.label }}</label>{{ f.password }}
+                <label> {{ f.username.label }}</label>{{ f.username }}
+                <label> {{ f.adress.label }}</label>{{ f.adress }}
+                <label> {{ f.mail.label }}</label>{{ f.mail }}
+                <label> {{ f.phone.label }}</label>{{ f.phone }}
+                {% endwith %}
              </div>
         </div>
         <div id="fbtn">

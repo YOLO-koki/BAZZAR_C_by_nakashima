@@ -28,8 +28,12 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 
 class RegisterForm(UserCreationForm):
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['usertype'].widget.initial = False
 
     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
+    usertype=forms.BooleanField(initial=False)
     #password1=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
     #password2=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
     username=forms.CharField(label='名前',max_length=20)
@@ -40,12 +44,14 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model=CustomUser
         
-        fields =(CustomUser.USERNAME_FIELD,'username','mail','phone')
+        fields =(CustomUser.USERNAME_FIELD,'username','age','mail','phone','adress', 'usertype','age')
         labels= {
             'userid':'ユーザーID',
             'username':'名前',
+            'age':'年齢',
             'mail':'メールアドレス',
             'phone':'電話番号',
+            'adress':'住所',
         }
 
 class SaveForm(forms.Form):
