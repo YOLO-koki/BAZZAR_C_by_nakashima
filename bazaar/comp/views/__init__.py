@@ -8,3 +8,7 @@ from .comp_update_password_view import CompUpdatePasswordView
 from .comp_mypage_views import CompMypageView
 from .comp_reservation_list_view import CompReservationListView
 from .comp_reservation_detail_view import CompReservationDetailView
+from .bo_check_infoviews import CheckRegiInfoView
+from .bo_regist_views import CreateAccountView
+from .bo_mail_sendviews import BoMailSendView
+from .bo_loginviews import BoLoginView
