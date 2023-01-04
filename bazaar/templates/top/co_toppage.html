@@ -282,7 +282,16 @@
 
             <!-- 店舗一覧 -->
             <div class="contents">
-                <a class="content" href="{% url 'top:detail' %}">  
+                {% for store in store_list %}
+                    <a class="content" href="{% url 'top:detail'%}">
+                        <img src="{{store.photo1}}" alt="dinner">
+                        <span class="text">
+                            <h3 class="title">{{store.store_name}}</h3>
+                            <div class="detail">{{store.bussiness_hours|truncatechars:20}}</div>
+                        </span>
+                    </a>
+                {% endfor %}
+                <!-- <a class="content" href="#">
                     <img src="../../images/dinner.jpg" alt="dinner">
                     <span class="text">
                         <h3 class="title">Title</h3>
@@ -299,16 +308,7 @@
                             quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
                             fugiat aut eos quis. Earum natus soluta nisi</div>
                     </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
+                </a> -->
                 <!-- <a class="content" href="#">
                     <img src="../../images/dinner.jpg" alt="dinner">
                     <span class="text">
