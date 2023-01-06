@@ -282,14 +282,16 @@
 
             <!-- 店舗一覧 -->
             <div class="contents">
-                {% for store in store_list %}
+                {% for store in stores %}
                     <a class="content" href="{% url 'top:detail'%}">
-                        <img src="{{store.photo1}}" alt="dinner">
-                        <span class="text">
-                            <h3 class="title">{{store.store_name}}</h3>
-                            <div class="detail">{{store.bussiness_hours|truncatechars:20}}</div>
-                        </span>
+                            <img src = "..\bazaar\dinner_IMP6uLZ.jpg" alt="dinner">
+                            <span class="text">
+                                <h3 class="title">{{store.store_name}}</h3>
+                                <div class="detail">{{store.bussiness_hours|truncatechars:20}}</div>
+                            </span>
                     </a>
+                {% empty %}
+                <p>aaa</p>
                 {% endfor %}
                 <!-- <a class="content" href="#">
                     <img src="../../images/dinner.jpg" alt="dinner">

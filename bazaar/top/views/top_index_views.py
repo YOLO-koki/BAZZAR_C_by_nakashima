@@ -6,17 +6,18 @@ from comp.models import Store
 # トップページview
 
 
-class TopIndexView(TemplateView):
+class TopIndexView(ListView):
     model = Store
     template_name: str = "top/co_toppage.html"
+    context_object_name = 'stores'
 
-    def store_list(request):
-        template_name: str = "top/co_toppage.html"
-        store = {}
-        sl = Store.objects.all()
-        store["store_list"] = sl
+    # def store_list(request):
+    #     template_name: str = "top/co_toppage.html"
+    #     store = {}
+    #     sl = Store.objects.all()
+    #     store["objects_list"] = sl
 
-        return render(request, template_name ,store)
+    #     return render(request, template_name ,store)
     
     # def search(request):
     #     objects = Store.objects.filter(Q(store_name__iexact="1") | Q(store_name__icontains="い"))
