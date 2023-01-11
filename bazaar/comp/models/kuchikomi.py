@@ -5,6 +5,7 @@ from django.db import models
 from accounts.models import CustomUser
 from .store import Store
 
+
 #口コミのModel
 class Kuchikomi(models.Model):
    #store_idとuser_idの合同主キー

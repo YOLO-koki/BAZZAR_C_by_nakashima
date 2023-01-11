@@ -4,7 +4,9 @@ from django.db import models
 from accounts.models import CustomUser
 from .store import Store
 
+
 #メニューのModel
+
 class Menu(models.Model):
    #store_id,menu_name,sizeの合同主キー
    store_id=models.ForeignKey(Store,to_field='store_id',verbose_name='店舗ID',on_delete=models.PROTECT)

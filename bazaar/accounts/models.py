@@ -70,12 +70,16 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     #ユーザーと事業者共通で必要
     #userid 主キー　１６桁
     userid = models.CharField(verbose_name='userid',primary_key=True,max_length=16,unique=True)
+
     username = models.CharField(verbose_name='name',max_length=20)
+
     #Trueが一般ユーザー,Falseが事業者
     usertype = models.BooleanField(verbose_name='usertype',default=True)
     #一般ユーザー、事業者、両方必要
     password = models.CharField(verbose_name='password', max_length=128)
+
     mail=models.EmailField(verbose_name='mail',max_length=40)
+
     phone=models.CharField(verbose_name='tel',max_length=11,blank=True, null=True)
     #事業者のみで必要
     age=models.IntegerField(verbose_name='age',blank=True, null=True,validators=[MaxValueValidator(150),MinValueValidator(0)])

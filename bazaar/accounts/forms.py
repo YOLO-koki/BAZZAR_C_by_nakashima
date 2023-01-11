@@ -1,50 +1,35 @@
-# from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model
 
-# from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import (UserCreationForm,
+                                        UserChangeForm,
+                                        AuthenticationForm,
+                                        PasswordResetForm,
+                                        SetPasswordForm)
 
-# class CustomUserCreationForm(UserCreationForm):
 
-#   def __init__(self, *args, **kwargs): # emailの登録を必須に変更
-#       super().__init__(*args, **kwargs)
-#       self.fields["email"].required = True
+from accounts.models import CustomUser
 
-#   class Meta:
-#     model = get_user_model()
-#     fields = ["userid","username","password", "email", "phone"] 
-#     labels = {
-#       "userid": "ユーザーID",
-#       "username": "ユーザー名",
-#       "password": "パスワード",
-#       "email": "メールアドレス",
-#       "phone": "電話番号",
-#     }
-#     help_texts = {
-#        "username": "",
-#       "userid": "",
-#       "password": "",
-#       "email": "",
-#       "phone": "",
-#     }
+class LoginForm(AuthenticationForm):
+    """ログインフォーム"""
 
-# class CustomUserChangeForm(UserChangeForm):
-#   def __init__(self, *args, **kwargs): # emailの登録を必須に変更
-#       super().__init__(*args, **kwargs)
-#       self.fields["email"].required = True
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-#   class Meta:
-#     model = get_user_model()
-#     fields = ["userid","username","password", "email", "phone"]
-#     labels = {
-#       "userid": "ユーザーID",
-#       "username": "ユーザー名",
-#       "password": "パスワード",
-#       "email": "メールアドレス",
-#       "phone": "電話番号",
-#     }
-#     help_texts = {
-#        "username": "",
-#       "userid": "",
-#       "password": "",
-#       "email": "",
-#       "phone": "",
-#     }
+class MyPasswordResetForm(PasswordResetForm):
+    """パスワード忘れたときのフォーム"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+
+
+class MySetPasswordForm(SetPasswordForm):
+    """パスワード再設定用フォーム(パスワード忘れて再設定)"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+
+

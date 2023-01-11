@@ -1,0 +1,28 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}URL送信案内{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/comp/style_bo_send_url.css' %}">
+{% endblock %}
+
+{% block contents %}
+<!-- メイン -->
+<main>
+    <div class="main">
+        <h1 class="signup_login">URL送信案内</h1>
+        <div class="guide">
+            <p>
+                登録されたメールアドレスに、登録確定メールをお送りしました。
+                <br>
+                ご確認のうえ、新規登録を完了させてください。
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>

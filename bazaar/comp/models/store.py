@@ -2,7 +2,9 @@ from django.db import models
 # from .business_person import Business_person
 from accounts.models import CustomUser
 
+
 #店舗のModel
+
 class Store(models.Model):
     #store_idが主キー
     store_id = models.AutoField(verbose_name='storeid',primary_key=True)
