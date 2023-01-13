@@ -30,14 +30,14 @@
             </ul>
         </div>
 
-        <div class="search">
+        <!-- <div class="search">
             <form method="get" action="{% url 'top:index' %}">
                 <div class="searchbox">
                     <ion-icon type = "submit" name="search-outline" class="search_icon"></ion-icon>
                     <input type="text" name="search" id="" placeholder="フリーワード検索">
                 </div>
             </form>
-        </div>
+        </div> -->
     </header>
     {% endblock %}
 
@@ -46,8 +46,13 @@
 
     <div class="search">
         <div class="searchbox">
-            <ion-icon name="search-outline" class="search_icon"></ion-icon>
-            <input type="text" name="search" id="" placeholder="フリーワード検索">
+            <form action = "{% url 'top:index' %}" method = "get"></form>
+                <ion-icon name="search-outline" class="search_icon"></ion-icon>
+                <input type="text" name="search" id="" placeholder="フリーワード検索" value = "">
+                <!-- <div class = "search_icon"></div>
+                    <input type = "image" src = "{% static '/media/megane.jpg' %}" alt = "検索" value="検索">
+                </div> -->
+            </form>
         </div>
     </div>
 
@@ -282,7 +287,21 @@
 
             <!-- 店舗一覧 -->
             <div class="contents">
-                <a class="content" href="{% url 'top:detail' %}">  
+                <!-- {% if not queryset %} -->
+                    {% for store in stores %}
+                        <a class="content" href="{% url 'top:detail' store.pk %}">
+                            <img src="" alt="dinner">
+                            <span class="text">
+                                <h3 class="title">{{store.store_name}}</h3>
+                                <div class="detail">{{store.bussiness_hours}}</div>
+                            </span>
+                        </a>
+                    {% empty %}
+                    <p>aaa</p>
+                    {% endfor %}
+                <!-- {% endif %} -->
+
+                <!-- <a class="content" href="#">
                     <img src="../../images/dinner.jpg" alt="dinner">
                     <span class="text">
                         <h3 class="title">Title</h3>
@@ -299,16 +318,7 @@
                             quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
                             fugiat aut eos quis. Earum natus soluta nisi</div>
                     </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
+                </a> -->
                 <!-- <a class="content" href="#">
                     <img src="../../images/dinner.jpg" alt="dinner">
                     <span class="text">

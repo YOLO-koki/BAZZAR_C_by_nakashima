@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'top',
     'comp',
     'accounts',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
