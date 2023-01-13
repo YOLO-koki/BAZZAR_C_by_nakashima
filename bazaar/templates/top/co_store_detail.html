@@ -121,7 +121,7 @@
 
                 <div class = "reviews">
                     {% for kuchikomi in kuchikomi_list %}
-                        {% if stores.store_id == kuchikomi.pk %}
+                        {% if stores.store_id == kuchikomi.store_id %}
                             <div class = "profile">
                                 
                                 <p>{{kuchikomi.user_id}}さん:</p>

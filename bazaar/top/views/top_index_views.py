@@ -11,17 +11,13 @@ class TopIndexView(ListView):
     template_name: str = "top/co_toppage.html"
     context_object_name = 'stores'
 
-    # def get_queryset(self):
-    #     queryset = Store.objects
-    #     query = self.request.GET.get('query')
+    def get_queryset(self):
+        queryset = Store.objects.all()
+        query = self.request.GET.get('search')
 
-    #     if query:
-    #         queryset = queryset.filter(
-    #             Q(store_name = query) | Q(text__icontains = query)
-    #         )
+        if query:
+            queryset = queryset.filter(
+                Q(store_name__contains = query)
+            )
 
-    #         return queryset
-    
-    def qobject(request):
-        objects = Store.objects.filter(Q(store_name__contais="search"))
-        return(Store.objects.all)
+        return queryset
