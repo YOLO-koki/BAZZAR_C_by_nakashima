@@ -23,14 +23,17 @@ class CompLoginView(View):
         data = [userid, password]
         form = LoginCustomUserForm(self.request, data=data)
         user = CompBackend.authenticate(self=CompBackend, userid=userid, password=password)
-        username = get_user_model().objects.get(pk=userid).username
+        # username = get_user_model().objects.get(pk=userid).username
 
         if user:
-            login(request=self.request, user=user, backend='accounts.backends.CompBackend')
+            #ログインに成功した場合
+            #login(request=self.request, user=user, backend='accounts.backends.CompBackend')
+            login(request=self.request, user=user,)
             # return render(request=self.request, template_name=template_name)
             return redirect(to=reverse('comp:mypage', args=[userid]))
             
         else:
+            #ログインに失敗した場合
             form = LoginCustomUserForm(self.request.POST)
             return render(request=self.request, template_name='comp/bo_login.html', context={'form': form, 'error': 'パスワードかユーザーIDが間違っています。'})
     

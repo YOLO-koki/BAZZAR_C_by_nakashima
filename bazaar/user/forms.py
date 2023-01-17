@@ -4,11 +4,12 @@ import pathlib
 currentdir = pathlib.Path(__file__).resolve().parent
 sys.path.append(str(currentdir)+"..comp/")
 # from comp.models.business_person import Business_person
-# from.models.users import User 
+# from.models.users import User
 from accounts.models import CustomUser
 import re
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from comp.models import Kuchikomi
 #from django.contrib.auth.forms.UserCreationForm import clean_password2
 
 
@@ -28,7 +29,6 @@ class LoginBusiness_personForm(forms.ModelForm):
 
 
 class RegisterForm(UserCreationForm):
-
     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
     #password1=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
     #password2=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
@@ -36,10 +36,8 @@ class RegisterForm(UserCreationForm):
     mail=forms.EmailField(label='メールアドレス',max_length=40)
     phone = forms.CharField(label='電話番号' ,max_length = 16)
 
-
     class Meta:
         model=CustomUser
-        
         fields =(CustomUser.USERNAME_FIELD,'username','mail','phone')
         labels= {
             'userid':'ユーザーID',
@@ -54,11 +52,10 @@ class SaveForm(forms.Form):
     confirm_password=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
     username=forms.CharField(label='名前',max_length=20)
     mail=forms.EmailField(label='メールアドレス',max_length=40)
-    phone = forms.CharField(label='電話番号' ,max_length = 16)    
+    phone = forms.CharField(label='電話番号' ,max_length = 16)  
+
     
-
-
-
-       
-
-        
+class KutikomiForm(forms.ModelForm):
+    class Meta:
+        model = Kuchikomi
+        fields = ('store_id','user_id','score','impression',)

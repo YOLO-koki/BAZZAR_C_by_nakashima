@@ -1,4 +1,4 @@
-{% extends '../layouts/comp/base.html' %}
+{% extends '../layouts/top/base.html' %}
 {% load static %}
 
 {% block title %}
@@ -16,13 +16,14 @@
         {% if error %}
         {{ error }}
         {% endif %}
-        {% if message %}
+        {% if message %}<!--"ログアウトしました"などを表示させる-->
         <div class="message">
             {{ message }}
         </div>
         {% endif %}
-        {% with form as f %}
+        {% with form as f %}<!--formを'f'に代入-->
         <form method="post" class="loginForm" action="{% url 'comp:login' %}">
+            <!--useridとpasswordでユーザー認証-->
             {% csrf_token %}
             <div class="inputArea">
                 <label>{{ f.userid.label }}</label>
@@ -31,6 +32,7 @@
             <div class="inputArea">
                 <div class="password">
                     <label>{{ f.password.label }}</label>
+                    <!--パスワードを忘れた場合はパスワードリセットページに飛ぶ-->
                     <p class="forget_password"><a href="{% url 'comp:reset_password' %}">パスワードを忘れた</a></p>
                 </div>
                 {{ f.password }}
@@ -42,6 +44,7 @@
 
             <div class="createArea">
                 <div class="createPageRoute">
+                    <!--登録していない場合は新規登録ページに飛ぶ-->
                     <p class="message">
                         新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から
                     </p>

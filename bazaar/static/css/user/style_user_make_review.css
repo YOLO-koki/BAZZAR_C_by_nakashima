@@ -1,0 +1,63 @@
+/* レビュー星 */
+.stars span{
+    display: flex;               /* 要素をフレックスボックスにする */
+    flex-direction: row-reverse; /* 星を逆順に並べる */
+    justify-content: flex-end;   /* 逆順なので、左寄せにする */
+    margin-top: -40px;
+}
+
+.stars input[type='radio']{
+    display: none;               /* デフォルトのラジオボタンを非表示にする */
+}
+
+.stars label{
+    color: #D2D2D2;              /* 未選択の星をグレー色に指定 */
+    font-size: 20px;             /* 星の大きさを20pxに指定 */
+    padding: 0 2px;              /* 左右の余白を2pxに指定 */
+    cursor: pointer;             /* カーソルが上に乗ったときに指の形にする */
+}
+
+.stars input[type='radio']:checked ~ label{
+  color: #F8C601;              /* 選択された星以降をすべて黄色にする */
+}
+
+/* メイン */
+.main {
+    padding: 100px;
+}
+
+.main .review_contents .signup {
+    margin-left: 800px;
+    margin-top: -50px;
+}
+
+.main .review_contents .signup p{
+    margin-top: 10px;
+}
+
+.main .review_contents form {
+    line-height: 4;
+    
+}
+
+#id_impression {
+    margin-top: 20px;
+    resize: none;
+    outline: none;
+    
+}
+
+.main .review_contents button {
+    width: 60px;
+    margin-left: 1000px;
+}
+
+.main .review_contents form button {
+    width: 70px;
+    height: 30px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
