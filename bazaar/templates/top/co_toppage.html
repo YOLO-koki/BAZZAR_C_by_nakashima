@@ -286,7 +286,7 @@
             <div class="contents">
                 {% if not queryset %}
                     {% for store in stores %}
-                        <a class="content" href="{% url 'top:detail' store.pk %}">
+                        <a class="content" href="{% url 'top:detail' %}">
                         <img src="" alt="dinner">
                         <span class="text">
                             <h3 class="title">{{store.store_name}}</h3>
@@ -297,133 +297,7 @@
                     <p>aaa</p>
                     {% endfor %}
                 {% endif %}
-
-                <!-- <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a> -->
-                <!-- <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a>
-                <a class="content" href="#">
-                    <img src="../../images/dinner.jpg" alt="dinner">
-                    <span class="text">
-                        <h3 class="title">Title</h3>
-                        <div class="detail">Amet modi sed consequatur assumenda esse! Nesciunt enim exercitationem quis
-                            quo voluptatem, inventore? Veniam possimus illo nam aut aspernatur nesciunt Blanditiis quo
-                            fugiat aut eos quis. Earum natus soluta nisi</div>
-                    </span>
-                </a> -->
+                
             </div>
         </div>
     {% endblock %}

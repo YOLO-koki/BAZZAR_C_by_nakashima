@@ -116,15 +116,16 @@
             <div class = "kutikomi">
                 <div class = "review-header">
                     <h1>口コミ</h1>
-                    <a href="{% url 'user:userKutikomi' stores.pk %}" target="_blank"><p>口コミを書く（会員登録が必要です）</p></a>
+                    <a href="{% url 'user:userKutikomi' %}" target="_blank"><p>口コミを書く（会員登録が必要です）</p></a>
                 </div>
 
                 <div class = "reviews">
                     {% for kuchikomi in kuchikomi_list %}
-                        {% if stores.store_id == kuchikomi.store_id %}
+                        {% if stores.store_id == kuchikomi.pk %}
                             <div class = "profile">
                                 
                                 <p>{{kuchikomi.user_id}}さん:</p>
+                                {{stores.pk}}
                                 <img src="{% static '/media/review03.png' %}" alt="" width="100px">
                             </div>
                             <div class = "review">

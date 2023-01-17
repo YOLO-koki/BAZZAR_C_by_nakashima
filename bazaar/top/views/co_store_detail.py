@@ -20,3 +20,5 @@ class CoStoreDetailView(DetailView):
 
     def get_queryset(self):
         return Store.objects.all()
+        
+    

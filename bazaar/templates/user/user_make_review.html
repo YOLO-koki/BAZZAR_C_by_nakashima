@@ -17,7 +17,11 @@
                 
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    
+                    <p>{{form.store_id}}</p>
+                    <p>ユーザーID：{{form.user_id}}</p>
+                    <p>評価：{{form.score}}</p>
+                    <p>評価内容：{{form.impression}}</p>
                     <button type="submit" name = "submitbutton">送信</button>
                 </form>
             </div>
