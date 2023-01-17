@@ -12,10 +12,10 @@
     <div class="main">
         <div class="welcome">
             <div class="welcome_detail">
-                <h2 class="welcome_message">ようこそ、{{ request.user.username }}さん。</h2>
+                <h2 class="welcome_message">ようこそ、{{ request.user.userid }}さん。</h2>
                 <div class="about_me">
                     <p><a href="#">予約一覧</a></p>
-                    <p><a href="#">店舗詳細</a></p>
+                    <p><a href="{% url 'comp:boStoreCustom' request.user.userid %}">店舗詳細</a></p>
                     <p><a href="#">削除要請</a></p>
                 </div>
             </div>
