@@ -14,6 +14,7 @@ from .views import (
     CreateAccountView,
     BoMailSendView,
     BoLoginView,
+    CompMyStoreCustomView,
 )
 # from .views.bo_check_infoviews import CheckRegiInfoView
 # from .views.bo_regist_views import CreateAccountView
@@ -21,7 +22,7 @@ from .views import (
 # from .views.bo_loginviews import BoLoginView
 app_name = 'comp'
 urlpatterns = [
-    path('mypage/<str:userid>', CompMypageView.as_view(), name='mypage'),  # マイページ
+    path('mypage/<str:userid>/', CompMypageView.as_view(), name='mypage'),  # マイページ
     path('login/', CompLoginView.as_view(), name='login'),  # ログイン機能
     path('logout/', CompLogoutView.as_view(), name='logout'),  # ログアウト機能
     path('signup/', CompSignupView.as_view(), name='signup'),  # 新規登録機能
@@ -35,4 +36,5 @@ urlpatterns = [
     path('boRegist/', CreateAccountView.as_view(), name='boRegist'),#新規登録
     path('boMailSend/',BoMailSendView.as_view(),name='boMailSend'),
      path('boLogin/',BoLoginView.as_view(),name='boLogin'),
+     path('boStoreCustom/<str:userid>/',CompMyStoreCustomView.as_view(),name='boStoreCustom'),
 ]

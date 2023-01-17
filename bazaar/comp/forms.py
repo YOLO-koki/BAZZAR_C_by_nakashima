@@ -1,4 +1,5 @@
 from django import forms
+from django.db import models
 import sys
 import pathlib
 currentdir = pathlib.Path(__file__).resolve().parent
@@ -10,6 +11,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
 from django.contrib.auth import get_user_model
 from accounts.models import CustomUser
+from comp.models import Store
 # from django.contrib.auth.forms.UserCreationForm import clean_password2
 
 # CustomUser = get_user_model()
@@ -66,8 +68,11 @@ class RegisterForm(UserCreationForm):
 #     username=forms.CharField(label='名前',max_length=20)
 #     mail=forms.EmailField(label='メールアドレス',max_length=40)
 #     phone = forms.CharField(label='電話番号' ,max_length = 16)    
-    
 
+class StoreForm(forms.ModelForm):
+    class Meta:
+        model=Store
+        exclude = ["bp_id"]
 
 
        
