@@ -21,30 +21,13 @@ from comp.models import Store
 class CompMyStoreCustomView(FormView):
     template_name = 'comp/bo_mystore_custom.html'
     form_class=StoreForm
-    success_url = reverse_lazy('top:index')
-
-    # def get_form_kwargs(self):
-    #     kwgs = super().get_form_kwargs()
-    #     kwgs["user"] = self.request.user
-    #     return kwgs
-    # def form_send(request):
-    #     if request.method=="POST":
-    #          bp=Store(bp_id=request.user)
-    #          form=StoreForm(request.post,
-    #          instance=bp)
-    #          if form.is_valid():
-    #             form.save()
-    #             return redirect('top:index')
-
-
+  
+    def get_success_url(self):
+        return reverse_lazy("comp:mypage", kwargs={"pk": self.request.user})
+    
     def form_valid(self, form):
         hoge=form.save(commit=False)  # 保存処理など
         hoge.bp_id=self.request.user
+        fuga=self.request.user
         hoge.save()
-        return redirect('mypage/<str:userid>')
-    # def get_form_kwargs(self):
-    #     kwgs = super().get_form_kwargs()
-    #     kwgs["bp_id"] = self.request.post['userid']
-    #     return kwgs
-    # def form_valid(self, form):
-    #     return render(request=self.request,template_name="comp/bo_check_registed_info.html",context={'form':form})
+        return render(request=self.request,template_name="comp/bo_mypage.html",context={'fuga':fuga})

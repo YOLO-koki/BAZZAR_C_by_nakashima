@@ -15,6 +15,8 @@ from .views import (
     BoMailSendView,
     BoLoginView,
     CompMyStoreCustomView,
+    CompStoreInfoView,
+    CompStoreUpdateView
 )
 # from .views.bo_check_infoviews import CheckRegiInfoView
 # from .views.bo_regist_views import CreateAccountView
@@ -37,4 +39,7 @@ urlpatterns = [
     path('boMailSend/',BoMailSendView.as_view(),name='boMailSend'),
      path('boLogin/',BoLoginView.as_view(),name='boLogin'),
      path('boStoreCustom/<str:userid>/',CompMyStoreCustomView.as_view(),name='boStoreCustom'),
+     path('boStoreInfo/<str:userid>/',CompStoreInfoView.as_view(),name='boStoreInfo'),
+     path('boStoreUpdates/<str:userid>',CompStoreUpdateView.as_view(),name='boStoreUpdate'),
+      path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
 ]
