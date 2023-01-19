@@ -9,6 +9,8 @@ from django.contrib.auth.forms import (UserCreationForm,
 
 from accounts.models import CustomUser
 
+User = get_user_model()
+
 class LoginForm(AuthenticationForm):
     """ログインフォーム"""
 

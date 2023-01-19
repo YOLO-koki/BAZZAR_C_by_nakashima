@@ -17,28 +17,20 @@
             {% with form as f %}
             <form action="{% url 'accounts:login' %}" method="post" class="loginForm">
                 {% csrf_token %}
-
-                <table class="reg_form">
-                    <tr>
-                    <td><label for="userid">ユーザーID:</label></td>
-                    <td><input type="text" name="userid"></td>
-                    <td><label for="password">パスワード：</label></td>
-                    <td><input type="password" name="password"></td>
-                    </tr>
-                    </table>
+                <p>{{ form.non_field_errors }}
+                    {{ field.errors }}</p>
                 
-                    <input type="submit" class="btn" value="Login">
-
-
-
-                <!--
+                
                 <div class="inputArea">
+                    
                     <label>{{ f.username.label }}</label>
                     {{ f.username }}
+                    
                 </div>
                 <div class="inputArea">
+                    
                     <div class="password">
-                        <label>{{ f.password.label }}</label>
+                       <label>{{ f.password.label }}</label>
                         <p class="forget_password"><a href="{% url 'accounts:password_reset' %}">パスワードを忘れた</a></p>
                     </div>
                     {{ f.password }}
@@ -47,7 +39,6 @@
                     <button type="submit" class="button_login">ログイン</button>
                 </div>
                 <div class="dummyArea1"></div>
--->
 
                 <div class="createArea">
                     <div class="createPageRoute">
