@@ -1,0 +1,47 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}事業者店舗情報確認ページ{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\boStoreCustom.css' %}">
+{% endblock %}
+{% block contents %}
+<!-- メイン -->
+<main>
+    <h1>店舗情報の確認</h1>
+    {% for customuser in customuser_list %}
+    <div>
+        <h2>事業者情報</h1>
+        <table>
+            <tr><th>ユーザーID</th><td>{{ customuser.userid }}</td></tr>
+            <tr><th>氏名</th><td>{{ customuser.username }}</td></tr>
+            <tr><th>パスワード</th><td>{{ customuser.password }}}</td></tr>
+            <tr><th>メールアドレス</th><td>{{ customuser.mail }}</td></tr>
+            <tr><th>電話番号</th><td>{{ customuser.phone }}</td></tr>
+            <tr><th>年齢</th><td>{{ customuser.age }}</td></tr>
+            <tr><th>住所</th><td>{{ customuser.adress }}</td></tr>
+        </table>
+    </div>
+    {% endfor %}
+    <p><a href="{% url 'comp:boStoreUpdate' request.user.userid %}">更新ページはこちら</a>
+    {% for store in store_list %}
+    <div>
+        <h2>店舗情報</h2>
+        <table>
+            <tr><th>事業者ID</th><td>{{ store.bp_id }}</td></tr>
+            <tr><th>店舗名</th><td>{{ store.store_name }}</td></tr>
+            <tr><th>郵便番号</th><td>{{ store.postal_code }}</td></tr>
+            <tr><th>店舗住所</th><td>{{ store.adress1 }}{{ store.adress2 }}{{ store.adress3 }}</td></tr>
+            <tr><th>電話番号</th><td>{{ store.phone_number }}</td></tr>
+            <tr><th>席数</th><td>{{ store.seat }}</td></tr>
+            <tr><th>予約可能席数</th><td>{{ store.seat_reservationable }}</td></tr>
+            <tr><th>営業時間</th><td>{{ store.bussiness_hours_start }}～{{ store.bussiness_hours_end }}</td></tr>
+            <tr><th>定休日</th><td>{{ store.holiday1 }},{{ store.holiday2 }},{{ store.holiday3 }}</td>
+            <tr><th>紹介文</th><td>{{ store.about }}</td></tr>
+            <tr><th>写真</th><td>{{ store.photo1 }}</td></tr>
+        </table>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

@@ -45,7 +45,7 @@ form > div > div:before, form > div > div:after {
     content: " ";
     clear: both;
 }
-form > div input[type=text], form > div input[type=email],form > div input[type=password],form > div input[type=number], form > div textarea, form > div select {
+form > div input[type=text], form > div input[type=email],form > div input[type=password], form > div textarea, form > div select {
     display: block;
     min-width: 405px;
     max-width: 405px;
@@ -170,8 +170,4 @@ span{
     display: inline-block;
    width: 500px;
    text-align: left; 
-}
-#id_age{
-    display: block;
-    float: left;
 }

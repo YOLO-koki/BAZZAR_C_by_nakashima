@@ -1,0 +1,28 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}事業者店舗情報登録ページ{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\boStoreCustom.css' %}">
+{% endblock %}
+{% block contents %}
+<!-- メイン -->
+<main>
+    <h1>店舗情報の登録/更新</h1>
+    <div>
+        <form method="post">
+            <div class = "main">
+                 <div class = "form_area"> 
+                     {% csrf_token %}
+                     {{ form.as_p }}
+                     <div id="fbtn">
+                     <button type="submit" name = "submitbutton">　登録　</button>
+                     </div>
+                 </div>
+                
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
