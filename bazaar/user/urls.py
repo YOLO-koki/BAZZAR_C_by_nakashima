@@ -20,7 +20,7 @@ urlpatterns = [
     path('userLogin/',UserLoginView.as_view(),name='userLogin'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     path('userKutikomi/<int:pk>/',UserKutikomiView.as_view(),name='userKutikomi'),#口コミ
-    path('userCheckKutikomi/',UserCheckKutikomiView.as_view(),name='userCheckKutikomi'),#口コミ確認
+    path('userCheckKutikomi/<int:pk>',UserCheckKutikomiView.as_view(),name='userCheckKutikomi'),#口コミ確認
     path('userReviewPerfect/',UserReviewPerfectView.as_view(),name='userReviewPerfect'),#口コミ送信完了
     
     ]

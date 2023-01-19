@@ -12,7 +12,7 @@ from django .shortcuts import redirect
 
 # from django.core.exceptions import ValidationError
 
-class UserCheckKutikomiView(TemplateView):
+class UserCheckKutikomiView(CreateView):
     template_name = "user/user_review_check.html"
     model = Kuchikomi,CustomUser,Store
     form_class = KutikomiForm

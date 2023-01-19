@@ -14,7 +14,7 @@
             <h1>口コミ内容確認</h1>
             <div class = "user_review_check">
                 <h3>以下の内容で口コミを送信します</h3>
-                <form method="post" action = "{% url 'user:userCheckKutikomi' %}">
+                <form method="post" action = "{% url 'user:userReviewPerfect'%}">
                     {% csrf_token %}
                     <div>
 
