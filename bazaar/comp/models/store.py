@@ -14,18 +14,18 @@ class Store(models.Model):
     fri="fri"
     sat="sat"
     sun="sun"
-    cel="cel"
-    none="none"
+    cel="祝日"
+    none="なし"
     date=[
-      (mon,'月曜日'),
-      (tue,'火曜日'),
-      (wed,'水曜日'),
-      (thr,'木曜日'),
-      (fri,'金曜日'),
-      (sat,'土曜日'),
-      (sun,'日曜日'),
-      (cel,'祝日'),
-      (none,'無し')
+      ('月曜日','月曜日'),
+      ('火曜日','火曜日'),
+      ('水曜日','水曜日'),
+      ('木曜日','木曜日'),
+      ('金曜日','金曜日'),
+      ('土曜日','土曜日'),
+      ('日曜日','日曜日'),
+      ('祝日','祝日'),
+      ('なし','なし')
     ]
     df="選択してください"
     hour=[
@@ -91,3 +91,9 @@ class Store(models.Model):
     photo9=models.ImageField(verbose_name='写真9',blank=True,null=True)
     photo10=models.ImageField(verbose_name='写真10',blank=True,null=True)
     about=models.TextField(verbose_name='紹介文',max_length=300)
+
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['bp_id'], name='unique_bo')
+        ]

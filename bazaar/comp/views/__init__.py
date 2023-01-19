@@ -13,3 +13,5 @@ from .bo_regist_views import CreateAccountView
 from .bo_mail_sendviews import BoMailSendView
 from .bo_loginviews import BoLoginView
 from .bo_mystore_custom_view import CompMyStoreCustomView
+from .bo_mystore_info_view import CompStoreInfoView
+from .bo_mystore_update_view import CompStoreUpdateView
