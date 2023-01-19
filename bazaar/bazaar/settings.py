@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'user',
     'top',
     'comp',
-    'accounts',
+    #'accounts',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
@@ -126,7 +127,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #USER_MODELの指定
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+LOGIN_URL = "accounts:login"
 
+LOGIN_REDIRECT_URL = 'top:index'
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'

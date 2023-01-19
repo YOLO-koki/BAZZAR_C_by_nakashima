@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import TemplateView
 from django.views.generic import FormView
-from django.views.generic import CreateView
+from django.views.generic import CreateView,UpdateView
 from django.urls import reverse_lazy
 from ..forms import RegisterForm
 from accounts.models import CustomUser
@@ -15,7 +15,6 @@ class CheckRegiInfoView(CreateView):
     model= CustomUser
     form_class = RegisterForm
     success_url = reverse_lazy('comp:boMailSend')
-    
     
     # def __init__(self):
     #     self.params = {
