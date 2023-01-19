@@ -3,17 +3,21 @@ from django.shortcuts import render
 from ..forms import KutikomiForm
 from django.urls import reverse_lazy
 from comp.models import Store,Kuchikomi
+from django .shortcuts import redirect
 
 class UserKutikomiView(FormView):
-    model = Store
+    model = Kuchikomi
     template_name = "user/user_make_review.html"
     form_class = KutikomiForm
     success_url = reverse_lazy('user:userCheckKutikomi')
     context_object_name = 'stores'
 
-
-    def form_valid(self,form):
-        return render(request=self.request, template_name = "user/user_review_check.html" ,context = {'form':form})
+    def form_valid(self, form):
+        kuchikomi_content=form.save(commit=False)
+        store_id = Store.objects.get(store_id=self.kwargs['pk'])
+        kuchikomi_content.store_id=store_id
+        
+        return render(request=self.request,template_name="user/user_review_check.html",context={'form':form})
 
     def get_context_data(self, **kwargs):
         context = super(UserKutikomiView,self).get_context_data(**kwargs)
@@ -24,22 +28,6 @@ class UserKutikomiView(FormView):
 
     def get_queryset(self):
         return Store.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        
-        # store_id_data = 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-
-    #     data_list = Store.objects.filter(store_id = self.kwargs['pk'])
-
-    #     context['store_data_list'] = data_list
-    #     return context
-
-
-    # def post(self, **kwargs):
-    #         kwargs['store_id']
 
       #ユーザID用
 

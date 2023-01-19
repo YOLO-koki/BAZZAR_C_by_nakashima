@@ -115,13 +115,17 @@
             <!-- 口コミ -->
             <div class = "kutikomi">
                 <div class = "review-header">
-                    <h1>口コミ</h1>
-                    <a href="{% url 'user:userKutikomi' %}" target="_blank"><p>口コミを書く（会員登録が必要です）</p></a>
-                </div>
+                        <h1>口コミ</h1>
+                        {% for kuchikomi in kuchikomi_list %}
+                            {% if stores.pk == kuchikomi.store_id_id %}
+                                <a href="{% url 'user:userKutikomi' stores.pk %}"><p>口コミを書く（会員登録が必要です）</p></a>
+                            {% endif %}
+                        {% endfor %}
+                </div>  
 
                 <div class = "reviews">
                     {% for kuchikomi in kuchikomi_list %}
-                        {% if stores.store_id == kuchikomi.pk %}
+                        {% if stores.pk == kuchikomi.store_id_id %}
                             <div class = "profile">
                                 
                                 <p>{{kuchikomi.user_id}}さん:</p>

@@ -15,9 +15,8 @@
                     <a href="#"><p>新規会員登録</p></a>
                 </div>
                 
-                <form method="post">
+                <form method="post" action = "{% url 'user:userCheckKutikomi' %}">
                     {% csrf_token %}
-                    
                     <p>{{form.store_id}}</p>
                     <p>ユーザーID：{{form.user_id}}</p>
                     <p>評価：{{form.score}}</p>

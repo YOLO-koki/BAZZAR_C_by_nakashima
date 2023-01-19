@@ -20,5 +20,6 @@ class CoStoreDetailView(DetailView):
 
     def get_queryset(self):
         return Store.objects.all()
-        
-    
+
+    # def get_success_url(self):
+    #   return reverse_lazy('user:userKutikomi',kwargs = {'pk':self.kwargs['pk']})
