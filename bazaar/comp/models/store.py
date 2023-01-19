@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 # from .business_person import Business_person
 from accounts.models import CustomUser
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -71,6 +72,7 @@ class Store(models.Model):
     adress3=models.CharField(verbose_name='住所(ビル名など)',max_length=20)
     phone_number=models.CharField(verbose_name='電話番号',max_length=13)
     #seatが店全体の席数。seat_reservationableが時間ごとに予約可能な席数
+
     seat=models.IntegerField(verbose_name='席数',validators=[MinValueValidator(0)])
     seat_reservationable=models.IntegerField(verbose_name='予約可能な席数',validators=[MinValueValidator(0)])
     bussiness_hours_start=models.CharField(verbose_name='営業開始',max_length=3,choices=hour,default="選択してください")

@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'user',
     'top',
     'comp',
-    #'accounts',
-    'accounts.apps.AccountsConfig'
+    'accounts',
+    #'mathfilters',
 ]
 
 MIDDLEWARE = [
