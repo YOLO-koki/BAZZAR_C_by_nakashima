@@ -1,4 +1,5 @@
 from django.urls import path
+#from .views import login_views,logout_views
 from .views.login_views import LoginViews
 from .views.password_reset_views import PasswordReset
 from .views.password_reset_send_views import PasswordResetDone
@@ -11,8 +12,8 @@ from django.contrib.auth import views as auth_views
 app_name ='accounts'
 
 urlpatterns =[
-    #path('', LoginViews.as_view(), name='login'),#ログインページ
-    #path('logout/', Logout.as_view(), name='logout'),#ログアウトページ
+    # path('', login_views.Login, name='login'),#ログインページ
+    # path('logout/', logout_views.logout, name='logout'),#ログアウトページ
     path('password_reset/', PasswordReset.as_view(), name='password_reset'),#パスワードリセットページ
     path('password_reset/done/', PasswordResetDone.as_view(), name='password_reset_done'),#パスワードリセット用のメールを送信しましたページ
     path('password_reset/confirm/<uidb64>/<token>/', PasswordResetConfirm.as_view(), name='password_reset_confirm'),#新パスワード入力用ページ
@@ -20,8 +21,10 @@ urlpatterns =[
     path('test/', TestView.as_view(), name='test'),#テスト用
 
     #テスト用
-    path('', auth_views.LoginView.as_view(template_name='accounts\login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    # path('', auth_views.LoginView.as_view(template_name='accounts\login.html'), name='login'),
+    # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('', LoginViews.as_view(), name='login'),
+    #path('logout/', LogoutView.as_view(), name='logout'),
 
 ]
       

@@ -15,8 +15,23 @@
         <div class="main">
             <h1 class="login">ユーザーログイン</h1>
             {% with form as f %}
-            <form action="" method="post" class="loginForm">
+            <form action="{% url 'accounts:login' %}" method="post" class="loginForm">
                 {% csrf_token %}
+
+                <table class="reg_form">
+                    <tr>
+                    <td><label for="userid">ユーザーID:</label></td>
+                    <td><input type="text" name="userid"></td>
+                    <td><label for="password">パスワード：</label></td>
+                    <td><input type="password" name="password"></td>
+                    </tr>
+                    </table>
+                
+                    <input type="submit" class="btn" value="Login">
+
+
+
+                <!--
                 <div class="inputArea">
                     <label>{{ f.username.label }}</label>
                     {{ f.username }}
@@ -32,6 +47,7 @@
                     <button type="submit" class="button_login">ログイン</button>
                 </div>
                 <div class="dummyArea1"></div>
+-->
 
                 <div class="createArea">
                     <div class="createPageRoute">
