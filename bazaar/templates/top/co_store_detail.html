@@ -116,11 +116,7 @@
             <div class = "kutikomi">
                 <div class = "review-header">
                         <h1>口コミ</h1>
-                        {% for kuchikomi in kuchikomi_list %}
-                            {% if stores.pk == kuchikomi.store_id_id %}
-                                <a href="{% url 'user:userKutikomi' stores.pk %}"><p>口コミを書く（会員登録が必要です）</p></a>
-                            {% endif %}
-                        {% endfor %}
+                        <a href="{% url 'user:userKutikomi' stores.pk %}"><p>口コミを書く（会員登録が必要です）</p></a>
                 </div>  
 
                 <div class = "reviews">
