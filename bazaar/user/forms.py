@@ -30,8 +30,8 @@ class LoginBusiness_personForm(forms.ModelForm):
 
 class RegisterForm(UserCreationForm):
     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
-    #password1=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
-    #password2=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
+    password1=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
+    password2=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
     username=forms.CharField(label='名前',max_length=20)
     mail=forms.EmailField(label='メールアドレス',max_length=40)
     phone = forms.CharField(label='電話番号' ,max_length = 16)
@@ -50,9 +50,9 @@ class SaveForm(forms.Form):
     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
     password=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
     confirm_password=forms.CharField(label='パスワード(再入力)',min_length=8,max_length=16,widget=forms.PasswordInput)
-    username=forms.CharField(label='名前',max_length=20)
-    mail=forms.EmailField(label='メールアドレス',max_length=40)
-    phone = forms.CharField(label='電話番号' ,max_length = 16)  
+    # username=forms.CharField(label='名前',max_length=20)
+    # mail=forms.EmailField(label='メールアドレス',max_length=40)
+    # phone = forms.CharField(label='電話番号' ,max_length = 16)  
 
     
 class KutikomiForm(forms.ModelForm):
