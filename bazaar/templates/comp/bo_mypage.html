@@ -16,7 +16,7 @@
                 <div class="about_me">
                     <p><a href="#">予約一覧</a></p>
                     <p><a href="{% url 'comp:customselect'  %}">店舗情報の登録</a></p>
-                    <p><a href="{% url 'comp:boStoreInfo' %}">登録情報の確認</a></p>
+                    <p><a href="{% url 'comp:boStoreInfo' request.user.userid %}">登録情報の確認</a></p>
                     <p><a href="#">削除要請</a></p>
                 </div>
             </div>
