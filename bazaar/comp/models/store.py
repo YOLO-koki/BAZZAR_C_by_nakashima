@@ -95,7 +95,7 @@ class Store(models.Model):
     about=models.TextField(verbose_name='紹介文',max_length=300)
 
 
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['bp_id'], name='unique_bo')
-        ]
+    # class Meta:
+    #     constraints = [
+    #         models.UniqueConstraint(fields=['bp_id'], name='unique_bo')
+    #     ]
