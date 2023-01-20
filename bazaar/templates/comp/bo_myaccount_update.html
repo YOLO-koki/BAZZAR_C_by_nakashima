@@ -1,0 +1,23 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}事業者情報更新ページ{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\boStoreUpdate.css' %}">
+{% endblock %}
+{% block contents %}
+<main>
+    <div id="main">
+        <h1>ユーザー情報更新ページ</h1>
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="更新">
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

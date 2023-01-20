@@ -16,7 +16,10 @@ from .views import (
     BoLoginView,
     CompMyStoreCustomView,
     CompStoreInfoView,
-    CompStoreUpdateView
+    CompStoreUpdateView,
+    CompMenuCustomView,
+    CustomSelectView,
+    CompAccountUpdateView
 )
 # from .views.bo_check_infoviews import CheckRegiInfoView
 # from .views.bo_regist_views import CreateAccountView
@@ -38,8 +41,11 @@ urlpatterns = [
     path('boRegist/', CreateAccountView.as_view(), name='boRegist'),#新規登録
     path('boMailSend/',BoMailSendView.as_view(),name='boMailSend'),
      path('boLogin/',BoLoginView.as_view(),name='boLogin'),
-     path('boStoreCustom/<str:userid>/',CompMyStoreCustomView.as_view(),name='boStoreCustom'),
-     path('boStoreInfo/<str:userid>/',CompStoreInfoView.as_view(),name='boStoreInfo'),
-     path('boStoreUpdates/<str:userid>',CompStoreUpdateView.as_view(),name='boStoreUpdate'),
-      path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
+     path('boStoreCustom/',CompMyStoreCustomView.as_view(),name='boStoreCustom'),
+     path('boStoreInfo/',CompStoreInfoView.as_view(),name='boStoreInfo'),
+     path('boStoreUpdates/<str:userid>/',CompStoreUpdateView.as_view(),name='boStoreUpdate'),
+      path('boAccountUpdates/<str:userid>/',CompAccountUpdateView.as_view(),name='boAccountUpdate'),
+    # path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
+      path('menucustom/',CompMenuCustomView.as_view(),name='menucustom'),
+      path('customselect/',CustomSelectView.as_view(),name='customselect')
 ]

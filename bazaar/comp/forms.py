@@ -12,6 +12,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Authenti
 from django.contrib.auth import get_user_model
 from accounts.models import CustomUser
 from comp.models import Store
+from comp.models import Menu
 # from django.contrib.auth.forms.UserCreationForm import clean_password2
 
 # CustomUser = get_user_model()
@@ -73,6 +74,13 @@ class StoreForm(forms.ModelForm):
     class Meta:
         model=Store
         exclude = ["bp_id"]
+
+
+class MenuForm(forms.ModelForm):
+    class Meta:
+        model= Menu
+        exclude = ["store_id"]
+
 
 
        
