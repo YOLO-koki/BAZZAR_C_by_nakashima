@@ -9,15 +9,16 @@ class UserKutikomiView(FormView):
     model = Kuchikomi
     template_name = "user/user_make_review.html"
     form_class = KutikomiForm
-    success_url = reverse_lazy('user:userCheckKutikomi')
+    success_url = reverse_lazy('user:userReviewPerfect')
     context_object_name = 'stores'
 
     def form_valid(self, form):
         kuchikomi_content=form.save(commit=False)
         store_id = Store.objects.get(store_id=self.kwargs['pk'])
         kuchikomi_content.store_id=store_id
-        
-        return render(request=self.request,template_name="user/user_review_check.html",context={'form':form})
+        kuchikomi_content.save()
+        return redirect('user:userReviewPerfect')
+        # return render(request=self.request,template_name="user/user_review_check.html",context={'form':form})
 
     def get_context_data(self, **kwargs):
         context = super(UserKutikomiView,self).get_context_data(**kwargs)
