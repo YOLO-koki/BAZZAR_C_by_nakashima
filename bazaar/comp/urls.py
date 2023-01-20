@@ -19,7 +19,8 @@ from .views import (
     CompStoreUpdateView,
     CompMenuCustomView,
     CustomSelectView,
-    CompAccountUpdateView
+    CompAccountUpdateView,
+    CompMenuUpdateView
 )
 # from .views.bo_check_infoviews import CheckRegiInfoView
 # from .views.bo_regist_views import CreateAccountView
@@ -45,7 +46,8 @@ urlpatterns = [
      path('boStoreInfo/<str:userid>/',CompStoreInfoView.as_view(),name='boStoreInfo'),
      path('boStoreUpdate/<str:userid>/',CompStoreUpdateView.as_view(),name='boStoreUpdate'),
       path('boAccountUpdate/<str:userid>/',CompAccountUpdateView.as_view(),name='boAccountUpdate'),
-    # path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
+       path('boMenuUpdate/<str:userid>/',CompMenuUpdateView.as_view(),name='boMenuUpdate'),
+    path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
       path('menucustom/',CompMenuCustomView.as_view(),name='menucustom'),
       path('customselect/',CustomSelectView.as_view(),name='customselect')
 ]
