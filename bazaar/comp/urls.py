@@ -26,6 +26,12 @@ from .views import (
 # from .views.bo_regist_views import CreateAccountView
 # from .views.bo_mail_sendviews import BoMailSendView
 # from .views.bo_loginviews import BoLoginView
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 app_name = 'comp'
 urlpatterns = [
     path('mypage/<str:userid>/', CompMypageView.as_view(), name='mypage'),  # マイページ
@@ -50,4 +56,4 @@ urlpatterns = [
     path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
       path('menucustom/',CompMenuCustomView.as_view(),name='menucustom'),
       path('customselect/',CustomSelectView.as_view(),name='customselect')
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
