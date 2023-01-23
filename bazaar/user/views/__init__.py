@@ -9,3 +9,4 @@ from .user_mypageviews import UserMypageView
 from .user_kutikomi_view import KutikomiForm
 from .user_check_kutikomiviews import UserCheckKutikomiView
 from .user_review_perfectview import UserReviewPerfectView
+from .user_make_reservation_view import UserMakeReservationView
