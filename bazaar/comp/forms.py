@@ -62,6 +62,12 @@ class RegisterForm(UserCreationForm):
             'phone':'電話番号',
             'adress':'住所',
         }
+    
+    def form_valid(self, form):
+            user = form.save(commit=False)
+            user.usertype = 'comp'
+            user.save()
+        
 # class SaveForm(forms.Form):
 #     userid=forms.CharField(label='ユーザーID',min_length=8,max_length=16)
 #     password=forms.CharField(label='パスワード',min_length=8,max_length=16,widget=forms.PasswordInput)
