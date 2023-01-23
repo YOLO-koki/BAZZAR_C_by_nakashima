@@ -26,7 +26,7 @@
                 {% if request.user.is_authenticated %}
                 <li><a href="{% url 'comp:logout' %}">ログアウト</a></li>
                 {% else %}
-                <li><a href="{% url 'top:login' %}">新規登録/ログイン</a></li>
+                <li><a href="{% url 'accounts:login' %}">新規登録/ログイン</a></li>
                 {% endif %}
             </ul>
         </div>

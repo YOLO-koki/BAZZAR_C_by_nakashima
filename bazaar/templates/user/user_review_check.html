@@ -14,43 +14,33 @@
             <h1>口コミ内容確認</h1>
             <div class = "user_review_check">
                 <h3>以下の内容で口コミを送信します</h3>
-                <form method="post" action = "{% url 'user:userCheckKutikomi' %}">
+                <form method="post" action="{% url 'user:userReviewPerfect' %}">
                     {% csrf_token %}
                     <div>
-                        <!-- 値渡し -->
-
-                        {% for field in form %}
-                
-                               {{ field.as_hidden }}
-                
-                        {% endfor %}
-                
                         <table>
                             <!-- 確認 -->
                                 {% for field in form %}
-                
                                 <tr>
-                
                                     <th>{{ field.label_tag }}</th>
-                
                                     <td style="white-space:pre-wrap;">{{ field.value }}</td>
-                
                                 </tr>
-                
                                 {% endfor %}
-                
                         </table>
+                    {{form.store_id}}
+                    {{form.user_id}}
+                    {{form.score}}
+                    {{form.impression}}
+
                 
                     </div>
                     
                     <div class = "button">
                         <div class = "submitbutton">
-                            <button type = "submit" name = "submitbutton">送信</button>
+                                <button type = "submit" name = "submitbutton">送信</button>
                         </div>
                         <div class = "backbutton">
                             <button type = "button" onclick = "history.back()">戻る</button>
                         </div>
-                        
                     </div>
                 </form>
 

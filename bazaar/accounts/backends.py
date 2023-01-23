@@ -6,11 +6,13 @@
 
 #         auth_result = False
 
-#         if user:
-#             if password == CustomUser.objects.get(pk=userid).password:
-#                 auth_result = True
-#             else:
-#                 auth_result = False
+        if user:
+            if password == CustomUser.objects.get(pk=userid).password:
+                print(password)
+                print(CustomUser.objects.get(pk=userid).password)
+                auth_result = True
+            else:
+                auth_result = False
 
 #         if auth_result:
 #             try:

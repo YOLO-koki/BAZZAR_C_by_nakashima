@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'top',
     'comp',
     'accounts',
-    # 'accounts.apps.AccountsConfig'
+    #'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'bazaar.urls'
 
@@ -119,10 +121,7 @@ STATIC_URL = '/static/'
 # 画像を保存する先の指定
 
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-
-# 画像をdjango側で読み込むための設定
 MEDIA_URL = '/media/'
-
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
@@ -136,7 +135,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_URL = "accounts:login"
 
-LOGIN_REDIRECT_URL = 'top:index'
+LOGIN_REDIRECT_URL = 'accounts:mypage'
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
