@@ -1,6 +1,5 @@
 {% extends '../layouts/top/base.html' %}
 {% load static %}
-<!--{% load mathfilters %}-->
 
 {% block title %}店舗詳細{% endblock %}
 {% block head %}
@@ -79,10 +78,8 @@
 
                 <!-- スライドする写真 -->
                 <div class="slider">
-                    {% if stores.photo1 %}
-                        <img src="" alt="" class = "image"/>
-                    {% endif %}
-                    <img src="{% static '/media/dinner.jpg' %}" alt="" class = "image">
+                        <img src="/media/{{stores.photo1}}" alt="sss" class = "image"/>
+                        <img src="/media/{{stores.photo2}}" alt="" class = "image"/>
                 </div>
 
                 <!-- 商品の説明 -->
@@ -90,22 +87,22 @@
                     <h2>当店のおススメ</h2>
                     <div class = "top">
                         <div class = "top-left">
-                            <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                            <img src="/media/{{stores.photo1}}" width = "200px" height = "125px" alt="">
                             <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
                         </div>
 
                         <div class = "top-right">
-                            <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                            <img src="/media/{{stores.photo2}}" width = "200px" height = "125px" alt="">
                             <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
                         </div>
                     </div>
                     <div class = "under">
                         <div class = "under-left">
-                            <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                            <img src="/media/{{stores.photo1}}" width = "200px" height = "125px" alt="">
                             <p>白米です。</p>
                         </div>
                         <div class = "under-right">
-                            <img src="{% static '/media/dinner.jpg' %}" width = "200px" height = "125px" alt="">
+                            <img src="/media/{{stores.photo2}}" width = "200px" height = "125px" alt="">
                             <p>白米です。</p>
                         </div>
                     </div>
@@ -125,7 +122,6 @@
                             <div class = "profile">
                                 
                                 <p>{{kuchikomi.user_id}}さん:</p>
-                                {{stores.pk}}
                                 <img src="{% static '/media/review03.png' %}" alt="" width="100px">
                             </div>
                             <div class = "review">
