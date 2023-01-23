@@ -1,6 +1,5 @@
 {% extends '../layouts/top/base.html' %}
 {% load static %}
-{% load mathfilters %}
 
 {% block title %}店舗詳細{% endblock %}
 {% block head %}
@@ -123,7 +122,9 @@
                             <div class = "profile">
                                 
                                 <p>{{kuchikomi.user_id}}さん:</p>
-                                {% if kuchikomi == 1 %}
+                                {% if kuchikomi.score == 1 %}
+                                    {{kuchikomi.score}}
+                                    <img src="{% static '/media/review01.png' %}" alt="" width="100px">
                                 <img src="{% static '/media/review03.png' %}" alt="" width="100px">
                             </div>
                             <div class = "review">
