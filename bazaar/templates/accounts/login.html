@@ -6,14 +6,14 @@
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css\user\userLogin.css' %}">
+<link rel="stylesheet" href="{% static 'css\accounts\accountsLogin.css' %}">
 {% endblock %}
 
 
     {% block contents %}
     <main>
         <div class="main">
-            <h1 class="login">ユーザーログイン</h1>
+            <h1 class="login">ログイン</h1>
             {% with form as f %}
             <form action="{% url 'accounts:login' %}" method="post" class="loginForm">
                 {% csrf_token %}
@@ -43,8 +43,11 @@
                 <div class="createArea">
                     <div class="createPageRoute">
                         <p class="message">
-                            新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から
+                            一般新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から
+                            
+                            事業者新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から
                         </p>
+
                         <div class="dummyArea2"></div>
                     </div>
                 </div>
