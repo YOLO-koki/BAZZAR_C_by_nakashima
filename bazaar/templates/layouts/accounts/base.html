@@ -8,7 +8,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css\layouts\user\base.css' %}">
+    <link rel="stylesheet" href="{% static 'css\layouts\comp\base.css' %}">
     {% block head %}{% endblock %}
 </head>
 
@@ -18,13 +18,12 @@
         <div class="navbar">
             <ul class="bazaar">
                 <li>
-                    <a href="{% url 'top:index' %}">BAZAAR</a>
+                    <a href="{% url 'accounts:mypage' %}">BAZAAR</a>
                 </li>
             </ul>
             <ul class="navigationbar">
                 <li><a href="{% url 'top:inquiry' %}">お問い合わせ</a></li>
                 {% if request.user.is_authenticated %}
-                <li><a href = "{% url 'accounts:mypage' %}">マイページ</a></li>
                 <li><a href="{% url 'accounts:logout' %}">ログアウト</a></li>
                 {% else %}
                 <li><a href="{% url 'accounts:login' %}">新規登録/ログイン</a></li>

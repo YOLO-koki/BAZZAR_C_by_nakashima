@@ -14,55 +14,26 @@
     <div class="main">
         <div class="list_area">
             <table class="list">
+                {% with reservation_list as re %}
                 <tr>
-                    <th>番号</th>
                     <th>代表者名</th>
-                    <th>日付</th>
                     <th>時間</th>
                     <th>人数</th>
+                    <th>メニュー</th>
                 </tr>
-
+                {% for re in re %}
                 <tr>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}"
-                            class="link">aasdfasdsadasdasdfasdasddsfaadsasdaf</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
+                    <td>{{ re.reservation_name }}</td>
+                    <td>{{ re.time }}</td>
+                    <td>{{ re.nop }}</td>
+                    {% if re.menu1 %}
+                    <td>{{ re.menu1 }}</td>
+                    {% else %}
+                    <td>メニューなし</td>
+                    {% endif %}
                 </tr>
-
-                <tr>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
-                </tr>
-
-                <tr>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
-                </tr>
-
-                <tr>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
-                </tr>
-
-                <tr>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">1</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">name</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">date</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">time</a></td>
-                    <td><a href="{% url 'comp:reservation_detail' %}" class="link">3</a></td>
-                </tr>
-
+                {% endfor %}
+                {% endwith %}
             </table>
         </div>
     </div>

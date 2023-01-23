@@ -1,5 +1,5 @@
 
-{% extends 'comp/base.html' %}
+{% extends '../accounts/base.html' %}
 
 {% load static %}
 
@@ -33,11 +33,11 @@
 
                     {% if 'comp' in user.usertype %}
 
-                    <p><a href="#">予約一覧</a></p>
+                    <p><a href="{% url 'comp:reservation_list'  %}">予約一覧</a></p>
                     <p><a href="{% url 'comp:customselect'  %}">店舗情報の登録</a></p>
                     <p><a href="{% url 'comp:boStoreInfo' request.user.userid %}">登録情報の確認</a></p>
                     <p><a href="#">削除要請</a></p>
-                    
+
                     {% else %}
 
                     <p><a href="#">予約内容の確認、変更</a></p>
