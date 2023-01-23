@@ -24,7 +24,7 @@
             <ul class="navigationbar">
                 <li><a href="{% url 'top:inquiry' %}">お問い合わせ</a></li>
                 {% if request.user.is_authenticated %}
-                <li><a href="{% url 'comp:logout' %}">ログアウト</a></li>
+                <li><a href="{% url 'accounts:logout' %}">ログアウト</a></li>
                 {% else %}
                 <li><a href="{% url 'accounts:login' %}">新規登録/ログイン</a></li>
                 {% endif %}

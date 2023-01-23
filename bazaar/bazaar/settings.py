@@ -133,6 +133,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_URL = "accounts:login"
 
 LOGIN_REDIRECT_URL = 'accounts:mypage'
+LOGOUT_REDIRECT_URL = "accounts:login"
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
