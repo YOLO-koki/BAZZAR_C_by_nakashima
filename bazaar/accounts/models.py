@@ -74,7 +74,8 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     username = models.CharField(verbose_name='name',max_length=20)
 
     #Trueが一般ユーザー,Falseが事業者
-    usertype = models.BooleanField(verbose_name='usertype',default=True)
+    #usertype = models.BooleanField(verbose_name='usertype',default=True)
+    usertype = models.CharField(verbose_name='usertype',max_length=10)
     #一般ユーザー、事業者、両方必要
     password = models.CharField(verbose_name='password', max_length=128)
 

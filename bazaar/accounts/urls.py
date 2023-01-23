@@ -7,6 +7,7 @@ from .views.password_reset_confim_views import PasswordResetConfirm
 from .views.password_reset_complete_views import PasswordResetComplete
 from .views.Atest_views import TestView
 from django.contrib.auth import views as auth_views
+from .views.mypage_views import MypageView
 
 
 app_name ='accounts'
@@ -19,6 +20,7 @@ urlpatterns =[
     path('password_reset/confirm/<uidb64>/<token>/', PasswordResetConfirm.as_view(), name='password_reset_confirm'),#新パスワード入力用ページ
     path('password_reset/complete/', PasswordResetComplete.as_view(), name='password_reset_complete'),#パスワード更新完了ページ
     path('test/', TestView.as_view(), name='test'),#テスト用
+    path('mypage/',MypageView.as_view(),name='mypage'),
 
     #テスト用
     # path('', auth_views.LoginView.as_view(template_name='accounts\login.html'), name='login'),

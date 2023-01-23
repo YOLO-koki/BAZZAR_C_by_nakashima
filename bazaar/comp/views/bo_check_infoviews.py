@@ -7,6 +7,7 @@ from django.views.generic import CreateView,UpdateView
 from django.urls import reverse_lazy
 from ..forms import RegisterForm
 from accounts.models import CustomUser
+from django.shortcuts import redirect
 
 from django.core.exceptions import ValidationError
 
@@ -15,6 +16,12 @@ class CheckRegiInfoView(CreateView):
     model= CustomUser
     form_class = RegisterForm
     success_url = reverse_lazy('comp:boMailSend')
+
+    def form_valid(self, form):
+            user = form.save(commit=False)
+            user.usertype = 'comp'
+            user.save()
+            return redirect('comp:boMailSend')
     
     # def __init__(self):
     #     self.params = {

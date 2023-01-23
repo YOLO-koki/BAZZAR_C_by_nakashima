@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTHENTICATION_BACKENDS = ['accounts.backends.CompBackend']
+
 
 ROOT_URLCONF = 'bazaar.urls'
 
@@ -132,7 +132,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_URL = "accounts:login"
 
-LOGIN_REDIRECT_URL = 'accounts:test'
+LOGIN_REDIRECT_URL = 'accounts:mypage'
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
