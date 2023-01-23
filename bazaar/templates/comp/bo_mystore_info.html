@@ -10,6 +10,7 @@
 <!-- メイン -->
 <main>
     <h1>店舗情報の確認</h1>
+    <p><a href="{% url 'comp:boAccountUpdate' request.user.userid %}">更新ページはこちら</a>
     {% for customuser in customuser_list %}
     <div>
         <h2>事業者情報</h1>
@@ -43,5 +44,18 @@
         </table>
     </div>
     {% endfor %}
+        <h2>メニュー情報</h2>
+        {% for menu in menu_list %}
+        <p><a href="{% url 'comp:boMenuUpdate' request.user.userid %}">更新ページはこちら</a>
+        <div>
+            <table>
+                <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
+                <tr><th>メニュー名</th><td>{{ menu.menu_name }}</td></tr>
+                <tr><th>サイズ</th><td>{{ menu.size }}</td></tr>
+                <tr><th>値段</th><td>{{ menu.price }}</td></tr>
+                <tr><th>写真</th><td>{{ menu.photo1 }}</td></tr>
+            </table>
+        </div>
+        {% endfor %}
 </main>
 {% endblock %}

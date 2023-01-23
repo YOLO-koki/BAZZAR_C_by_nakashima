@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'top',
     'comp',
     'accounts',
-    'mathfilters',
+    #'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = ['accounts.backends.CompBackend']
 
 ROOT_URLCONF = 'bazaar.urls'
 
@@ -128,7 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #USER_MODELの指定
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+LOGIN_URL = "accounts:login"
 
+LOGIN_REDIRECT_URL = 'accounts:test'
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'

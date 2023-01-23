@@ -8,6 +8,8 @@ class CompBackend:
 
         if user:
             if password == CustomUser.objects.get(pk=userid).password:
+                print(password)
+                print(CustomUser.objects.get(pk=userid).password)
                 auth_result = True
             else:
                 auth_result = False

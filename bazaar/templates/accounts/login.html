@@ -1,4 +1,4 @@
-{% extends '../layouts/user/base.html' %}
+{% extends 'accounts\base.html' %}
 {% load static %}
 
 {% block title %}
@@ -15,15 +15,22 @@
         <div class="main">
             <h1 class="login">ユーザーログイン</h1>
             {% with form as f %}
-            <form action="" method="post" class="loginForm">
+            <form action="{% url 'accounts:login' %}" method="post" class="loginForm">
                 {% csrf_token %}
+                <p>{{ form.non_field_errors }}
+                    {{ field.errors }}</p>
+                
+                
                 <div class="inputArea">
+                    
                     <label>{{ f.username.label }}</label>
                     {{ f.username }}
+                    
                 </div>
                 <div class="inputArea">
+                    
                     <div class="password">
-                        <label>{{ f.password.label }}</label>
+                       <label>{{ f.password.label }}</label>
                         <p class="forget_password"><a href="{% url 'accounts:password_reset' %}">パスワードを忘れた</a></p>
                     </div>
                     {{ f.password }}
