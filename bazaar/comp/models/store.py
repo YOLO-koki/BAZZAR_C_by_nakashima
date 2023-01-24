@@ -82,7 +82,7 @@ class Store(models.Model):
     holiday1=models.CharField(verbose_name="定休日1" ,max_length=4,choices=date,default=cel)
     holiday2=models.CharField(verbose_name="定休日2" ,max_length=4,choices=date,default=none)
     holiday3=models.CharField(verbose_name="定休日3" ,max_length=4,choices=date,default=none)
-    photo1=models.ImageField(verbose_name='写真1',blank=True,null=True)
+    photo1=models.ImageField(upload_to="media", verbose_name='写真1',blank=True,null=True)
     photo2=models.ImageField(verbose_name='写真2',blank=True,null=True)
     photo3=models.ImageField(verbose_name='写真3',blank=True,null=True)
     photo4=models.ImageField(verbose_name='写真4',blank=True,null=True)

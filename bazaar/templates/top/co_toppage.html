@@ -287,7 +287,7 @@
                 {% if not queryset %}
                     {% for store in stores %}
                         <a class="content" href="{% url 'top:detail' store.pk %}">
-                        <img src="/media/{{store.photo1}}" alt="dinner">
+                        <img src="{{store.photo1.url}}" alt="dinner">
                         <span class="text">
                             <h3 class="title">{{store.store_name}}</h3>
                             <div class="detail">{{store.about}}</div>

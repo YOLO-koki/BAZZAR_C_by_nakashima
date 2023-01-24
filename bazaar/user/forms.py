@@ -11,8 +11,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from comp.models import Kuchikomi
 from comp.models import Reservation
-#from django.contrib.auth.forms.UserCreationForm import clean_password2
-
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 class LoginBusiness_personForm(forms.ModelForm):
     class Meta:
@@ -68,6 +67,10 @@ class KutikomiForm(forms.ModelForm):
         exclude = ["store_id"]
 
 class ReservationForm(forms.ModelForm):
+    reservation_day = forms.DateField(
+        label="予約希望日",
+        widget=DatePickerInput(format='%Y-%m-%d')
+    )
     class Meta:
         model= Reservation
         exclude = ["store_id","user_id","menu1","menu2","menu3","menu4","menu5"]

@@ -10,6 +10,7 @@ from .views import UserKutikomiView
 from .views import UserCheckKutikomiView
 from .views import UserReviewPerfectView
 from .views import UserMakeReservationView
+from .views import UserSelectReservationView
 app_name = 'user'
 urlpatterns = [
     path('', UserIndexView.as_view(),name = 'index'),#トップページ
@@ -22,5 +23,6 @@ urlpatterns = [
     path('userKutikomi/<int:pk>/',UserKutikomiView.as_view(),name='userKutikomi'),#口コミ
     path('userCheckKutikomi/',UserCheckKutikomiView.as_view(),name='userCheckKutikomi'),#口コミ確認
     path('userReviewPerfect/',UserReviewPerfectView.as_view(),name='userReviewPerfect'),#口コミ送信完了
-    path('userMakeReservation/',UserMakeReservationView.as_view(),name='userMakeReservation')
+    path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
+    path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
     ]

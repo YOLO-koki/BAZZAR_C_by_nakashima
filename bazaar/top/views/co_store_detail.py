@@ -14,7 +14,7 @@ class CoStoreDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(CoStoreDetailView,self).get_context_data(**kwargs)
         context.update({
-            'kuchikomi_list':Kuchikomi.objects.all()
+            'kuchikomi_list':Kuchikomi.objects.all(),
         })
         return context
 

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'top',
     'comp',
     'accounts',
+    'bootstrap4',
+    'bootstrap_datepicker_plus',
     #'mathfilters',
 ]
 
@@ -70,6 +72,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            'builtins':[ 
+                'bootstrap4.templatetags.bootstrap4',
             ],
         },
     },
@@ -139,6 +144,9 @@ LOGIN_REDIRECT_URL = 'accounts:mypage'
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
 
 
