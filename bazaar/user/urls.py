@@ -9,6 +9,7 @@ from .views import UserMypageView
 from .views import UserKutikomiView
 from .views import UserCheckKutikomiView
 from .views import UserReviewPerfectView
+from .views import UserReservationlistView
 
 app_name = 'user'
 urlpatterns = [
@@ -22,5 +23,6 @@ urlpatterns = [
     path('userKutikomi/<int:pk>/',UserKutikomiView.as_view(),name='userKutikomi'),#口コミ
     path('userCheckKutikomi/',UserCheckKutikomiView.as_view(),name='userCheckKutikomi'),#口コミ確認
     path('userReviewPerfect/',UserReviewPerfectView.as_view(),name='userReviewPerfect'),#口コミ送信完了
+    path('reservation_list/',UserReservationlistView.as_view(),name="reservation_list"),#テストページ
     
     ]
