@@ -38,31 +38,38 @@
                         <td>予約なし</td>
                         {% endif %}
                     {% endfor %}
-<!--
-                    {% if re.menu2 %}
-                        <td>{{ re.menu2 }}</td>
-                    {% else %}
-                        <td></td>
-                    {% endif %}
 
-                    {% if re.menu3 %}
-                        <td>{{ re.menu3 }}</td>
-                    {% else %}
+                    {% for menu2 in menu2_name %}
+                        {% if re.menu2 %}
+                        <td>{{ menu2.menu_name }}</td>
+                        {% else %}
                         <td></td>
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
 
-                    {% if re.menu4 %}
-                        <td>{{ re.menu4 }}</td>
-                    {% else %}
+                    {% for menu3 in menu3_name %}
+                        {% if re.menu3 %}
+                        <td>{{ menu3.menu_name }}</td>
+                        {% else %}
                         <td></td>
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
 
-                    {% if re.menu5 %}
-                        <td>{{ re.menu5 }}</td>
-                    {% else %}
+                    {% for menu4 in menu4_name %}
+                        {% if re.menu4 %}
+                        <td>{{ menu4.menu_name }}</td>
+                        {% else %}
                         <td></td>
--->
-                    {% endif %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for menu5 in menu5_name %}
+                        {% if re.menu5 %}
+                        <td>{{ menu5.menu_name }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    {% endfor %}
                 </tr>
                 {% endfor %}
             </table>
