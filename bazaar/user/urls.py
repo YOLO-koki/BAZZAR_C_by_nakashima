@@ -24,11 +24,11 @@ urlpatterns = [
     path('user_accounts_update/<str:userid>/',UserAccountUpdateView.as_view(),name='userAccountUpdate'),#ユーザー情報更新ページ
     path('reservation_list/',UserReservationlistView.as_view(),name="reservation_list"),#予約履歴ページ
     path('userRegist/', CreateAccountView.as_view(), name='userRegist'),#新規登録
-
+    path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
+    path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
 #以下使ってない
-    # path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
+    
     # path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
     # path('userLogin/',UserLoginView.as_view(),name='userLogin'),
-    # path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     
     ]
