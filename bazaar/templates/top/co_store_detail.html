@@ -50,29 +50,23 @@
             <div class = "detail">
                 <div class = "explain">
                     <h1>{{stores.store_name}}</h1>
-                    <p>{{avg_score.avg_score|floatformat:0}}</p>
+                    <!-- <p>{{avg_score.avg_score|floatformat:0}}</p> -->
                     
                     <div class = "stars">
-                        {% for kuchikomi in kuchikomi_list %}
-                            {% if stores.pk == kuchikomi.store_id_id %}
-                                {% for avg__score in avg_score %}
-                                    {% if avg__score == 1 %}
-                                        <img src="{% static '/media/review01.png' %}" alt="" width="100px">
-                                    {% elif avg__score >= 2 %}
-                                        <img src="{% static '/media/review02.png' %}" alt="" width="100px">
-                                    {% elif avg__score == 3 %}
-                                        <img src="{% static '/media/review03.png' %}" alt="" width="100px">
-                                    {% elif avg__score == 4 %}
-                                        <img src="{% static '/media/review04.png' %}" alt="" width="100px">
-                                    {% elif avg__score == 5 %}
-                                        <img src="{% static '/media/review05.png' %}" alt="" width="100px">
-                                    {% endif %}
-                                {% endfor %}
+                            {% if avg_score.avg_score >= 5 %}
+                                <img src="{% static '/media/review05.png' %}" alt="a" width="100px">
+                            {% elif avg_score.avg_score >= 4 %}
+                                <img src="{% static '/media/review04.png' %}" alt="a" width="100px">
+                            {% elif avg_score.avg_score >= 3 %}
+                                <img src="{% static '/media/review03.png' %}" alt="a" width="100px">
+                            {% elif avg_score.avg_score >= 2 %}
+                                <img src="{% static '/media/review02.png' %}" alt="a" width="100px">
+                            {% elif avg_score.avg_score >= 1 %}
+                                <img src="{% static '/media/review01.png' %}" alt="a" width="100px">
                             {% endif %}
-                        {% endfor %}
                     </div>
                 </div>
-                <p>{{stores.adress}}</p>
+                <p>{{stores.adress1}}{{stores.adress2}}{{stores.adress3}}</p>
 
                 <div class = "feature">
                     <h2>特徴がないのが特徴！白ごはん専門店！</h2>
