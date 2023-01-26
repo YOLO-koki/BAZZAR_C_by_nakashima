@@ -18,11 +18,10 @@
             <form action="{% url 'accounts:login' %}" method="post" class="loginForm">
                 {% csrf_token %}
                 <p>{{ form.non_field_errors }}
-                    {{ field.errors }}</p>
-                
+                    {{ field.errors }}
+                </p>
                 
                 <div class="inputArea">
-                    
                     <label>{{ f.username.label }}</label>
                     {{ f.username }}
                     
@@ -44,7 +43,8 @@
                     <div class="createPageRoute">
                         <p class="message">
                             一般新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から
-                            
+                        </p>
+                        <p class="message2">
                             事業者新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から
                         </p>
 

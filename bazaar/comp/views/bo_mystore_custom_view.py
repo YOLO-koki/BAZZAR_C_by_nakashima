@@ -23,11 +23,11 @@ class CompMyStoreCustomView(FormView):
     form_class=StoreForm
   
     def get_success_url(self):
-        return reverse_lazy("comp:mypage", kwargs={"pk": self.request.user})
+        return reverse_lazy("accounts:mypage")
     
     def form_valid(self, form):
         hoge=form.save(commit=False)  # 保存処理など
         hoge.bp_id=self.request.user
         fuga=hoge.store_id
         hoge.save()
-        return render(request=self.request,template_name="comp/bo_mypage.html",context={'fuga':fuga})
+        return render(request=self.request,template_name="accounts/mypage.html",context={'fuga':fuga})
