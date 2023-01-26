@@ -14,4 +14,4 @@ class CompMenuUpdateView(UpdateView):
         id=Store.objects.get(bp_id=self.request.user)
         return Menu.objects.get(store_id=id) # or request.POST
     def get_success_url(self):
-        return reverse_lazy("comp:mypage", kwargs={"pk": self.request.user})
+        return reverse_lazy("accounts:mypage")

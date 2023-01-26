@@ -16,4 +16,4 @@ class CompStoreUpdateView(UpdateView):
     def get_object(self):
         return Store.objects.get(bp_id=self.request.user) # or request.POST
     def get_success_url(self):
-        return reverse_lazy("comp:mypage", kwargs={"pk": self.request.user})
+        return reverse_lazy("accounts:mypage")

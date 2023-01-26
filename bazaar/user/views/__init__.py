@@ -10,3 +10,5 @@ from .user_kutikomi_view import KutikomiForm
 from .user_check_kutikomiviews import UserCheckKutikomiView
 from .user_review_perfectview import UserReviewPerfectView
 from .Reservation_list import UserReservationlistView
+from .user_info_view import UserInfoView
+from .user_accounts_update_view import UserAccountUpdateView
