@@ -64,6 +64,7 @@ class KutikomiForm(forms.ModelForm):
     class Meta:
         model = Kuchikomi
         fields = ('store_id','user_id','score','impression',)
+
         exclude = ["store_id"]
 
 class ReservationForm(forms.ModelForm):
@@ -80,3 +81,4 @@ class ReservationForm(forms.ModelForm):
                 }
             ),
         }
+
