@@ -14,6 +14,10 @@ from .views import UserInfoView
 from .views import UserAccountUpdateView
 from .views import UserMakeReservationView
 from .views import UserSelectReservationView
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 app_name = 'user'
 urlpatterns = [
     path('', UserIndexView.as_view(),name = 'index'),#トップページ
@@ -36,4 +40,4 @@ urlpatterns = [
     path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
     path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
 
-    ]
+    ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
