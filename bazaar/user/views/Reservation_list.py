@@ -23,7 +23,7 @@ class UserReservationlistView(LoginRequiredMixin,ListView):
     def get_context_data(self, **kwargs):
         context = super(UserReservationlistView, self).get_context_data(**kwargs)
 
-        reservation = Reservation.objects.filter(user_id_id = self.request.user.userid)
+        reservation = Reservation.objects.filter(user_id_id = self.request.user.userid).order_by('reservation_day').reverse()
         
         store_id = reservation.values_list('store_id_id')
         store_name = Store.objects.filter(store_id__in = store_id)

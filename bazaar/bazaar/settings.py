@@ -126,8 +126,8 @@ STATIC_URL = '/static/'
 # 画像を保存する先の指定
 
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-MEDIA_URL = '/media/media/'
-MEDIA_ROOT = BASE_DIR/'media/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
