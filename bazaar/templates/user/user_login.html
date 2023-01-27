@@ -1,0 +1,56 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+
+{% block title %}
+ユーザーログインページ
+{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'css\user\userLogin.css' %}">
+{% endblock %}
+
+    {% block contents %}
+    <main>
+        <div class="main">
+            <h1 class="login">ユーザーログイン</h1>
+            {% with form as f %}
+            <form action="" method="post" class="loginForm">
+                {% csrf_token %}
+                <div class="inputArea">
+                    <label>{{ f.bp_id.label }}</label>
+                    {{ f.bp_id }}
+                </div>
+                <div class="inputArea">
+                    <div class="password">
+                        <label>{{ f.password.label }}</label>
+                        <p class="forget_password"><a href="#">パスワードを忘れた</a></p>
+                    </div>
+                    {{ f.password }}
+                </div>
+                <div class="inputArea">
+                    <button type="submit" class="button_login">ログイン</button>
+                </div>
+                <div class="dummyArea1"></div>
+
+                <div class="createArea">
+                    <div class="createPageRoute">
+                        <p class="message">
+                            新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から
+                        </p>
+                        <div class="dummyArea2"></div>
+                    </div>
+                </div>
+            </form>
+            {% endwith %}
+
+            <!-- 動画 -->
+            <div class="video_area">
+                <video src="{% static '/videos/Chop - 11638.mp4' %}" id="cooking_video" poster="../../images/dinner.jpg"
+                    webkit-playsinline playsinline muted autoplay loop>
+                    <p>動画を再生できる環境ではありません。</p>
+                </video>
+            </div>
+        </div>
+    </main>
+    {% endblock %}

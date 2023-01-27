@@ -1,0 +1,68 @@
+/* メイン */
+.main {
+    padding: 100px;
+}
+
+.main .inquiry_contents{
+    margin-top: 30px;
+}
+
+.main .inquiry_contents p {
+    margin-bottom: 10px;
+    margin-left: 175px;
+}
+
+.main .inquiry_contents .inquiry_area form .inquiry_name {
+    margin-left: 50px;
+    margin-left: 175px;
+}
+
+.main .inquiry_contents .inquiry_area form .inquiry_email {
+    margin-left: 50px;
+    margin-left: 175px;
+}
+
+#id_inquiry {
+    resize: none;
+    width: 800px;
+    height: 250px;
+    outline: none;
+}
+
+#id_inquiry_email {
+    width: 200px;
+}
+
+.main .inquiry_contents .inquiry_area form .form_group .form_label p label{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.main .inquiry_contents .inquiry_area form .form_group .form_field{
+    margin-left: 260px;
+}
+
+.main .inquiry_contents .inquiry_area form p{
+    line-height: 2;
+}
+
+.main .inquiry_contents .inquiry_area form .inquiry_email {
+    margin-left: 85px;
+}
+
+
+
+.main .inquiry_contents button {
+    width: 60px;
+    margin-left: 1000px;
+}
+
+.main .inquiry_contents .inquiry_area button {
+    width: 70px;
+    height: 30px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}

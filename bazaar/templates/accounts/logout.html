@@ -1,0 +1,69 @@
+{% extends '../layouts/top/base.html' %}
+{% load static %}
+
+{% block title %}
+ユーザーログアウトページ
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\style_bo_login.css' %}">
+{% endblock %}
+
+{% block contents %}
+<main>
+    <div class="main">
+        <h1 class="login">事業者ログイン</h1>
+        {% if error %}
+        {{ error }}
+        {% endif %}
+        {% if message %}<!--"ログアウトしました"などを表示させる-->
+        <div class="message">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% with form as f %}<!--formを'f'に代入-->
+        <form method="post" class="loginForm" action="{% url 'comp:login' %}">
+            <!--useridとpasswordでユーザー認証-->
+            {% csrf_token %}
+            <div class="inputArea">
+                <label>{{ f.userid.label }}</label>
+                {{ f.userid }}
+            </div>
+            <div class="inputArea">
+                <div class="password">
+                    <label>{{ f.password.label }}</label>
+                    <!--パスワードを忘れた場合はパスワードリセットページに飛ぶ-->
+                    <p class="forget_password"><a href="{% url 'comp:reset_password' %}">パスワードを忘れた</a></p>
+                </div>
+                {{ f.password }}
+            </div>
+            <div class="inputArea">
+                <button type="submit" class="button_login">ログイン</button>
+            </div>
+            <div class="dummyArea1"></div>
+
+            <div class="createArea">
+                <div class="createPageRoute">
+                    <!--登録していない場合は新規登録ページに飛ぶ-->
+                    <p class="message">
+                        新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から
+                    </p>
+                    <div class="dummyArea2"></div>
+                </div>
+            </div>
+        </form>
+        {% endwith %}
+        <!-- 動画 -->
+        <div class="video_area">
+            <video src="{% static '/videos/Chop - 11638.mp4' %}" id="cooking_video" poster="../../images/dinner.jpg"
+                webkit-playsinline playsinline muted autoplay loop>
+                <p>動画を再生できる環境ではありません。</p>
+            </video>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>

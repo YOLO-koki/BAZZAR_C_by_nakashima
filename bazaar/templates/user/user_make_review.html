@@ -1,0 +1,29 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+{% block title %}口コミ書き込みページ{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css\user\style_user_make_review.css' %}">
+{% endblock %}
+{% block contents %}
+    <main>
+        <div class = "main">
+            <div class = "review_contents">
+                <h1>口コミ書き込みページ</h1>
+
+                <div class = "signup">
+                    <p>会員登録がまだの方↓</p>
+                    <a href="#"><p>新規会員登録</p></a>
+                </div>
+                
+                <form method="post" action = "">
+                    {% csrf_token %}
+                    <p>{{form.store_id}}</p>
+                    <p>ユーザーID：{{form.user_id}}</p>
+                    <p>評価：{{form.score}}</p>
+                    <p>評価内容：{{form.impression}}</p>
+                    <button type="submit" name = "submitbutton">送信</button>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

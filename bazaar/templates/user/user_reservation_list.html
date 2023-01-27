@@ -1,0 +1,33 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+
+{% block title %}
+予約履歴一覧
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\style_bo_reservation_list.css' %}">
+{% endblock %}
+
+{% block contents %}
+<main>
+    <div class="main">
+        <div class="list_area">
+            <table class="list">
+                <tr>
+                    <th>店舗名</th>
+                </tr>
+                {% for store in store_name %}
+                <tr>
+                    <td>{{ store.store_name }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>

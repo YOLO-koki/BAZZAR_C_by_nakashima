@@ -1,0 +1,19 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+{% block title %}新規登録完了{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\user\userMailSend.css' %}">{% endblock %}
+{% block contents %}
+
+    <main> 
+        <h1>会員登録完了</h1>
+        <div class="main">
+            <p class="test">
+            会員登録が完了しました。引き続きサービスをご利用ください。
+            <a href="{% url 'accounts:login' %}">新規登録/ログイン</a>
+            </p>
+        </div>
+    </main>
+</body>
+</html>
+{% endblock %}

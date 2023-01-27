@@ -1,0 +1,154 @@
+{% extends '../layouts/top/base.html' %}
+{% load static %}
+
+{% block title %}店舗詳細{% endblock %}
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/top/style_co_store_detail.css' %}">
+
+    <!-- スライドする写真 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('.slider').bxSlider({
+                    auto: true,
+                    pause: 5000,
+             });
+            });
+    </script>
+    
+</head>
+{% endblock %}
+
+{% block contents %}
+
+    <main>
+        <div class = "main">
+            <!-- パンくずリスト -->
+            <div class="bread_crumbs">
+                <li class="bread_crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="top">トップ</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="bread_crumb" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="detail">店舗詳細</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </div>
+            
+            <!-- 予約ボタン -->
+            <button class = "button" onclick="location.href='#'">今すぐ予約</button>
+            
+            <!-- 店舗について -->
+            <div class = "detail">
+                <div class = "explain">
+                    <h1>{{stores.store_name}}</h1>
+                    <p>{{avg_score.avg_score|floatformat:0}}</p>
+                    
+                    <div class = "stars">
+                        {% for kuchikomi in kuchikomi_list %}
+                            {% if stores.pk == kuchikomi.store_id_id %}
+                                {% for avg__score in avg_score %}
+                                    {% if avg__score == 1 %}
+                                        <img src="{% static '/media/review01.png' %}" alt="" width="100px">
+                                    {% elif avg__score >= 2 %}
+                                        <img src="{% static '/media/review02.png' %}" alt="" width="100px">
+                                    {% elif avg__score == 3 %}
+                                        <img src="{% static '/media/review03.png' %}" alt="" width="100px">
+                                    {% elif avg__score == 4 %}
+                                        <img src="{% static '/media/review04.png' %}" alt="" width="100px">
+                                    {% elif avg__score == 5 %}
+                                        <img src="{% static '/media/review05.png' %}" alt="" width="100px">
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <p>{{stores.adress}}</p>
+
+                <div class = "feature">
+                    <h2>特徴がないのが特徴！白ごはん専門店！</h2>
+                    <p>石川県金沢市にある大原食堂は創業２００年目を迎える老舗白ごはん専門店である。今まで・・・・・・・・</p>
+                </div>
+
+                <!-- スライドする写真 -->
+                <div class="slider">
+                        <img src="/media/{{stores.photo1}}" alt="sss" class = "image"/>
+                        <img src="/media/{{stores.photo2}}" alt="" class = "image"/>
+                </div>
+
+                <!-- 商品の説明 -->
+                <div class = "picks">
+                    <h2>当店のおススメ</h2>
+                    <div class = "top">
+                        <div class = "top-left">
+                            <img src="/media/{{stores.photo1}}" width = "200px" height = "125px" alt="">
+                            <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
+                        </div>
+
+                        <div class = "top-right">
+                            <img src="/media/{{stores.photo2}}" width = "200px" height = "125px" alt="">
+                            <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
+                        </div>
+                    </div>
+                    <div class = "under">
+                        <div class = "under-left">
+                            <img src="/media/{{stores.photo1}}" width = "200px" height = "125px" alt="">
+                            <p>白米です。</p>
+                        </div>
+                        <div class = "under-right">
+                            <img src="/media/{{stores.photo2}}" width = "200px" height = "125px" alt="">
+                            <p>白米です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 口コミ -->
+            <div class = "kutikomi">
+                <div class = "review-header">
+                        <h1>口コミ</h1>
+                        <a href="{% url 'user:userKutikomi' stores.pk %}"><p>口コミを書く（会員登録が必要です）</p></a>
+                </div>  
+
+                <div class = "reviews">
+                    {% for kuchikomi in kuchikomi_list %}
+                        {% if stores.pk == kuchikomi.store_id_id %}
+                            <div class = "profile">
+                                
+                                <p>{{kuchikomi.user_id}}さん:</p>
+<<<<<<< HEAD
+=======
+                                {% if kuchikomi.score == 1 %}
+>>>>>>> top
+                                    <img src="{% static '/media/review01.png' %}" alt="" width="100px">
+                                {% elif kuchikomi.score == 2%}
+                                    <img src="{% static '/media/review02.png' %}" alt="" width="100px">
+                                {% elif kuchikomi.score == 3 %}
+                                    <img src="{% static '/media/review03.png' %}" alt="" width="100px">
+                                {% elif kuchikomi.score == 4 %}
+                                    <img src="{% static '/media/review04.png' %}" alt="" width="100px">
+                                {% elif kuchikomi.score == 5 %}
+                                    <img src="{% static '/media/review05.png' %}" alt="" width="100px">
+                                {% endif %}
+                            </div>
+                            <div class = "review">
+                                <p>{{kuchikomi.impression}}</p>
+                            </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+
+        </div>
+    </main>
+{% endblock %}

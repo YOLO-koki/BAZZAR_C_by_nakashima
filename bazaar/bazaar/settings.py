@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'user',
     'top',
     'comp',
+    'accounts',
+    #'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'bazaar.urls'
 
@@ -114,6 +118,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, "static")
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
@@ -121,3 +126,17 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#USER_MODELの指定
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+LOGIN_URL = "accounts:login"
+
+LOGIN_REDIRECT_URL = 'accounts:mypage'
+LOGOUT_REDIRECT_URL = "accounts:login"
+
+# アダプターの指定
+#ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
+
+
+

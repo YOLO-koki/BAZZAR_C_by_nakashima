@@ -1,0 +1,35 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+{% block title %}登録内容確認{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\boCheck.css' %}">{% endblock %}
+{% block contents %}
+<main>
+   <h1>登録内容確認</h1>
+   <div id="test">
+    <h3>登録内容はこちらで宜しいでしょうか？よろしければ「登録」ボタンを押して下さい。</h3>
+   <form method="post" action="{% url 'comp:boCheck'  %}">
+    <div>
+        {% csrf_token %}
+        <input type="hidden" name="usertype" value="False">
+        {% for field in form %}
+               {{ field.as_hidden }}
+        {% endfor %}
+        <table>
+                {% for field in form %}
+                <tr>
+                    <th>{{ field.label_tag }}</th>
+                    <td>{{ field.value }}</td>
+                </tr>
+                {% endfor %}
+
+        </table>
+    </div>
+         <div id="fbtn">
+             <button class="back" type="button" onclick="history.back()">内容を修正する</button>
+             <button class="submit" type="submit">登録</button>
+         </div>
+    </form>
+   </div>
+ </main>
+{% endblock %}
