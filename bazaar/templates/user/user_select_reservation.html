@@ -1,0 +1,65 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+
+{% block title %}予約方法選択ページ{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/user/user_select_reservation.css' %}">
+</head>
+{% endblock %}
+
+{% block contents %}
+    <main>
+        <h1>予約方法選択</h1>
+        <div>
+        {% if request.user.is_authenticated %}  
+        <a href="{% url 'user:userMakeReservation' store.store_id %}">予約ページに進む</a>   
+        {% else %}
+        {% with form as f %}
+        <a href="{% url 'user:userMakeReservation' store.store_id %}">ログインせずに予約する</a>
+        <h2>アカウントをすでにお持ちの方はこちら↓↓</h2><br>
+        <form action="{% url 'user:userMakeReservation' store.store_id %}" method="post" class="loginForm">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}
+                {{ field.errors }}</p>
+            
+            
+            <div class="inputArea">
+                
+                <label>{{ f.username.label }}</label>
+                {{ f.username }}
+                
+            </div>
+            <div class="inputArea">
+                
+                <div class="password">
+                   <label>{{ f.password.label }}</label>
+                    <p class="forget_password"><a href="{% url 'accounts:password_reset' %}">パスワードを忘れた</a></p>
+                </div>
+                {{ f.password }}
+            </div>
+            <div class="inputArea">
+                <button type="submit" class="button_login">ログイン</button>
+            </div>
+            <div class="dummyArea1"></div>
+
+            <div class="createArea">
+                <div class="createPageRoute">
+                    <p class="message">一般新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から</p>   
+                    <p class="message2">事業者新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から</p>
+                </div>
+            </div>
+        </form>
+        {% endwith %}
+        {% endif %}
+        <!-- <form method="post">
+        <div>
+        </div>
+        <div id="fbtn">
+            <button type="submit" name = "submitbutton">　次へ　</button>
+        </div>
+    </form> -->
+</div>
+    </main>
+{% endblock %}

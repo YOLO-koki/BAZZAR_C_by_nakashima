@@ -31,13 +31,6 @@ header {
     white-space: nowrap
 }
 
-.navbar li p {
-    text-decoration: none;
-    color: black;
-    width: 50px;
-    white-space: nowrap
-}
-
 
 .navbar .navigationbar {
     position: absolute;

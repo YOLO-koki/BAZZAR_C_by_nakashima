@@ -44,15 +44,15 @@
     </div>
     {% endfor %}
         <h2>メニュー情報</h2>
-        {% for menu in menu_list %}
         <p><a href="{% url 'comp:boMenuUpdate' request.user.userid %}">更新ページはこちら</a>
+        {% for menu in menu_list %}
         <div>
             <table>
                 <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
                 <tr><th>メニュー名</th><td>{{ menu.menu_name }}</td></tr>
                 <tr><th>サイズ</th><td>{{ menu.size }}</td></tr>
                 <tr><th>値段</th><td>{{ menu.price }}</td></tr>
-                <tr><th>写真</th><td>{{ menu.photo1 }}</td></tr>
+                <tr><th>写真</th><td><img src="/media/{{ menu.photo1 }}" alt="メニュー１"></td></tr>
             </table>
         </div>
         {% endfor %}

@@ -12,7 +12,8 @@ from .views import UserReviewPerfectView
 from .views import UserReservationlistView
 from .views import UserInfoView
 from .views import UserAccountUpdateView
-
+from .views import UserMakeReservationView
+from .views import UserSelectReservationView
 app_name = 'user'
 urlpatterns = [
     path('', UserIndexView.as_view(),name = 'index'),#トップページ
@@ -27,8 +28,12 @@ urlpatterns = [
     path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
 #以下使ってない
-    
+
+    path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
     # path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
     # path('userLogin/',UserLoginView.as_view(),name='userLogin'),
-    
+    path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
+    path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
+    path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
+
     ]
