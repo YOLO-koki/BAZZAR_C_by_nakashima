@@ -16,10 +16,13 @@
         <form method="post">
         <div class = "main">
              <div class = "inquiry_area">
-                      {% bootstrap_javascript jquery='full' %} 
-                      {{ form.media }}
                       {% csrf_token %}
+                      {% load bootstrap4 %}
+                      {% bootstrap_css %}
+                      {% bootstrap_javascript jquery='full' %}
+                      {{ form.media }}
                       {{ form.as_p }}
+                     
              </div>
         </div>
         <div id="fbtn">

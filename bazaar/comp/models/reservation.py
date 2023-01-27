@@ -72,7 +72,7 @@ class Reservation(models.Model):
    menu5=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー5',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_5')
    reservation_name=models.CharField(verbose_name='予約者名',max_length=20,null=True,blank=True)
    reservation_mail=models.CharField(verbose_name='予約者メールアドレス',max_length=40,null=True,blank=True)
-   reservation_day=models.DateField(verbose_name='予約希望日', default=timezone.now)
+   reservation_day=models.DateField(verbose_name='予約希望日',default=timezone.now)
    reservation_phone=models.CharField(verbose_name='予約者電話番号',max_length=11,null=True,blank=True)
    reservation_hour=models.CharField(verbose_name='予約希望時間',max_length=3,choices=hour,default="選択してください")
    reservation_minute=models.CharField(verbose_name="", max_length=3,choices=minute ,default="選択してください")

@@ -5,7 +5,7 @@
 
 {% block head %}
 <head>
-    <link rel="stylesheet" href="{% static 'css/user/userCreate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user/user_select_reservation.css' %}">
 </head>
 {% endblock %}
 
@@ -13,12 +13,12 @@
     <main>
         <h1>予約方法選択</h1>
         <div>
-            <a href="{% url 'user:userMakeReservation' store.store_id %}">ログインせずに予約する</a>
-        <h2>アカウントをすでにお持ちの方はこちら↓↓</h2><br>
         {% if request.user.is_authenticated %}  
         <a href="{% url 'user:userMakeReservation' store.store_id %}">予約ページに進む</a>   
         {% else %}
         {% with form as f %}
+        <a href="{% url 'user:userMakeReservation' store.store_id %}">ログインせずに予約する</a>
+        <h2>アカウントをすでにお持ちの方はこちら↓↓</h2><br>
         <form action="{% url 'user:userMakeReservation' store.store_id %}" method="post" class="loginForm">
             {% csrf_token %}
             <p>{{ form.non_field_errors }}
@@ -46,13 +46,8 @@
 
             <div class="createArea">
                 <div class="createPageRoute">
-                    <p class="message">
-                        一般新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から
-                        
-                        事業者新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から
-                    </p>
-
-                    <div class="dummyArea2"></div>
+                    <p class="message">一般新規登録は<a href="{% url 'user:userRegist' %}">こちら</a>から</p>   
+                    <p class="message2">事業者新規登録は<a href="{% url 'comp:boRegist' %}">こちら</a>から</p>
                 </div>
             </div>
         </form>

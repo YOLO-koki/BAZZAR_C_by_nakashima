@@ -27,10 +27,10 @@ urlpatterns = [
     path('userRegist/', CreateAccountView.as_view(), name='userRegist'),#新規登録
 
 #以下使ってない
-    # path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
+    path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
     # path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
     # path('userLogin/',UserLoginView.as_view(),name='userLogin'),
-    # path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
+    path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
     path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
     ]
