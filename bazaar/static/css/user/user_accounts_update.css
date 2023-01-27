@@ -1,0 +1,30 @@
+main {
+    padding-top: 12vh;
+}
+
+h1 {
+    margin-left: 25px;
+}
+
+div form {
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color: #dddddd;
+    border: 1px solid black;
+}
+
+div form p {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+div form input[type="submit"] {
+    width: 80px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
