@@ -364,18 +364,15 @@
                         box.innerHTML += "";
                         inputedArr.map((item) => {
                             box.innerHTML +=
-                                "<a class='content' href='{% url 'top:detail'" +
+                                "<a class='content' href='{% url `top:detail`" +
                                 item["id"] +
-                                '%}">' +
-                                `
-                                    <img src='/media/${item["photo1"]}' alt="dinner" />
-                                    <span class="text">
-                                        <h3 class="title">${item["store_name"]}</h3>
-                                        <div class="detail">${item["about"]}</div>
-                                    </span>
-                                </a>
-                            `;
-                            console.log(item);
+                                "%}'>" +
+                                "<img src='/media/" +
+                                item["photo1"] +
+                                "'" +
+                                "alt='dinner' />" +
+                                `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
+                            console.log(item["photo1"]);
                         });
                     } else {
                         box.innerHTML = "No Results found..";
