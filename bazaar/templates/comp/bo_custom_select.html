@@ -4,7 +4,7 @@
 {% block title %}事業者情報登録ページ{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css\comp\boStoreCustom.css' %}">
+<link rel="stylesheet" href="{% static 'css\comp\boMyStoreCustom.css' %}">
 {% endblock %}
 {% block contents %}
 <!-- メイン -->
@@ -13,6 +13,9 @@
     <div>
        <a href="{% url 'comp:boStoreCustom' %}">店舗情報の登録</a>
        <a href="{% url 'comp:menucustom' %}">メニュー情報の登録</a>
+    </div>
+    <div class = "check">
+        <p>初めに店舗情報の登録をお願いします。</p>
     </div>
 </main>
 {% endblock %}
