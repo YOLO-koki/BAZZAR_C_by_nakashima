@@ -14,3 +14,4 @@ from .user_info_view import UserInfoView
 from .user_accounts_update_view import UserAccountUpdateView
 from .user_make_reservation_view import UserMakeReservationView
 from .user_select_reservation_view import UserSelectReservationView
+from .user_make_reservation_login_view import UserMakeReservationLoginView

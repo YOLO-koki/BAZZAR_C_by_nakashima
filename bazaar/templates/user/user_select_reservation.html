@@ -14,7 +14,7 @@
         <h1>予約方法選択</h1>
         <div>
         {% if request.user.is_authenticated %}  
-        <a href="{% url 'user:userMakeReservation' store.store_id %}">予約ページに進む</a>   
+        <a href="{% url 'user:loginUserMakeReservation' store.store_id %}">予約ページに進む</a>   
         {% else %}
         {% with form as f %}
         <a href="{% url 'user:userMakeReservation' store.store_id %}">ログインせずに予約する</a>
@@ -35,12 +35,11 @@
                 
                 <div class="password">
                    <label>{{ f.password.label }}</label>
-                    <p class="forget_password"><a href="{% url 'accounts:password_reset' %}">パスワードを忘れた</a></p>
                 </div>
                 {{ f.password }}
             </div>
             <div class="inputArea">
-                <button type="submit" class="button_login">ログイン</button>
+                <p><a href="{% url 'accounts:login' %}">ログインをして予約(ログインページに飛びます)</a></p>
             </div>
             <div class="dummyArea1"></div>
 
