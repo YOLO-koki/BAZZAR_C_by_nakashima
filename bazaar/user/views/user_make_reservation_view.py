@@ -5,7 +5,7 @@ from comp.models import Store
 class UserMakeReservationView(FormView):
     template_name: str = "user/user_make_reservation.html"
     form_class=ReservationForm
-    success_url = 'top:toppage'
+    success_url = 'top:index'
     def form_valid(self,form):
         hoge=form.save(commit=False)
         hoge.store_id=Store.objects.get(store_id=self.kwargs['pk'])
