@@ -38,12 +38,3 @@ div table tr td {
 main p {
     margin-left: 1100px;
 }
-
-main p a {
-    background-color: #0cf;
-    cursor: pointer;
-    color: black;
-    border-radius: 5px;
-    border: none;
-    text-decoration: none;
-}

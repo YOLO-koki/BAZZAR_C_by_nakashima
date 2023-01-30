@@ -10,10 +10,13 @@ from .views import UserKutikomiView
 from .views import UserCheckKutikomiView
 from .views import UserReviewPerfectView
 from .views import UserReservationlistView
+from .views import UserReservationView
 from .views import UserInfoView
 from .views import UserAccountUpdateView
 from .views import UserMakeReservationView
 from .views import UserSelectReservationView
+from .views import UserMakeReservationLoginView
+from .views import UserCompleteReserveView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,6 +31,7 @@ urlpatterns = [
     path('user_info/',UserInfoView.as_view(),name="user_info"),#ユーザー情報ページ
     path('user_accounts_update/<str:userid>/',UserAccountUpdateView.as_view(),name='userAccountUpdate'),#ユーザー情報更新ページ
     path('reservation_list/',UserReservationlistView.as_view(),name="reservation_list"),#予約履歴ページ
+    path('reservation/',UserReservationView.as_view(),name="reservation"),#予約確認ページ
     path('userRegist/', CreateAccountView.as_view(), name='userRegist'),#新規登録
     path('userCheck/', CheckRegiInfoView.as_view(), name='userCheck'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
@@ -38,6 +42,8 @@ urlpatterns = [
     # path('userLogin/',UserLoginView.as_view(),name='userLogin'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
-    path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
+    path('loginUserMakeReservation/<int:pk>/',UserMakeReservationLoginView.as_view(),name='loginUserMakeReservation'),
+    path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation'),
+    path('userCompReservation/<int:pk>/',UserCompleteReserveView.as_view(),name='userCompReservation')
 
     ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

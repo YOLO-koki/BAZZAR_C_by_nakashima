@@ -65,7 +65,7 @@ class KutikomiForm(forms.ModelForm):
         model = Kuchikomi
         fields = ('store_id','user_id','score','impression',)
 
-        exclude = ["store_id"]
+        exclude = ["store_id",'user_id']
 
 class ReservationForm(forms.ModelForm):
    
@@ -82,3 +82,17 @@ class ReservationForm(forms.ModelForm):
             ),
         }
 
+class ReservationLoginForm(forms.ModelForm):
+   
+    class Meta:
+        model= Reservation
+        exclude = ["store_id","user_id","reservation_name","reservation_phone","reservation_mail","menu1","menu2","menu3","menu4","menu5"]
+        widgets={
+             'reservation_day': DatePickerInput(
+                format='%Y-%m-%d',
+                options={
+                    'locale': 'ja',
+                    'dayViewHeaderFormat': 'YYYY年 MMMM',
+                }
+            ),
+        }

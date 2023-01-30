@@ -19,3 +19,4 @@ from .bo_menu_custom_view import CompMenuCustomView
 from .bo_custom_select_view import CustomSelectView
 from .bo_myaccount_update_view import CompAccountUpdateView
 from .bo_mymenu_update_view import CompMenuUpdateView
+from .bo_reservation_listall import CompReservationListAllView

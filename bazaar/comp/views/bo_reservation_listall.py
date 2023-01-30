@@ -3,28 +3,23 @@ from django.views.generic import ListView
 from ..models import Reservation,Store,Menu
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from  datetime import date,datetime,timedelta
 # class CompReservationListView(TemplateView):
 #     template_name: str = 'comp/bo_reservation_list.html'
 
 
 
-class CompReservationListView(LoginRequiredMixin,ListView):
+class CompReservationListAllView(LoginRequiredMixin,ListView):
     model = Reservation
     #context_object_name = "reservation_list"
-    template_name: str = 'comp/bo_reservation_list.html'
+    template_name: str = 'comp/bo_reservation_listall.html'
 
     def get_context_data(self, **kwargs):
-        context = super(CompReservationListView, self).get_context_data(**kwargs)
+        context = super(CompReservationListAllView, self).get_context_data(**kwargs)
         #予約情報を取得
-        #現在の日付を取得
-        dt_now = datetime.now()
-        #2日後の日付を取得
-        dt_2day = dt_now + timedelta(days=2)
+
         #StoreテーブルからログインしているユーザーのストアIDを取得
         store_id = Store.objects.get(bp_id_id = self.request.user.userid)#
-        reservation = Reservation.objects.filter(reservation_day__range=[dt_now, dt_2day])
-        reservation = reservation.filter(store_id_id = store_id).order_by('reservation_day')
+        reservation = Reservation.objects.filter(store_id_id = store_id).order_by('reservation_day').reverse()
         #reservation = reservation.filter(reservation.values(reservation_day__range=[dt_now, dt_2day]))
         context['reservation'] = reservation
 
@@ -60,8 +55,4 @@ class CompReservationListView(LoginRequiredMixin,ListView):
     # user_store_id = get_store_id()
     # queryset = Reservation.objects.filter(store_id=user_store_id)
 
-    def get_store_id(request):
-        user = request.user.store_id
-        store_id = user.store_id
-        return store_id
 

@@ -1,5 +1,4 @@
-{% extends '../layouts/top/base.html' %}
-{% load static %}
+{% extends '../layouts/top/base.html' %} {% load static %}
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -9,7 +8,7 @@
 {% block head %}
 
 <head>
-    <link rel="stylesheet" href="{% static 'css/top/style_co_toppage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/top/style_co_toppage.css' %}" />
 </head>
 
 <body>
@@ -41,265 +40,383 @@
     </header>
     {% endblock %}
 
+    <body>
     {% block contents %}
-    {% block header %}
+        {% block header %}
 
-    <div class="search">
-        <div class="searchbox">
-            <form action = "{% url 'top:index' %}" method = "get">
-                <ion-icon name="search-outline" class="search_icon"></ion-icon>
-                <input type="search" name="search" id="" placeholder="フリーワード検索" value = "{{request.GET.query}}">
-            </form>
+        <div class="search">
+            <div class="searchbox">
+                <form action="{% url 'top:index' %}" method="get">
+                    <ion-icon name="search-outline" class="search_icon"></ion-icon>
+                    <input
+                        type="search"
+                        name="search"
+                        id="search_here"
+                        placeholder="フリーワード検索"
+                        value="{{request.GET.query}}"
+                    />
+                </form>
+            </div>
         </div>
-    </div>
+        {% endblock %}
 
-    {% endblock %}
+        
+        
+        <main>
+            <div class="main">
+                <!-- 都道府県（チェックボックス） -->
+                <div class="checkboxies">
+                    <div class="search_checkboxies">
+                        <div class="area">
+                            <div class="abstract_area">北海道・東北</div>
+                            <div class="prefecture">
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label>北海道<input id="" type="checkbox" name="" /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>青森<input id="" type="checkbox" name="" /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>秋田<input id="" type="checkbox" name="" /></label>
+                                    </div>
+                                </div>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label>山形<input id="" type="checkbox" name="" /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>宮城<input id="" type="checkbox" name="" /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>福島<input id="" type="checkbox" name="" /></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    <main>
-        <div class="main">
-            <!-- 都道府県（チェックボックス） -->
-            <div class="checkboxies">
-                <div class="search_checkboxies">
-                    <div class="area">
-                        <div class="abstract_area">
-                            北海道・東北
-                        </div>
-                        <div class="prefecture">
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label>北海道<input id="" type="checkbox" name=""></label>
+                        <div class="area">
+                            <div class="abstract_area">中部</div>
+                            <div class="prefecture">
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >愛知<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >岐阜<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >静岡<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label>青森<input id="" type="checkbox" name=""></label>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >三重<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >新潟<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >山梨<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label>秋田<input id="" type="checkbox" name=""></label>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >長野<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >石川<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >富山<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                </div>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >福井<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label>山形<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>宮城<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>福島<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
-                    <div class="area">
-                        <div class="abstract_area">
-                            中部
+                        <div class="area">
+                            <div class="abstract_area">関東</div>
+                            <div class="prefecture">
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >東京<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >神奈川<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >埼玉<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                </div>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >千葉<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >栃木<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >茨城<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                </div>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >群馬<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="prefecture">
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">愛知<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">岐阜<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">静岡<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">三重<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">新潟<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">山梨<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">長野<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">石川<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">富山<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">福井<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="area">
-                        <div class="abstract_area">
-                            関東
+                        <div class="area">
+                            <div class="abstract_area">関西</div>
+                            <div class="prefecture">
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >大阪<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >兵庫<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >京都<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                </div>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >滋賀<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >奈良<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >和歌山<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="prefecture">
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">東京<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">神奈川<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">埼玉<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">千葉<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">栃木<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">茨城<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">群馬<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="area">
-                        <div class="abstract_area">
-                            関西
-                        </div>
-                        <div class="prefecture">
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">大阪<input id="" type="checkbox" name=""></label>
+                        <div class="area">
+                            <div class="abstract_area">中国・四国</div>
+                            <div class="prefecture">
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >岡山<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >広島<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >鳥取<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label for="">兵庫<input id="" type="checkbox" name=""></label>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >島根<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >山口<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >香川<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label for="">京都<input id="" type="checkbox" name=""></label>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >徳島<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >愛媛<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >高知<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">滋賀<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">奈良<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">和歌山<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
-                    <div class="area">
-                        <div class="abstract_area">
-                            中国・四国
-                        </div>
-                        <div class="prefecture">
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">岡山<input id="" type="checkbox" name=""></label>
+                        <div class="area">
+                            <div class="abstract_area">九州・沖縄</div>
+                            <div class="prefecture">
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >福岡<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >佐賀<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >長崎<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label for="">広島<input id="" type="checkbox" name=""></label>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >熊本<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >大分<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >宮崎<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label for="">鳥取<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">島根<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">山口<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">香川<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">徳島<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">愛媛<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">高知<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="area">
-                        <div class="abstract_area">
-                            九州・沖縄
-                        </div>
-                        <div class="prefecture">
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">福岡<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">佐賀<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">長崎<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">熊本<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">大分<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">宮崎<input id="" type="checkbox" name=""></label>
-                                </div>
-                            </div>
-                            <div class="three_checkboxies">
-                                <div class="checkbox">
-                                    <label for="">鹿児島<input id="" type="checkbox" name=""></label>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="">沖縄<input id="" type="checkbox" name=""></label>
+                                <div class="three_checkboxies">
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >鹿児島<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label for=""
+                                            >沖縄<input id="" type="checkbox" name=""
+                                        /></label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 店舗一覧 -->
-            <div class="contents">
+                <!-- 店舗一覧 -->
+                <div class="contents" id="box">
                 {% if not queryset %}
                     {% for store in stores %}
-                        <a class="content" href="{% url 'top:detail' store.pk %}">
-                        {% if store.photo1 %}
-                        <img src="{{store.photo1.url}}" alt="dinner">
-                        {% endif %}
+                    <a class="content" href="{% url 'top:detail' store.pk %}">
+                        <img src="/media/{{store.photo1}}" alt="dinner" />
                         <span class="text">
                             <h3 class="title">{{store.store_name}}</h3>
                             <div class="detail">{{store.about}}</div>
                         </span>
-                        </a>
+                    </a>
                     {% empty %}
                     <p>aaa</p>
                     {% endfor %}
                 {% endif %}
+                </div>
             </div>
-        </div>
     {% endblock %}
-    </main>
+
+            <!-- 店舗の検索機能 -->
+            {% block scripts %}
+            <script>
+                const data = "{{ qs_json }}";
+                console.log(data);
+
+                const rdata = JSON.parse(data.replace(/&quot;/g, '"'));
+                console.log(rdata);
+
+                const input = document.getElementById("search_here");
+                console.log(input);
+
+                let inputedArr = [];
+
+                input.addEventListener("keyup", (e) => {
+                    box.innerHTML = "";
+                    inputedArr = rdata.filter((query) =>
+                        query["store_name"].includes(e.target.value)
+                    );
+                    console.log(inputedArr);
+
+                    if (inputedArr.length > 0) {
+                        box.innerHTML += "";
+                        inputedArr.map((item) => {
+                            box.innerHTML +=
+                                "<a class='content' href='{% url `top:detail`" +
+                                item["id"] +
+                                "%}'>" +
+                                "<img src='/media/" +
+                                item["photo1"] +
+                                "'" +
+                                "alt='dinner' />" +
+                                `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
+                            console.log(item["photo1"]);
+                        });
+                    } else {
+                        box.innerHTML = "No Results found..";
+                    }
+                });
+            </script>
+            {% endblock %}
+        </main>
+    </body>
+</html>

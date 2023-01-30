@@ -3,8 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
+body{
+    background-image: url("450-2021053022465849379.jpg");
+}
 /* ヘッダー */
 /* ナビゲーション */
 header {

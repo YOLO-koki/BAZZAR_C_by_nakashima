@@ -195,4 +195,7 @@
   color: #F8C601;              /* 選択された星以降をすべて黄色にする */
 }
 
+#reserve{
+    float: right;
+}
 
