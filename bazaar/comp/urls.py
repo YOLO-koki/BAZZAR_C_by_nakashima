@@ -20,7 +20,8 @@ from .views import (
     CompMenuCustomView,
     CustomSelectView,
     CompAccountUpdateView,
-    CompMenuUpdateView
+    CompMenuUpdateView,
+    CompReservationListAllView,
 )
 # from .views.bo_check_infoviews import CheckRegiInfoView
 # from .views.bo_regist_views import CreateAccountView
@@ -51,7 +52,8 @@ urlpatterns = [
     #  path('boLogin/',BoLoginView.as_view(),name='boLogin'),
     #path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
 
-    path('reservation_list/', CompReservationListView.as_view(), name='reservation_list'),  # 予約一覧
+    path('reservation_list/', CompReservationListView.as_view(), name='reservation_list'),  # 予約一覧(２日後)
+    path('reservation_list_all/',CompReservationListAllView.as_view(),name="reservation_list_all"),#予約一覧ページ(全部)
     path('reservation_detail/', CompReservationDetailView.as_view(), name='reservation_detail'),  # 予約詳細
      path('boStoreCustom/',CompMyStoreCustomView.as_view(),name='boStoreCustom'),
      path('boStoreInfo/<str:userid>/',CompStoreInfoView.as_view(),name='boStoreInfo'),

@@ -65,7 +65,7 @@ class KutikomiForm(forms.ModelForm):
         model = Kuchikomi
         fields = ('store_id','user_id','score','impression',)
 
-        exclude = ["store_id"]
+        exclude = ["store_id",'user_id']
 
 class ReservationForm(forms.ModelForm):
    
