@@ -1,3 +1,70 @@
-#main{
+h1 {
     padding-top: 10vh;
+} 
+.main {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form {
+    display: block;
+    width: 900px;
+    height: 1570px;
+    margin: 0 auto;
+    background-color: ghostwhite;
+}
+
+form label {
+    width: 200px;
+}
+
+p {
+    display: flex;
+    width: 700px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label::after {
+    content: "\A" ;
+    white-space: pre ;
+    
+}
+
+#id_store_name , #id_postal_code , #id_adress1 , #id_adress2 , #id_adress3 , #id_phone_number {
+    width: 695px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+#id_seat , #id_seat_reservationable {
+    width: 100px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+#id_bussiness_hours_start , #id_bussiness_hours_end {
+    height: 30px;
+}
+
+#id_start_minute , #id_end_minute{
+    margin-left: 270px;
+    height: 30px;
+    margin-top: -40px;
+}
+
+#id_holiday1 , #id_holiday2 , #id_holiday3 {
+    height: 30px;
+}
+
+p #id_photo1 {
+    width: 200px;
+}
+
+form input[type="submit"]{
+    margin-top: 15px;
+    margin-left: 50%;
 }

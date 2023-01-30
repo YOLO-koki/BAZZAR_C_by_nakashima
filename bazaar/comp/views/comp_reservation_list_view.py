@@ -17,7 +17,7 @@ class CompReservationListView(LoginRequiredMixin,ListView):
         context = super(CompReservationListView, self).get_context_data(**kwargs)
         #予約情報を取得
         store_id = Store.objects.get(bp_id_id = self.request.user.userid)
-        reservation = Reservation.objects.filter(store_id_id = store_id)
+        reservation = Reservation.objects.filter(store_id_id = store_id).order_by('reservation_day').reverse()
         context['reservation'] = reservation
 
         #メニュー１～５のメニュー名を取得

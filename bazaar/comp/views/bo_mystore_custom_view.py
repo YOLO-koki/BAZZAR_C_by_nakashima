@@ -28,6 +28,7 @@ class CompMyStoreCustomView(FormView):
     def form_valid(self, form):
         hoge=form.save(commit=False)  # 保存処理など
         hoge.bp_id=self.request.user
+        hoge.photo1=form.cleaned_data['photo1']
         fuga=hoge.store_id
-        hoge.save()
+        hoge.save() 
         return render(request=self.request,template_name="accounts/mypage.html",context={'fuga':fuga})

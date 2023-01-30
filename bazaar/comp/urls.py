@@ -27,6 +27,12 @@ from .views import (
 # from .views.bo_mail_sendviews import BoMailSendView
 # from .views.bo_loginviews import BoLoginView
 
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 app_name = 'comp'
 urlpatterns = [
     #path('mypage/<str:userid>/', CompMypageView.as_view(), name='mypage'),  # マイページ
@@ -38,6 +44,9 @@ urlpatterns = [
     # path('send_url/', CompSendURLView.as_view(), name='send_url'),  # URL送信案内
     # path('reset_password/', CompResetPasswordView.as_view(), name='reset_password'),  # パスワードリセットURL送信
     # path('update_password/', CompUpdatePasswordView.as_view(), name='update_password'),  # パスワード更新
+
+    path('boCheck/', CheckRegiInfoView.as_view(), name='boCheck'),
+    path('boMailSend/',BoMailSendView.as_view(),name='boMailSend'),
 
     #  path('boLogin/',BoLoginView.as_view(),name='boLogin'),
     #path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
@@ -51,7 +60,7 @@ urlpatterns = [
        path('boMenuUpdate/<str:userid>/',CompMenuUpdateView.as_view(),name='boMenuUpdate'),
       path('menucustom/',CompMenuCustomView.as_view(),name='menucustom'),
       path('customselect/',CustomSelectView.as_view(),name='customselect'),
-    path('boRegist/', CreateAccountView.as_view(), name='boRegist'),#新規登録
-    path('boCheck/', CheckRegiInfoView.as_view(), name='boCheck'),
-    path('boMailSend/',BoMailSendView.as_view(),name='boMailSend'),
-]
+
+       path('boRegist/', CreateAccountView.as_view(), name='boRegist'),#新規登録
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'top',
     'comp',
     'accounts',
+    'bootstrap4',
+    'bootstrap_datepicker_plus',
     #'mathfilters',
 ]
 
@@ -70,6 +72,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            'builtins':[ 
+                'bootstrap4.templatetags.bootstrap4',
             ],
         },
     },
@@ -117,7 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 画像を保存する先の指定
+
 STATIC_DIR = os.path.join(BASE_DIR, "static")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     STATIC_DIR,
@@ -137,6 +146,9 @@ LOGOUT_REDIRECT_URL = "accounts:login"
 
 # アダプターの指定
 #ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
 
 
 
