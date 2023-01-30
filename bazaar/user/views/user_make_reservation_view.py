@@ -10,4 +10,4 @@ class UserMakeReservationView(FormView):
         hoge=form.save(commit=False)
         hoge.store_id=Store.objects.get(store_id=self.kwargs['pk'])
         hoge.save()
-        return render(request=self.request,template_name="top/co_toppage.html",context={'store':hoge})
+        return render(request=self.request,template_name="user/user_complete_reserve.html",context={'store':hoge})

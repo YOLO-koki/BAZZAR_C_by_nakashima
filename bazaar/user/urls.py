@@ -15,6 +15,7 @@ from .views import UserAccountUpdateView
 from .views import UserMakeReservationView
 from .views import UserSelectReservationView
 from .views import UserMakeReservationLoginView
+from .views import UserCompleteReserveView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -40,6 +41,7 @@ urlpatterns = [
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
     path('loginUserMakeReservation/<int:pk>/',UserMakeReservationLoginView.as_view(),name='loginUserMakeReservation'),
-    path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
+    path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation'),
+    path('userCompReservation/<int:pk>/',UserCompleteReserveView.as_view(),name='userCompReservation')
 
     ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

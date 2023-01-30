@@ -11,8 +11,9 @@ class UserMakeReservationLoginView(FormView):
         hoge=form.save(commit=False)
         hoge.store_id=Store.objects.get(store_id=self.kwargs['pk'])
         fuga=CustomUser.objects.get(userid=self.request.user)
+        hoge.user_id=CustomUser.objects.get(userid=self.request.user)
         hoge.reservation_name=fuga.username
         hoge.reservation_phone=fuga.phone
         hoge.reservation_mail=fuga.mail
         hoge.save()
-        return render(request=self.request,template_name="top/co_toppage.html",context={'store':hoge})
+        return render(request=self.request,template_name="user/user_complete_reserve.html",context={'store':hoge})

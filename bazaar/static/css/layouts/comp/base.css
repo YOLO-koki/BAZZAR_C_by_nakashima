@@ -10,7 +10,9 @@ header {
     position: fixed;
     z-index: 999;
 }
-
+body{
+    background-image: url("450-2021053022465849379.jpg");
+}
 .navbar {
     display: flex;
     width: 100vw;
