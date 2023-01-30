@@ -601,37 +601,65 @@
 
                 const rdata = JSON.parse(data.replace(/&quot;/g, '"'));
                 console.log(rdata);
-
-                const input = document.getElementById("search_here");
-
+                let checkedboxies = [];
                 const checkboxies = document.getElementsByClassName("prefectures");
                 const checkboxiesArr = Array.from(checkboxies);
-                let checkedboxies = [];
-                let checkedPrefArr = [];
+                let checkedPrefs = []
+                let checkedPrefArr = []
 
+                // チェックボックス
                 function checkedbox(checked, value) {
-                    let checkedPerfArr = [];
+
                     if (checked) {
                         checkedboxies.push(value);
+                        console.log(checkedboxies)
+
+                        checkedPrefs = rdata.filter((query) => {
+                            return query['adress1'].includes(value)
+                        })
+                        for(let i = 0; i < checkedPrefs.length; i++){
+                            checkedPrefArr.push(checkedPrefs[i])
+                        }
+
                     } else {
                         if (checkedboxies.includes(value)) {
                             checkedboxies.splice(checkedboxies.indexOf(value, 1));
+                            for(let i = 0; i < checkedPrefArr.length; i++){
+                                if(checkedPrefArr[i]['adress1'] === value){
+                                    checkedPrefArr.splice(checkedPrefArr.indexOf(checkedPrefArr[i], 1))
+                                }
+                            }
                         }
                     }
-                    console.log(checkedboxies);
+                    console.log(checkedPrefArr)
+                    {% autoescape on %}
+                    if (checkedPrefArr.length > 0) {
+                        box.innerHTML += "";
+                        checkedPrefArr.map((item) => {
+                            let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
+                            const aTag = `<a class="content" href=${sampleTag1}>`;
+                            box.innerHTML +=
+                                aTag +
+                                "<img src='/media/" +
+                                item["photo1"] +
+                                "'" +
+                                "alt='dinner' />" +
+                                `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
 
-                    for (let i = 0; i < checkedboxies.length; i++) {
-                        checkedPref = rdata.filter((query) => {
-                            query["adress1"].includes(checkedboxies[i]);
+                        console.log(sampleTag1)
                         });
-                        checkedPrefArr.push(checkedPref);
-                        console.log(checkedboxies[i]);
-                        console.log(checkedPrefArr);
+                        box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
+                        console.log(box.innerHTML);
+                    } else {
+                        box.innerHTML = "No Results found..";
                     }
+
+                    {% endautoescape %}
                 }
 
-                checkedboxSearchArr = [];
 
+                // 検索フォーム
+                const input = document.getElementById("search_here");
                 let inputStoreNameArr = [];
 
                 input.addEventListener("keyup", (e) => {
