@@ -39,13 +39,11 @@
                     <a itemprop="item" href="#">
                         <span itemprop="detail">店舗詳細</span>
                     </a>
-                    <meta itemprop="position" content="2" />
+                    <meta itemprop="position" content="2">
                 </li>
             </div>
-            
             <!-- 予約ボタン -->
-            <a href="{% url 'user:userSelectReservation' stores.pk  %}">今すぐ予約</a>>
-            
+            <h1><a href="{% url 'user:userSelectReservation' stores.pk  %}" id="reserve">今すぐ予約</a></h1>
             <!-- 店舗について -->
             <div class = "detail">
                 <div class = "explain">
