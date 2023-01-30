@@ -645,16 +645,15 @@
 
                     let inputAll = inputStoreNameArr.concat(inputStoreDescArr);
 
-                    {% autoescape on %}
                     if (inputAll.length > 0) {
                         box.innerHTML += "";
                         inputAll.map((item) => {
                             // djangoが「script」内のテンプレートタグに反応してエラーが出ている可能性あり
-                            // let aTag1 =
-                            //     "'\{\% url " + '\"top:detail\" ' + item["store_id"] + " \%\}'";
+                            let aTag1 =
+                                "'\{\% url " + '"top:detail" ' + item["store_id"] + " \%\}'";
+                            console.log(aTag1);
 
-                            let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
-                            const aTag = `<a class="content" href=${sampleTag1}>`;
+                            const aTag = `<a class="content" href=${aTag1}>`;
                             box.innerHTML +=
                                 aTag +
                                 "<img src='/media/" +
@@ -662,16 +661,12 @@
                                 "'" +
                                 "alt='dinner' />" +
                                 `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
-
-                        console.log(sampleTag1)
                         });
-                        box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
+                        box.innerHTML = box.innerHTML.replace(/&quot;/g, '"')
                         console.log(box.innerHTML);
                     } else {
                         box.innerHTML = "No Results found..";
                     }
-
-                    {% endautoescape %}
                 });
             </script>
             {% endblock %}
