@@ -14,6 +14,7 @@ from .views import UserInfoView
 from .views import UserAccountUpdateView
 from .views import UserMakeReservationView
 from .views import UserSelectReservationView
+from .views import UserMakeReservationLoginView
 app_name = 'user'
 urlpatterns = [
     path('', UserIndexView.as_view(),name = 'index'),#トップページ
@@ -34,6 +35,7 @@ urlpatterns = [
     # path('userLogin/',UserLoginView.as_view(),name='userLogin'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
     path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
+    path('loginUserMakeReservation/<int:pk>/',UserMakeReservationLoginView.as_view(),name='loginUserMakeReservation'),
     path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation')
-
+    
     ]
