@@ -1,0 +1,48 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+{% block title %}予約完了{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user/usercompreserve.css' %}">{% endblock %}
+{% block contents %}
+<main>
+   <h1>予約内容の確認</h1>
+   <h3>以下の内容で登録します。</h3>
+<table class="Table">
+    <thead class="Table-Head">
+        <tr class="Table-Head-Row">
+            <th class="Table-Head-Row-Cell">項目</th>
+            <th class="Table-Head-Row-Cell">登録内容</th>
+        </tr>
+        </thead>
+    <tbody class="Table-Body">
+    <tr class="Table-Body-Row">
+        <th class="Table-Head-Row-Cell">予約者名:</th>
+        <td class="Table-Body-Row-Cell">{{ store.reservation_name }}</td>
+    </tr>
+    <tr class="Table-Body-Row">
+        <th class="Table-Head-Row-Cell">メールアドレス:</th>
+        <td class="Table-Body-Row-Cell">{{ store.reservation_mail }}</td>
+    </tr>
+    <tr class="Table-Body-Row">
+        <th class="Table-Head-Row-Cell">電話番号:</th>
+        <td class="Table-Body-Row-Cell">{{ store.reservation_phone }}</td>
+    </tr>
+    <tr class="Table-Body-Row">
+        <th class="Table-Head-Row-Cell">予約日:</th>
+        <td class="Table-Body-Row-Cell">{{ store.reservation_day }}</td>
+    </tr>
+    <tr class="Table-Body-Row">
+        <th class="Table-Head-Row-Cell">予約日時:</th>
+        <td class="Table-Body-Row-Cell">{{ store.reservation_hour }}:{{ store.reservation_minute }}</td>
+    </tr>
+    <tr class="Table-Body-Row">
+        <th class="Table-Head-Row-Cell">人数:</th>
+        <td class="Table-Body-Row-Cell">{{ store.nop }}</td>
+    </tr>
+    </tbody>
+</table>
+<div id="fbtn">
+    <a class="button" href="{% url 'user:userMailSend' %}">登録</a>
+</div>
+ </main>
+{% endblock %}
