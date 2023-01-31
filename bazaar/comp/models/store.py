@@ -61,15 +61,65 @@ class Store(models.Model):
       ("30分","30分"),
       ("45分","45分"),
     ]
+    prefectures = [
+        ('北海道', '北海道'),
+        ('青森', '青森'),
+        ('岩手', '岩手'),
+        ('宮城', '宮城'),
+        ('秋田', '秋田'),
+        ('山形', '山形'),
+        ('福島', '福島'),
+        ('茨城', '茨城'),
+        ('栃木', '栃木'),
+        ('群馬', '群馬'),
+        ('埼玉', '埼玉'),
+        ('千葉', '千葉'),
+        ('東京', '東京'),
+        ('神奈川', '神奈川'),
+        ('新潟', '新潟'),
+        ('富山', '富山'),
+        ('石川', '石川'),
+        ('福井', '福井'),
+        ('山梨', '山梨'),
+        ('長野', '長野'),
+        ('岐阜', '岐阜'),
+        ('静岡', '静岡'),
+        ('愛知', '愛知'),
+        ('三重', '三重'),
+        ('滋賀', '滋賀'),
+        ('京都', '京都'),
+        ('大阪', '大阪'),
+        ('兵庫', '兵庫'),
+        ('奈良', '奈良'),
+        ('和歌山', '和歌山'),
+        ('鳥取', '鳥取'),
+        ('島根', '島根'),
+        ('岡山', '岡山'),
+        ('広島', '広島'),
+        ('山口', '山口'),
+        ('徳島', '徳島'),
+        ('香川', '香川'),
+        ('愛媛', '愛媛'),
+        ('高知', '高知'),
+        ('福岡', '福岡'),
+        ('佐賀', '佐賀'),
+        ('長崎', '長崎'),
+        ('熊本', '熊本'),
+        ('大分', '大分'),
+        ('宮城', '宮城'),
+        ('鹿児島', '鹿児島'),
+        ('沖縄', '沖縄'),
+    ]
     #store_idが主キー
     store_id = models.AutoField(verbose_name='storeid',primary_key=True)
     bp_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='事業者ID',max_length=16,on_delete=models.PROTECT)
     store_name=models.CharField(verbose_name='店舗名',max_length=30)
     #CustomUserのほうが事業者の住所,Storeのほうが店舗の住所.
     postal_code=models.CharField(verbose_name='郵便番号',max_length=8)
-    adress1=models.CharField(verbose_name='住所(xx県xx市)',max_length=20)
-    adress2=models.CharField(verbose_name='住所(xx丁目xx番地)',max_length=20)
-    adress3=models.CharField(verbose_name='住所(ビル名など)',max_length=20)
+    adress1=models.CharField(verbose_name='住所(xx県)',max_length=20, choices=prefectures)
+    adress2=models.CharField(verbose_name='住所(xx市)',max_length=20)
+    adress3=models.CharField(verbose_name='住所(xx丁目xx番地)',max_length=20)
+    adress4=models.CharField(verbose_name='住所(ビル名など)',max_length=20)
     phone_number=models.CharField(verbose_name='電話番号',max_length=13)
     #seatが店全体の席数。seat_reservationableが時間ごとに予約可能な席数
 
