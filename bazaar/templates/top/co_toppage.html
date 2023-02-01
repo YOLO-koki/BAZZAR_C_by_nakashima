@@ -393,7 +393,10 @@
             window.document.onkeydown = function (e) {
                 // 検索フォームにテキストを入力してEnterを押しても、無効化する
                 if (e.key === 'Enter') {
+                    console.log('you pushed Enter')
                     return false;
+                } else {
+                    console.log('you did not push Enter')
                 }
             }
 
