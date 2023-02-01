@@ -9,6 +9,9 @@ dev =  "python manage.py runserver"
 [packages]
 django = "*"
 pillow = "*"
+django-bootstrap-datepicker-plus = "*"
+django-bootstrap4 = "*"
+python3-openid = "*"
 
 [dev-packages]
 autopep8 = "*"
