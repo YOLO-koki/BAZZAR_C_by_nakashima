@@ -17,8 +17,7 @@
         <div class="searchbox">
             <form action="{% url 'top:index' %}" method="get">
                 <ion-icon name="search-outline" class="search_icon"></ion-icon>
-                <input type="search" name="search" id="search_here" placeholder="フリーワード検索"
-                    value="{{request.GET.query}}" />
+                <input type="search" name="search" id="search_here" placeholder="フリーワード検索" />
             </form>
         </div>
     </div>
@@ -58,6 +57,12 @@
                                 <div class="checkbox">
                                     <label>福島<input id="" type="checkbox" class="prefectures"
                                             onclick="checkedbox(this.checked, this.value)" value="福島" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>岩手<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="岩手" /></label>
                                 </div>
                             </div>
                         </div>
@@ -312,16 +317,15 @@
             let checkedboxies = [];
             const checkboxies = document.getElementsByClassName("prefectures");
             const checkboxiesArr = Array.from(checkboxies);
-            let checkedPrefs = []
-            let checkedPrefArr = []
+            let checkedPrefs = [];
+            let checkedPrefArr = [];
+            let checkedAll = [];
 
             // チェックボックス
             function checkedbox(checked, value) {
-
                 if (checked) {
+                    // チェックボックスにチェックされたとき
                     checkedboxies.push(value);
-                    console.log(checkedboxies)
-                    //console.log(checkedboxies)
 
                     checkedPrefs = rdata.filter((query) => {
                         return query['adress1'].includes(value)
@@ -330,18 +334,22 @@
                         checkedPrefArr.push(checkedPrefs[i])
                     }
                 } else {
+                    // チェックボックスを外されたとき
                     if (checkedboxies.includes(value)) {
+                        // 
                         checkedboxies.splice(checkedboxies.indexOf(value, checkedboxies.filter((value) => checkedboxies.includes(value))).length);
                         for (let i = 0; i < checkedPrefArr.length; i++) {
                             if (checkedPrefArr[i]['adress1'] == value) {
                                 checkedPrefArr.splice(checkedPrefArr.indexOf(checkedPrefArr[i], i))
-                                console.log('a: ', checkedPrefArr[i])
                             }
                         }
                     }
                 }
+
+
                 // console.log(checkedPrefArr)
                 if (checkedPrefArr.length > 0) {
+                    // 選択されたチェックボックスに該当するオブジェクトが存在するときそれらを表示する
                     box.innerHTML = "";
                     checkedPrefArr.map((item) => {
                         let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
@@ -355,15 +363,39 @@
                             `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
                     });
                     box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
+                } else if (checkedboxies.length < 1) {
+                    // チェックボックスを全て外されたときに全表示させる
+                    box.innerHTML = "";
+                    checkedAll = rdata
+                    checkedAll.map((item) => {
+                        let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
+                        const aTag = `<a class="content" href=${sampleTag1}>`;
+                        box.innerHTML +=
+                            aTag +
+                            "<img src='/media/" +
+                            item["photo1"] +
+                            "'" +
+                            "alt='dinner' />" +
+                            `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
+                    });
+                    box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
                 } else {
+                    // 選択されたチェックボックスに該当するオブジェクトが無かった時「No Results found..」を表示
+                    console.log(checkedboxies.length < 1)
                     box.innerHTML = "No Results found..";
                 }
             }
 
-
             // 検索フォーム
             const input = document.getElementById("search_here");
             let inputStoreNameArr = [];
+
+            window.document.onkeydown = function (e) {
+                // 検索フォームにテキストを入力してEnterを押しても、無効化する
+                if (e.key === 'Enter') {
+                    return false;
+                }
+            }
 
             input.addEventListener("keyup", (e) => {
                 box.innerHTML = "";
@@ -385,6 +417,7 @@
 
                         let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
                         const aTag = `<a class="content" href=${sampleTag1}>`;
+
                         box.innerHTML +=
                             aTag +
                             "<img src='/media/" +
