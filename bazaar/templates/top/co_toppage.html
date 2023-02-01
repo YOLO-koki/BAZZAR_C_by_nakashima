@@ -3,9 +3,7 @@
 <!DOCTYPE html>
 {% autoescape off %}
 <html lang="ja">
-
-{% block title %}トップページ{% endblock %}
- {% block head %}
+{% block title %}トップページ{% endblock %} {% block head %}
 
 <head>
     <link rel="stylesheet" href="{% static 'css/top/style_co_toppage.css' %}" />
@@ -37,7 +35,6 @@
                                 <div class="checkbox">
                                     <label>北海道<input id="" type="checkbox" class="prefectures"
                                             onclick="checkedbox(this.checked, this.value)" value="北海道" /></label>
-
                                 </div>
                                 <div class="checkbox">
                                     <label>青森<input id="" type="checkbox" class="prefectures"
@@ -293,7 +290,6 @@
                 </div>
             </div>
 
-
             <!-- 店舗一覧 -->
             <div class="contents" id="box">
                 {% if not queryset %} {% for store in stores %}
@@ -310,7 +306,6 @@
             </div>
         </div>
         {% endblock %}
-        
 
         <!-- 店舗の検索機能 -->
         {% block scripts %}
