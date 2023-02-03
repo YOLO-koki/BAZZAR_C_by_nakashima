@@ -1,0 +1,40 @@
+h1 {
+    padding-top: 10vh;
+} 
+.main {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+} 
+form {
+    display: block;
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: ghostwhite;
+}
+p {
+    display: block;
+    width: 700px;
+    height: 60px;
+    margin: 0 auto;
+    text-align: left;
+}
+label::after {
+    content: "\A" ;
+    white-space: pre ;
+}
+
+#id_username , #id_mail , #id_phone , #id_age , #id_adress {
+    width: 695px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+form input[type="submit"]{
+    margin-top: 15px;
+    margin-left: 50%;
+}

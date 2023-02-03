@@ -1,0 +1,56 @@
+h1{
+    padding-top: 12vh;
+    padding-left: 25vh;
+}
+h3{
+    padding-left: 65vh;
+}
+.Table {
+   margin: 0 auto;
+   margin-top: 20px;
+   text-align: center;
+    width: 600px;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 16px;
+  }
+  @media screen and (max-width: 768px) {
+    .Table {
+      font-size: 12px;
+    }
+  }
+  .Table-Head {
+    background: #eee;
+  }
+  .Table-Head-Row-Cell {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .Table-Body-Row:nth-child(even) {
+    background: #eee;
+  }
+  .Table-Body-Row-Cell {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .button {
+    display       : inline-block;
+    border-radius : 10%;          /* 角丸       */
+    font-size     : 15pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #000066;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    border        : 2px solid #000066;    /* 枠の指定 */
+  }
+#fbtn{
+    margin-top: 20px;
+    text-align: center;
+}

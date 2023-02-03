@@ -4,8 +4,9 @@ from ..forms import KutikomiForm
 from django.urls import reverse_lazy
 from comp.models import Store,Kuchikomi
 from django .shortcuts import redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class UserKutikomiView(FormView):
+class UserKutikomiView(LoginRequiredMixin,FormView):
     model = Kuchikomi
     template_name = "user/user_make_review.html"
     form_class = KutikomiForm

@@ -4,14 +4,14 @@
 {% block title %}事業者店舗情報登録ページ{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css\comp\boStoreCustom.css' %}">
+<link rel="stylesheet" href="{% static 'css\comp\boMenuCustom.css' %}">
 {% endblock %}
 {% block contents %}
 <!-- メイン -->
 <main>
     <h1>メニュー情報の登録</h1>
     <div>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class = "main">
                  <div class = "form_area"> 
                      {% csrf_token %}

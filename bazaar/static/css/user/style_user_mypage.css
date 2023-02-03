@@ -2,8 +2,8 @@
 /* メイン */
 .main{
     padding-top: 20vh;
+    padding-left: 25vh;
     height: 100vh;
-    background-color: #eee8aa;
 }
 
 .welcome{

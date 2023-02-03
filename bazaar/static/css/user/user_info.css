@@ -1,0 +1,40 @@
+main {
+    padding-top: 12vh;
+}
+h1 {
+    margin-left: 25px;
+}
+
+h2 {
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+div table {
+    border-top: 1px solid #333;
+    margin-left: 35%;
+    margin-top: 5vh;
+    border-spacing: 0;
+    width: 500px;
+}
+
+
+
+div table tr th {
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-right: 20px;
+    width: 150px;
+}
+
+div table tr td {
+    border-left: 1px solid #333;;
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    background-color: lightyellow;
+}
+
+main p {
+    margin-left: 1100px;
+}

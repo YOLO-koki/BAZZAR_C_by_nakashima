@@ -1,0 +1,35 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+
+{% block title %}予約ページ{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/user/user_make_reservation.css' %}">
+</head>
+{% endblock %}
+
+{% block contents %}
+    <main>
+        <h1>予約登録</h1>
+        <div id="test">
+        <form method="post">
+        <div class = "main">
+             <div class = "inquiry_area">
+                      {% csrf_token %}
+                      {% load bootstrap4 %}
+                      {% bootstrap_css %}
+                      {% bootstrap_javascript jquery='full' %}
+                      {{ form.media }}
+                      {{ form.as_p }}
+                     
+             </div>
+        </div>
+        <div id="fbtn">
+            <button type="submit" name = "submitbutton">　次へ　</button>
+        </div>
+    </form>
+</div>
+    </main>
+
+{% endblock %}n

@@ -1,5 +1,5 @@
 
-{% extends 'comp/base.html' %}
+{% extends '../layouts/comp/base.html' %}
 
 {% load static %}
 
@@ -14,7 +14,7 @@
     <div class="main">
         <div class="welcome">
             <div class="welcome_detail">
-                <h2 class="welcome_message">ようこそ、{{ request.user.userid }}さん。</h2>
+                <h2 class="welcome_message">ようこそ、{{ request.user.username }}さん。</h2>
                 <div class="about_me">
                     <p><a href="#">予約一覧</a></p>
                     <p><a href="{% url 'comp:customselect'  %}">店舗情報の登録</a></p>

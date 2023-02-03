@@ -1,0 +1,51 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+
+{% block title %}
+予約一覧
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\user\style_user_reservation_list.css' %}">
+{% endblock %}
+
+{% block contents %}
+<main>
+    <div class="main">
+        <div>
+            <h1>予約一覧</h1>
+        </div>
+        <div class="list_area">
+            <table class="list">
+                <tr>
+                    <th>日付</th>
+                    <th>店舗名</th>
+                </tr>
+                {% for re in reservation %}
+                <tr>
+                    <td>{{ re.reservation_day }}</td>
+                    {% if store_name %}
+                    {% for store in store_name %}
+                    
+                        {% if store.store_name %}
+                        <td>{{ store.store_name }}</td>
+                        {% else %}
+                        <td></td>
+                        {% endif %}
+                    
+                    {% endfor %}
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    <td>{{ store.store_name }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+</body>
+
+</html>

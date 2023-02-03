@@ -4,20 +4,19 @@
 {% block title %}事業者店舗情報確認ページ{% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css\comp\boStoreCustom.css' %}">
+<link rel="stylesheet" href="{% static 'css\comp\boStoreInfo.css' %}">
 {% endblock %}
 {% block contents %}
 <!-- メイン -->
 <main>
     <h1>店舗情報の確認</h1>
-    <p><a href="{% url 'comp:boAccountUpdate' request.user.userid %}">更新ページはこちら</a>
     {% for customuser in customuser_list %}
-    <div>
+    <div class = "compinfo">
         <h2>事業者情報</h1>
+        <p><a href="{% url 'comp:boAccountUpdate' request.user.userid %}">更新ページはこちら</a>
         <table>
             <tr><th>ユーザーID</th><td>{{ customuser.userid }}</td></tr>
             <tr><th>氏名</th><td>{{ customuser.username }}</td></tr>
-            <tr><th>パスワード</th><td>{{ customuser.password }}}</td></tr>
             <tr><th>メールアドレス</th><td>{{ customuser.mail }}</td></tr>
             <tr><th>電話番号</th><td>{{ customuser.phone }}</td></tr>
             <tr><th>年齢</th><td>{{ customuser.age }}</td></tr>
@@ -25,10 +24,10 @@
         </table>
     </div>
     {% endfor %}
-    <p><a href="{% url 'comp:boStoreUpdate' request.user.userid %}">更新ページはこちら</a>
     {% for store in store_list %}
-    <div>
+    <div class = "storeinfo">
         <h2>店舗情報</h2>
+        <p><a href="{% url 'comp:boStoreUpdate' request.user.userid %}">更新ページはこちら</a>
         <table>
             <tr><th>事業者ID</th><td>{{ store.bp_id }}</td></tr>
             <tr><th>店舗名</th><td>{{ store.store_name }}</td></tr>
@@ -40,20 +39,20 @@
             <tr><th>営業時間</th><td>{{ store.bussiness_hours_start }}～{{ store.bussiness_hours_end }}</td></tr>
             <tr><th>定休日</th><td>{{ store.holiday1 }},{{ store.holiday2 }},{{ store.holiday3 }}</td>
             <tr><th>紹介文</th><td>{{ store.about }}</td></tr>
-            <tr><th>写真</th><td><img src="/media/{{store.photo1}}" alt="dinner"></td></tr>
+            <tr><th>写真</th><td><img src="/media/{{store.photo1}}" alt="dinner" width="200px"></td></tr>
         </table>
     </div>
     {% endfor %}
         <h2>メニュー情報</h2>
-        {% for menu in menu_list %}
         <p><a href="{% url 'comp:boMenuUpdate' request.user.userid %}">更新ページはこちら</a>
-        <div>
+        {% for menu in menu_list %}
+        <div class = "menuinfo">
             <table>
                 <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
                 <tr><th>メニュー名</th><td>{{ menu.menu_name }}</td></tr>
                 <tr><th>サイズ</th><td>{{ menu.size }}</td></tr>
                 <tr><th>値段</th><td>{{ menu.price }}</td></tr>
-                <tr><th>写真</th><td>{{ menu.photo1 }}</td></tr>
+                <tr><th>写真</th><td><img src="/media/{{ menu.photo1 }}" alt="メニュー１" width="200px"></td></tr>
             </table>
         </div>
         {% endfor %}

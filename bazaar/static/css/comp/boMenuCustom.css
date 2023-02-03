@@ -1,0 +1,50 @@
+h1 {
+    padding-top: 10vh;
+} 
+.main {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+} 
+.form_area {
+    display: block;
+    width: 800px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: ghostwhite;
+}
+p {
+    display: block;
+    width: 700px;
+    height: 60px;
+    margin: 0 auto;
+    text-align: left;
+}
+label::after {
+    content: "\A" ;
+    white-space: pre ;
+}
+#id_store_name,#id_postal_code,#id_adress1,#id_adress2,#id_adress3 {
+    width: 695px;
+    height: 30px;
+    border-radius: 2px;
+}
+#id_seat,#id_seat_reservationable,#id_bussiness_hours,#id_phone_number,#id_bussiness_hours_start,#id_bussiness_hours_end,#id_about{
+    border-radius: 2px;
+}
+#id_about{
+    width: 500px;
+    height: 150px;
+}
+#fbtn{
+    margin-top: 150px;
+}
+/* #id_start_minute {
+    margin-left: 60px;
+}
+#bussiness_hours_start::before {
+    content: "\A" ;
+    white-space: pre ;
+} */
