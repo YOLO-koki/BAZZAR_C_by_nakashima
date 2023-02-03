@@ -73,36 +73,41 @@
 
                 <!-- スライドする写真 -->
                 <div class="slider">
-                        <img src="/media/{{stores.photo1}}" alt="sss" class = "image"/>
-                        <img src="/media/{{stores.photo2}}" alt="" class = "image"/>
+                        <img src="/media/{{stores.photo1}}" alt="sss" class = "image" width="470" , height="190"/>
+                        <img src="/media/{{stores.photo2}}" alt="" class = "image" width="470" , height="190"/>
+                        <img src="/media/{{stores.photo3}}" alt="" class = "image" width="470" , height="190"/>
+                        <img src="/media/{{stores.photo4}}" alt="" class = "image" width="470" , height="190"/>
                 </div>
 
                 <!-- 商品の説明 -->
                 <div class = "picks">
                     <h2>当店のおススメ</h2>
-                    <div class = "top">
-                        <div class = "top-left">
-                            <img src="/media/{{stores.photo1}}" width = "200px" height = "125px" alt="">
-                            <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
-                        </div>
+                    {% for menu in menus %}
+                        {% if stores.pk == menu.store_id_id %}
+                            <div class = "top">
+                                <div class = "top-left">
+                                    <img src="/media/{{menu.photo1}}" width = "200px" height = "125px" alt="">
+                                    <p>{{menu.about1 | truncatechars:75}}</p>
+                                </div>
 
-                        <div class = "top-right">
-                            <img src="/media/{{stores.photo2}}" width = "200px" height = "125px" alt="">
-                            <p>白米です。普通の白米です。研ぎました。hello I am fine thank you</p>
-                        </div>
-                    </div>
-                    <div class = "under">
-                        <div class = "under-left">
-                            <img src="/media/{{stores.photo3}}" width = "200px" height = "125px" alt="">
-                            <p>白米です。</p>
-                        </div>
-                        <div class = "under-right">
-                            <img src="/media/{{stores.photo4}}" width = "200px" height = "125px" alt="">
-                            <p>白米です。</p>
-                        </div>
+                                <div class = "top-right">
+                                    <img src="/media/{{menu.photo2}}" width = "200px" height = "125px" alt="">
+                                    <p>{{menu.about2 | truncatechars:75}}</p>
+                                </div>
+                            </div>
+                            <div class = "under">
+                                <div class = "under-left">
+                                    <img src="/media/{{menu.photo3}}" width = "200px" height = "125px" alt="">
+                                    <p>{{menu.about3 | truncatechars:75}}</p>
+                            </div>
+                            <div class = "under-right">
+                                <img src="/media/{{menu.photo4}}" width = "200px" height = "125px" alt="">
+                                <p>{{menu.about4 | truncatechars:75}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                     </div>
                 </div>
-            </div>
 
             <!-- 口コミ -->
             <div class = "kutikomi">

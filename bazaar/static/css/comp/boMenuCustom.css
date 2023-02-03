@@ -10,7 +10,7 @@ h1 {
 .form_area {
     display: block;
     width: 800px;
-    height: 700px;
+    height: 1800px;
     margin: 0 auto;
     padding: 20px;
     background-color: ghostwhite;
@@ -26,21 +26,50 @@ label::after {
     content: "\A" ;
     white-space: pre ;
 }
-#id_store_name,#id_postal_code,#id_adress1,#id_adress2,#id_adress3 {
-    width: 695px;
-    height: 30px;
-    border-radius: 2px;
+
+.menu1 {
+    height: 430px;
 }
-#id_seat,#id_seat_reservationable,#id_bussiness_hours,#id_phone_number,#id_bussiness_hours_start,#id_bussiness_hours_end,#id_about{
-    border-radius: 2px;
+
+.menu2 {
+    height: 430px;
 }
-#id_about{
-    width: 500px;
-    height: 150px;
+
+.menu3 {
+    height: 430px;
 }
-#fbtn{
+
+.menu4 {
+    height: 430px;
+}
+
+#about1{
+    resize: none;
+    width: 400px;
+    height: 90px;
+}
+
+#about2{
+    resize: none;
+    width: 400px;
+    height: 90px;
+}
+
+#about3{
+    resize: none;
+    width: 400px;
+    height: 90px;
+}
+
+#about4{
+    resize: none;
+    width: 400px;
+    height: 90px;
+}
+
+/* #fbtn{
     margin-top: 150px;
-}
+} */
 /* #id_start_minute {
     margin-left: 60px;
 }
