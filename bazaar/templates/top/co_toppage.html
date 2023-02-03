@@ -297,7 +297,7 @@
                     <img src="/media/{{store.photo1}}" alt="dinner" />
                     <span class="text">
                         <h3 class="title">{{store.store_name}}</h3>
-                        <div class="detail">{{store.about}}</div>
+                        <div class="detail">{{store.about | truncatechars:100}}</div>
                     </span>
                 </a>
                 {% empty %}
