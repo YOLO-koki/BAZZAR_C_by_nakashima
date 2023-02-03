@@ -312,8 +312,9 @@
         <script>
             const data = "{{ qs_json }}";
 
-            const rdata = JSON.parse(data.replace(/&quot;/g, '"'));
-            console.log(rdata);
+            const rdata = JSON.parse(data.replace(/&quot;/g, '"').replace(/\r/g, '"'))
+            // const rdata = data.replace(/&quot;/g, '"')
+            console.log(rdata)
             let checkedboxies = [];
             const checkboxies = document.getElementsByClassName("prefectures");
             const checkboxiesArr = Array.from(checkboxies);
