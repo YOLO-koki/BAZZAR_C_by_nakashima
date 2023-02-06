@@ -29,7 +29,7 @@
         <h2>店舗情報</h2>
         <p><a href="{% url 'comp:boStoreUpdate' request.user.userid %}">更新ページはこちら</a>
         <table>
-            <tr><th>事業者ID</th><td>{{ store.bp_id }}</td></tr>
+            <tr><th>店舗ID</th><td>{{ store.store_id }}</td></tr>
             <tr><th>店舗名</th><td>{{ store.store_name }}</td></tr>
             <tr><th>郵便番号</th><td>{{ store.postal_code }}</td></tr>
             <tr><th>店舗住所</th><td>{{ store.adress1 }}{{ store.adress2 }}{{ store.adress3 }}</td></tr>
@@ -39,7 +39,8 @@
             <tr><th>営業時間</th><td>{{ store.bussiness_hours_start }}～{{ store.bussiness_hours_end }}</td></tr>
             <tr><th>定休日</th><td>{{ store.holiday1 }},{{ store.holiday2 }},{{ store.holiday3 }}</td>
             <tr><th>紹介文</th><td>{{ store.about }}</td></tr>
-            <tr><th>写真</th><td><img src="/media/{{store.photo1}}" alt="dinner" width="200px"></td></tr>
+            <tr><th>写真</th><td><img src="/media/{{store.photo1}}" alt="dinner" width="150px"><img src="/media/{{store.photo2}}" alt="dinner" width="150px"><img src="/media/{{store.photo3}}" alt="dinner" width="150px"><img src="/media/{{store.photo4}}" alt="dinner" width="150px"></td></tr>
+            
         </table>
     </div>
     {% endfor %}
@@ -49,10 +50,31 @@
         <div class = "menuinfo">
             <table>
                 <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
-                <tr><th>メニュー名</th><td>{{ menu.menu_name }}</td></tr>
-                <tr><th>サイズ</th><td>{{ menu.size }}</td></tr>
-                <tr><th>値段</th><td>{{ menu.price }}</td></tr>
+                <tr><th>メニュー名</th><td>{{ menu.menu_name1 }}</td></tr>
+                <tr><th>サイズ</th><td>{{ menu.size1 }}</td></tr>
+                <tr><th>値段</th><td>{{ menu.price1 }}</td></tr>
                 <tr><th>写真</th><td><img src="/media/{{ menu.photo1 }}" alt="メニュー１" width="200px"></td></tr>
+            </table>
+            <table>
+                <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
+                <tr><th>メニュー名</th><td>{{ menu.menu_name2 }}</td></tr>
+                <tr><th>サイズ</th><td>{{ menu.size2 }}</td></tr>
+                <tr><th>値段</th><td>{{ menu.price2 }}</td></tr>
+                <tr><th>写真</th><td><img src="/media/{{ menu.photo2 }}" alt="メニュー２" width="200px"></td></tr>
+            </table>
+            <table>
+                <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
+                <tr><th>メニュー名</th><td>{{ menu.menu_name3 }}</td></tr>
+                <tr><th>サイズ</th><td>{{ menu.size3 }}</td></tr>
+                <tr><th>値段</th><td>{{ menu.price3 }}</td></tr>
+                <tr><th>写真</th><td><img src="/media/{{ menu.photo3 }}" alt="メニュー３" width="200px"></td></tr>
+            </table>
+            <table>
+                <tr><th>店舗ID</th><td>{{ menu.store_id }}</td></tr>
+                <tr><th>メニュー名</th><td>{{ menu.menu_name4 }}</td></tr>
+                <tr><th>サイズ</th><td>{{ menu.size4 }}</td></tr>
+                <tr><th>値段</th><td>{{ menu.price4 }}</td></tr>
+                <tr><th>写真</th><td><img src="/media/{{ menu.photo4 }}" alt="メニュー４" width="200px"></td></tr>
             </table>
         </div>
         {% endfor %}
