@@ -22,6 +22,7 @@ from .views import (
     CompAccountUpdateView,
     CompMenuUpdateView,
     CompReservationListAllView,
+    CustomPerfectView,
 )
 # from .views.bo_check_infoviews import CheckRegiInfoView
 # from .views.bo_regist_views import CreateAccountView
@@ -61,7 +62,8 @@ urlpatterns = [
     path('boAccountUpdate/<str:userid>/',CompAccountUpdateView.as_view(),name='boAccountUpdate'),
     path('boMenuUpdate/<str:userid>/',CompMenuUpdateView.as_view(),name='boMenuUpdate'),
     path('menucustom/',CompMenuCustomView.as_view(),name='menucustom'),
-    path('customselect',CustomSelectView.as_view(),name='customselect'),
+    path('customselect/<str:userid>',CustomSelectView.as_view(),name='customselect'),
     path('boRegist/', CreateAccountView.as_view(), name='boRegist'),#新規登録
+    path('customperfect/',CustomPerfectView.as_view(), name = "customperfect"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
