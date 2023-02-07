@@ -11,12 +11,12 @@
 <main>
     <h1>事業者登録ページ</h1>
     <div>
-        {% if store %}
+        {% if not registration_store %}
             <a href="{% url 'comp:boStoreCustom' %}">店舗情報の登録</a>
         {% endif %}
         <a href="{% url 'comp:menucustom' %}">メニュー情報の登録</a>
     </div>
-    {% if store %}
+    {% if not registration_store %}
         <div class = "check">
             <p>初めに店舗情報の登録をお願いします。</p>
         </div>

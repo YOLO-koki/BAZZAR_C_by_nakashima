@@ -1,11 +1,17 @@
 from django.views.generic import TemplateView
-from comp.models import Store
+from comp.models import Store,Menu
+from accounts.models import CustomUser
 
 class CustomSelectView(TemplateView):
     template_name="comp/bo_custom_select.html"
-    model = Store
+    model = Store,Menu,CustomUser
 
-    def get_object(self):
-        id=Store.objects.get(bp_id_id=self.request.user)
-        store = Store.objects.filter(store_id=id).exists()
-        return store
+
+    def get_context_data(self,**kwargs):
+        context = super(CustomSelectView,self).get_context_data(**kwargs)
+        customuserid = CustomUser.objects.get(userid = self.request.user.userid)
+        registration_store = Store.objects.filter(bp_id_id = customuserid.userid)
+
+        context['registration_store'] = registration_store
+
+        return context
