@@ -29,6 +29,6 @@ class TopIndexView(ListView):
         qs_json = json.dumps(list(Store.objects.values()), ensure_ascii=False)
         qs_json = re.sub(r"\\n", "", qs_json)
         qs_json = re.sub(r"\\r", "", qs_json)
-        print(qs_json)
+        # print(qs_json)
         context['qs_json'] = qs_json
         return context
