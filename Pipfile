@@ -9,6 +9,7 @@ dev =  "python manage.py runserver"
 [packages]
 django = "*"
 pillow = "*"
+pdfkit = "*"
 
 [dev-packages]
 autopep8 = "*"

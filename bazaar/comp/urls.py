@@ -1,4 +1,5 @@
 from django.urls import path
+from .views.comp_reservation_list_view import change_to_pdf
 from .views import (
     CompLoginView,
     CompLogoutView,
@@ -53,6 +54,7 @@ urlpatterns = [
     #path('mypage/<str:pk>/', CompMypageView.as_view(), name='mypage'),
 
     path('reservation_list/', CompReservationListView.as_view(), name='reservation_list'),  # 予約一覧(２日後)
+    path('change_to_pdf/', change_to_pdf, name='change_to_pdf'),  # 予約一覧(２日後)
     path('reservation_list_all/',CompReservationListAllView.as_view(),name="reservation_list_all"),#予約一覧ページ(全部)
     path('reservation_detail/', CompReservationDetailView.as_view(), name='reservation_detail'),  # 予約詳細
      path('boStoreCustom/',CompMyStoreCustomView.as_view(),name='boStoreCustom'),
