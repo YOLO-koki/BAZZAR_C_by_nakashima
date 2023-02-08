@@ -35,6 +35,7 @@
 
                     <p><a href="{% url 'comp:reservation_list'  %}">予約一覧</a></p>
 
+
                         {% if not registration_store %}
                             {% if not registration_menu %}
 
@@ -48,8 +49,7 @@
                             <p><a href="{% url 'comp:boStoreInfo' request.user.userid %}">登録情報の確認</a></p>
 
                         {% endif %}
-
-                    <p><a href="#">削除要請</a></p>
+                    <p><a href="{% url 'comp:delete' %}">削除要請</a></p>
 
                     {% else %}
 

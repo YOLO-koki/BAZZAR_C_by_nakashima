@@ -9,14 +9,10 @@ class MypageView(LoginRequiredMixin, TemplateView):
     template_name = "accounts/mypage.html"
     model = Store,Menu,CustomUser
 
-    # def get(self, request, **kwargs):
-    #     ctx = {
-    #         'usertype': self.request.user.usertype
-    #     }
-    #     return self.render_to_response(ctx)
 
     def get_context_data(self, **kwargs):
         context = super(MypageView,self).get_context_data(**kwargs)
+
 
         if CustomUser.objects.filter(userid = self.request.user.userid):
             customuserid = CustomUser.objects.get(userid = self.request.user.userid)
@@ -29,6 +25,5 @@ class MypageView(LoginRequiredMixin, TemplateView):
         else:
             context['usertype'] = self.request.user.usertype
 
-        print('------------------------')
 
         return context

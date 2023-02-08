@@ -29,7 +29,7 @@
         <h2>店舗情報</h2>
         <p><a href="{% url 'comp:boStoreUpdate' request.user.userid %}">更新ページはこちら</a>
         <table>
-            <tr><th>事業者ID</th><td>{{ store.bp_id }}</td></tr>
+            <tr><th>店舗ID</th><td>{{ store.store_id }}</td></tr>
             <tr><th>店舗名</th><td>{{ store.store_name }}</td></tr>
             <tr><th>郵便番号</th><td>{{ store.postal_code }}</td></tr>
             <tr><th>店舗住所</th><td>{{ store.adress1 }}{{ store.adress2 }}{{ store.adress3 }}</td></tr>
