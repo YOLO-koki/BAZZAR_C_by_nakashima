@@ -1,0 +1,20 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}削除要請完了ページ{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/comp/bocustomperfect.css' %}">
+</head>
+{% endblock %}
+
+{% block contents %}
+    <main>
+        <div class = "main">
+            <h1>削除要請が完了しました。</h1>
+            <p><a href="{% url 'top:index'%}">トップページに戻る。</a></p>
+        </div>
+    </main>
+
+{% endblock %}
