@@ -1,0 +1,23 @@
+{% extends '../layouts/comp/base.html' %}
+{% load static %}
+
+{% block title %}削除要請ページ{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css\comp\bo_delete.css' %}">
+{% endblock %}
+{% block contents %}
+<main>
+    <div class="main">
+        <h1>削除要請ページ</h1>
+        <div>
+            <form method="post" enctype="multipart/form-data" action="{% url 'comp:deleteperfect' %}">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="要請">
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

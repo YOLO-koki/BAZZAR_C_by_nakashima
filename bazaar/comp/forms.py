@@ -2,6 +2,7 @@ from django import forms
 from django.db import models
 import sys
 import pathlib
+from django.core.mail import EmailMessage
 currentdir = pathlib.Path(__file__).resolve().parent
 sys.path.append(str(currentdir)+"..comp/")
 # from comp.models.business_person import Business_person
@@ -87,8 +88,19 @@ class MenuForm(forms.ModelForm):
         model= Menu
         exclude = ["store_id"]
 
+class DeleteForm(forms.Form):
+
+    delete_store_id = forms.CharField(label = "店舗ID" , required = True)
+
+def send_email(abc):
+    delete_store_id = abc["delete_store_id"]
+
+    message = "削除要請について\nstore_id:{0}".format(delete_store_id)
+    from_email = 'admin@example.com'
+    to_list = [
+        'test@example.com' #宛先
+    ]
 
 
-       
-
-        
+    message = EmailMessage(body = message, from_email = from_email, to = to_list)
+    message.send()
