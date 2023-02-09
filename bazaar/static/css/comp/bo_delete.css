@@ -1,3 +1,19 @@
 .main {
     padding-top: 10vh;
 }
+
+.main div form {
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+.main div form input[type=submit]{
+    width: 70px;
+    height: 30px;
+    background-color: #0cf;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    margin-top: 15px;
+}
