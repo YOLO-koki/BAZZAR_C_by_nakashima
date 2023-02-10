@@ -13,12 +13,15 @@
     <main>
         <h1>予約登録</h1>
         <div id="test">
-            <h3>予約日時　{{ date }}:{{ hour }}時</h3>
-            <h3>店舗：{{ store.store_name }}</h3>
-        <form method="post">
+        <form method="post" action="{% url 'user:userCompReservation' store.store_id hour date %}">
         <div class = "main">
              <div class = "inquiry_area">
+                <h3>店舗：{{ store.store_name }}</h3>
                       {% csrf_token %}
+                      {{ form.reservation_day.label_tag }}
+                      <input type="text" name="reservation_day" id="id_reservation_day" value="{{date}}" readonly>
+                      {{ form.reservation_hour.label_tag }}
+                      <input type="number" name="reservation_hour" id="id_reservation_hour" value="{{reservation_hour}}" readonly>
                       {{ form.reservation_name.label_tag }}
                       {{ form.reservation_name }}
                       {{ form.reservation_name.errors }}
@@ -29,7 +32,8 @@
                       {{ form.reservation_phone }}
                       {{ form.reservation_phone.errors }}
                       {{ form.nop.label_tag }}
-                      <input type="number" name="nop" id="id_nop" max="{{empty}}">
+                      <input type="number" name="nop" id="id_nop" value="{{nop}}">
+                      <input type="hidden" name="store_id" id="id_store_id" value="{{store.store_id}}">
              </div>
         </div>
             <button type="submit" name = "submitbutton">　次へ　</button>

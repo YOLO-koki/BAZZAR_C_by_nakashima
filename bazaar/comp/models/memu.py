@@ -33,3 +33,7 @@ class Menu(models.Model):
    price4=models.IntegerField(verbose_name='値段')
    photo4=models.ImageField(upload_to="media",verbose_name='写真',blank=True,null=True)
    about4=models.TextField(verbose_name='紹介文',max_length=300)
+
+   def __str__(self):
+      return self.menu_name
+
