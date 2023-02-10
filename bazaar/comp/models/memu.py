@@ -18,3 +18,6 @@ class Menu(models.Model):
    photo3=models.ImageField(upload_to="media",verbose_name='写真3',blank=True,null=True)
    photo4=models.ImageField(upload_to="media",verbose_name='写真4',blank=True,null=True)
    photo5=models.ImageField(upload_to="media",verbose_name='写真5',blank=True,null=True)
+
+   def __str__(self):
+      return self.menu_name

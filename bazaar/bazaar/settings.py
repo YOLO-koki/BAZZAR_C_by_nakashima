@@ -76,6 +76,9 @@ TEMPLATES = [
             'builtins':[ 
                 'bootstrap4.templatetags.bootstrap4',
             ],
+            'libraries': {
+                'lookup': 'user.lookup' # 追記
+            }
         },
     },
 ]
@@ -149,6 +152,47 @@ LOGOUT_REDIRECT_URL = "accounts:login"
 BOOTSTRAP4 = {
     'include_jquery': True,
 }
+
+import datetime
+
+PUBLIC_HOLIDAYS = [
+    # 2020
+    datetime.date(year=2023, month=1, day=1),
+    datetime.date(year=2023, month=1, day=13),
+    datetime.date(year=2023, month=2, day=11),
+    datetime.date(year=2023, month=2, day=23),
+    datetime.date(year=2023, month=2, day=24),
+    datetime.date(year=2023, month=3, day=20),
+    datetime.date(year=2023, month=4, day=29),
+    datetime.date(year=2023, month=5, day=3),
+    datetime.date(year=2023, month=5, day=4),
+    datetime.date(year=2023, month=5, day=5),
+    datetime.date(year=2023, month=7, day=20),
+    datetime.date(year=2023, month=8, day=11),
+    datetime.date(year=2023, month=9, day=21),
+    datetime.date(year=2023, month=9, day=22),
+    datetime.date(year=2023, month=10, day=12),
+    datetime.date(year=2023, month=11, day=3),
+    datetime.date(year=2023, month=11, day=23),
+
+    # 2021
+    datetime.date(year=2024, month=1, day=1),
+    datetime.date(year=2024, month=1, day=11),
+    datetime.date(year=2024, month=2, day=11),
+    datetime.date(year=2024, month=2, day=23),
+    datetime.date(year=2024, month=3, day=20),
+    datetime.date(year=2024, month=4, day=29),
+    datetime.date(year=2024, month=5, day=3),
+    datetime.date(year=2024, month=5, day=4),
+    datetime.date(year=2024, month=5, day=5),
+    datetime.date(year=2024, month=7, day=19),
+    datetime.date(year=2024, month=8, day=11),
+    datetime.date(year=2024, month=9, day=20),
+    datetime.date(year=2024, month=9, day=23),
+    datetime.date(year=2024, month=10, day=11),
+    datetime.date(year=2024, month=11, day=3),
+    datetime.date(year=2024, month=11, day=23),
+]
 
 
 

@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="{% static 'css/user/usercompreserve.css' %}">{% endblock %}
 {% block contents %}
 <main>
-   <h1>予約内容の確認</h1>
-   <h3>以下の内容で登録します。</h3>
+   <h1>予約完了</h1>
+   <h3>以下の内容で予約が完了しました。　<a href="{% url 'top:index' %}">トップページに戻る</a></h3>
 <table class="Table">
     <thead class="Table-Head">
         <tr class="Table-Head-Row">
@@ -17,32 +17,29 @@
     <tbody class="Table-Body">
     <tr class="Table-Body-Row">
         <th class="Table-Head-Row-Cell">予約者名:</th>
-        <td class="Table-Body-Row-Cell">{{ store.reservation_name }}</td>
+        <td class="Table-Body-Row-Cell">{{form.reservation_name}}</td>
     </tr>
     <tr class="Table-Body-Row">
         <th class="Table-Head-Row-Cell">メールアドレス:</th>
-        <td class="Table-Body-Row-Cell">{{ store.reservation_mail }}</td>
+        <td class="Table-Body-Row-Cell">{{form.reservation_mail}}</td>
     </tr>
     <tr class="Table-Body-Row">
         <th class="Table-Head-Row-Cell">電話番号:</th>
-        <td class="Table-Body-Row-Cell">{{ store.reservation_phone }}</td>
+        <td class="Table-Body-Row-Cell">{{form.reservation_phone}}</td>
     </tr>
     <tr class="Table-Body-Row">
         <th class="Table-Head-Row-Cell">予約日:</th>
-        <td class="Table-Body-Row-Cell">{{ store.reservation_day }}</td>
+        <td class="Table-Body-Row-Cell">{{form.reservation_day}}</td>
     </tr>
     <tr class="Table-Body-Row">
         <th class="Table-Head-Row-Cell">予約日時:</th>
-        <td class="Table-Body-Row-Cell">{{ store.reservation_hour }}:{{ store.reservation_minute }}</td>
+        <td class="Table-Body-Row-Cell">{{form.reservation_hour}}</td>
     </tr>
     <tr class="Table-Body-Row">
         <th class="Table-Head-Row-Cell">人数:</th>
-        <td class="Table-Body-Row-Cell">{{ store.nop }}</td>
+        <td class="Table-Body-Row-Cell">{{form.nop}}</td>
     </tr>
     </tbody>
 </table>
-<div id="fbtn">
-    <a class="button" href="{% url 'user:userMailSend' %}">登録</a>
-</div>
  </main>
 {% endblock %}

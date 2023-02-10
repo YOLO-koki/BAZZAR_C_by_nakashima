@@ -1,6 +1,6 @@
 {% extends '../layouts/user/base.html' %}
 {% load static %}
-
+{% load lookup %}
 {% block title %}予約ページ{% endblock %}
 
 {% block head %}
@@ -11,23 +11,25 @@
 
 {% block contents %}
     <main>
-        <h1>予約登録</h1>
+        <h1>予約登録　{{ request.user.username }}様</h1>
         <div id="test">
+            <h3>予約日時　{{ date }}:{{ hour }}時</h3>
+            <h3>店舗：{{ store.store_name }}</h3>
         <form method="post">
         <div class = "main">
              <div class = "inquiry_area">
                       {% csrf_token %}
-                      {% load bootstrap4 %}
-                      {% bootstrap_css %}
-                      {% bootstrap_javascript jquery='full' %}
-                      {{ form.media }}
-                      {{ form.as_p }}
-                     
+                      {{ form.reservation_name.label_tag }}
+                      <input type="text" name="reservation_name" id="id_reservation_name" value="{{ user.username }}">
+                      {{ form.reservation_mail.label_tag }}
+                      <input type="email" name="reservation_mail" id="id_reservation_mail" value="{{ user.mail }}">
+                      {{ form.reservation_phone.label_tag }}
+                      <input type="text" name="reservation_phone" id="id_reservation_phone" value="{{ user.phone }}">
+                      {{ form.nop.label_tag }}
+                      <input type="number" name="nop" id="id_nop" max="{{empty}}">
              </div>
         </div>
-        <div id="fbtn">
             <button type="submit" name = "submitbutton">　次へ　</button>
-        </div>
     </form>
 </div>
     </main>

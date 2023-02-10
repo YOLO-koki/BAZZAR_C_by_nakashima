@@ -1,0 +1,103 @@
+{% extends '../layouts/user/base.html' %}
+{% load static %}
+{% load lookup %}
+{% block title %}予約ページ{% endblock %}
+
+{% block head %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/user/user_make_reservation.css' %}">
+</head>
+{% endblock %}
+{% block contents %}
+{% if request.user.is_authenticated %} 
+<h1>予約日程の選択</h1>
+<h2>×は満席、○は空席あり</h2>
+<p>()内は予約可能席数</p>
+<p>{{ start_day }} - {{ end_day }}</p>
+<table class="table table-bordered text-center" style="table-layout: fixed;width: 100%" border="1">
+    <tr>
+        <td><a href="{% url 'user:userCalender2' request.user.userid store.store_id before.year before.month before.day %}">前週</a></td>
+        {% for day in days %}
+            {% if day in public_holidays %}
+                <th style="background-color: yellow">{{ day | date:"d(D)" }}</th>
+            {% elif day.weekday == 5 %}
+                <th style="color: blue;">{{ day | date:"d(D)" }}</th>
+            {% elif day.weekday == 6 %}
+                <th style="color: red;">{{ day | date:"d(D)" }}</th>
+            {% else %}
+                <th>{{ day | date:"d(D)" }}</th>
+            {% endif %}
+        {% endfor %}
+        <td><a href="{% url 'user:userCalender2' request.user.userid store.store_id next.year next.month next.day %}">次週</a></td>
+    </tr>
+
+    {% for hour, schedules in calendar.items %}
+        <tr style="font-size:12px">
+            <td>
+                {{ hour }}:00
+            </td>
+            {% for dt, book in schedules.items %}
+                <td>
+                    {% if dt <= today %}
+                    -
+                    {% elif book %}
+                        <a href="{% url 'user:userMakeReservationLogin' request.user.userid store.store_id  hour dt  %}?param={{ empty|lookup:hour|lookup:dt }}">○({{ empty|lookup:hour|lookup:dt }})</a>
+                    {% else %}
+                        ×
+                    {% endif %}
+                </td>
+
+            {% endfor %}
+            <td>
+                {{ hour }}:00
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>予約日程の選択</h1>
+<h2>×は満席、○は空席あり</h2>
+<p>()内は予約可能席数</p>
+<p>{{ start_day }} - {{ end_day }}</p>
+<table class="table table-bordered text-center" style="table-layout: fixed;width: 100%" border="1">
+    <tr>
+        <td><a href="{% url 'user:userCalender2' store.store_id before.year before.month before.day %}">前週</a></td>
+        {% for day in days %}
+            {% if day in public_holidays %}
+                <th style="background-color: yellow">{{ day | date:"d(D)" }}</th>
+            {% elif day.weekday == 5 %}
+                <th style="color: blue;">{{ day | date:"d(D)" }}</th>
+            {% elif day.weekday == 6 %}
+                <th style="color: red;">{{ day | date:"d(D)" }}</th>
+            {% else %}
+                <th>{{ day | date:"d(D)" }}</th>
+            {% endif %}
+        {% endfor %}
+        <td><a href="{% url 'user:userCalender2' store.store_id next.year next.month next.day %}">次週</a></td>
+    </tr>
+
+    {% for hour, schedules in calendar.items %}
+        <tr style="font-size:12px">
+            <td>
+                {{ hour }}:00
+            </td>
+            {% for dt, book in schedules.items %}
+                <td>
+                    {% if dt <= today %}
+                    -
+                    {% elif book %}
+                        <a href="{% url 'user:userMakeReservation' store.store_id  hour dt  %}?param={{ empty|lookup:hour|lookup:dt }}">○({{ empty|lookup:hour|lookup:dt }})</a>
+                    {% else %}
+                        ×
+                    {% endif %}
+                </td>
+
+            {% endfor %}
+            <td>
+                {{ hour }}:00
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

@@ -16,10 +16,10 @@ from .views import UserAccountUpdateView
 from .views import UserMakeReservationView
 from .views import UserSelectReservationView
 from .views import UserMakeReservationLoginView
-from .views import UserCompleteReserveView
+from .views import UserCompleteReserveView,UserCheckReserveView
 from django.conf import settings
 from django.conf.urls.static import static
-
+from .views import CalenderView
 
 app_name = 'user'
 urlpatterns = [
@@ -41,9 +41,14 @@ urlpatterns = [
     # path('userComplete/', UserCompleteView.as_view(), name='userComplete'),
     # path('userLogin/',UserLoginView.as_view(),name='userLogin'),
     path('userMailSend/',UserMailSendView.as_view(),name='userMailSend'),
-    path('userMakeReservation/<int:pk>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
+    path('userMakeReservation/<str:pk>/<int:hour>/<str:dt>/',UserMakeReservationView.as_view(),name='userMakeReservation'),
+    path('userMakeReservationLogin/<str:pk2>//<int:pk>/<int:hour>/<str:dt>/',UserMakeReservationLoginView.as_view(),name='userMakeReservationLogin'),
     path('loginUserMakeReservation/<int:pk>/',UserMakeReservationLoginView.as_view(),name='loginUserMakeReservation'),
     path('userSelectReservation/<int:pk>/',UserSelectReservationView.as_view(),name='userSelectReservation'),
-    path('userCompReservation/<int:pk>/',UserCompleteReserveView.as_view(),name='userCompReservation')
-
+    path('userCompReservation/<int:pk>/<int:hour>/<str:dt>/',UserCompleteReserveView.as_view(),name='userCompReservation'),
+    path('userCalender/<int:pk>/<int:year>/<int:month>/<int:day>/',CalenderView.as_view(),name='userCalender2'),
+    path('userCalender/<str:pk2>/<int:pk>/<int:year>/<int:month>/<int:day>/',CalenderView.as_view(),name='userCalender2'),
+    path('userCalender/<int:pk>/',CalenderView.as_view(),name='userCalender'),
+    path('userCalender/<str:pk2>/<int:pk>/',CalenderView.as_view(),name='userCalender'),
+    path('userCheckReservation/<int:pk>/<int:hour>/<str:dt>/',UserCheckReserveView.as_view(),name='userCheckReservation'),
     ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
