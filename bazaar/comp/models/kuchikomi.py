@@ -14,3 +14,7 @@ class Kuchikomi(models.Model):
    user_id=models.ForeignKey(CustomUser,to_field='userid',verbose_name='ユーザーID',max_length=16,on_delete=models.PROTECT)
    score=models.IntegerField(verbose_name='評価点数',validators=[MinValueValidator(1), MaxValueValidator(5)])
    impression=models.TextField(verbose_name='評価内容',max_length=2000)
+
+   def __str__(self):
+      st=str(self.store_id)+str(self.user_id)
+      return st

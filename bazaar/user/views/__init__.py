@@ -16,4 +16,5 @@ from .user_make_reservation_view import UserMakeReservationView
 from .user_select_reservation_view import UserSelectReservationView
 from .user_reservation_view import UserReservationView
 from .user_make_reservation_login_view import UserMakeReservationLoginView
-from .user_complete_reserve_views import UserCompleteReserveView
+from .user_complete_reserve_views import UserCompleteReserveView,UserCheckReserveView
+from .user_calender_view import CalenderView
