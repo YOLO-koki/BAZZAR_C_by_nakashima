@@ -1,0 +1,38 @@
+main {
+    padding-top: 12vh;
+}
+h1 {
+    margin-left: 25px;
+}
+
+.main form{
+    text-align: center;
+    width: 700px;
+    height: 1500px;
+    margin: 0 auto;
+    background-color: ghostwhite;
+}
+
+.main form p{
+    margin-top: 20px;
+}
+
+.main form input[type="submit"] {
+    margin-top: 20px;
+}
+
+#id_about1{
+    resize: none;
+}
+
+#id_about2{
+    resize: none;
+}
+
+#id_about3{
+    resize: none;
+}
+
+#id_about4{
+    resize: none;
+}

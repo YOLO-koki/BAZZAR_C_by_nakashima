@@ -1,0 +1,114 @@
+main {
+    padding-top: 12vh;
+}
+h1 {
+    margin-left: 25px;
+}
+
+h2 {
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+.compinfo table {
+    border-top: 1px solid #333;
+    margin-left: 30%;
+    margin-top: 5vh;
+    border-spacing: 0;
+    width: 600px;
+}
+
+.compinfo table tr th {
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-right: 20px;
+    width: 150px;
+}
+
+.compinfo table tr td {
+    border-left: 1px solid #333;;
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    background-color: lightyellow;
+}
+
+main p a {
+    background-color: #0cf;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    margin-left: 1100px;
+}
+
+/* ---------------------------------------------- */
+
+.storeinfo table {
+    border-top: 1px solid #333;
+    margin-left: 30%;
+    margin-top: 5vh;
+    border-spacing: 0;
+    width: 600px;
+}
+
+.storeinfo table tr th {
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-right: 20px;
+    width: 200px;
+}
+
+.storeinfo table tr td {
+    border-left: 1px solid #333;;
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    background-color: lightyellow;
+}
+
+.storeinfo table tr td {
+    border-left: 1px solid #333;;
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    background-color: lightyellow;
+}
+
+/* --------------------------------------- */
+
+.menuinfo table {
+    border-top: 1px solid #333;
+    margin-left: 30%;
+    margin-top: 5vh;
+    border-spacing: 0;
+    width: 600px;
+}
+
+.menuinfo table tr th {
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-right: 20px;
+    width: 150px;
+}
+
+.menuinfo table tr td {
+    border-left: 1px solid #333;;
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    background-color: lightyellow;
+}
+
+.menuinfo table tr td {
+    border-left: 1px solid #333;;
+    border-bottom: 1px solid #333;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    background-color: lightyellow;
+}
+
+.menuinfo table {
+    padding-bottom: 20px;
+}

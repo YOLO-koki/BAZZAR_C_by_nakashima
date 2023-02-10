@@ -6,7 +6,7 @@ h1 {
     margin-left: 25px;
 }
 
-main form {
+div form {
     margin-top: 50px;
     text-align: center;
     margin-left: 35%;
@@ -15,16 +15,16 @@ main form {
     border: 1px solid black;
 }
 
-main form .form-group{
+div form p {
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
-main form button {
-    margin-bottom: 20px;
+div form input[type="submit"] {
     width: 80px;
     background-color: #0cf;
     cursor: pointer;
     color: black;
     border-radius: 5px;
+    margin-bottom: 10px;
 }

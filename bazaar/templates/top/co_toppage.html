@@ -1,422 +1,447 @@
 {% extends '../layouts/top/base.html' %} {% load static %}
 
 <!DOCTYPE html>
+{% autoescape off %}
 <html lang="ja">
-
-{% block title %}トップページ{% endblock %}
-
-{% block head %}
+{% block title %}トップページ{% endblock %} {% block head %}
 
 <head>
     <link rel="stylesheet" href="{% static 'css/top/style_co_toppage.css' %}" />
 </head>
+{% endblock %}
 
 <body>
-    <header>
-        <!-- ナビゲーション -->
-        <!-- <div class="navbar">
-            <ul class="bazaar">
-                <li>
-                    <a href="#">BAZAAR</a>
-                </li>
-            </ul>
-            <ul class="navigationbar">
-                <li><a href="#">sample</a></li>
-                <li><a href="#">sample</a></li>
-                <li><a href="#">sample</a></li>
-                <li><a href="#">sample</a></li>
-                <li><a href="#">sample</a></li>
-            </ul>
-        </div> -->
+    {% block contents %} {% block header %}
 
-        <!-- <div class="search">
-            <form method="get" action="{% url 'top:index' %}">
-                <div class="searchbox">
-                    <ion-icon type = "submit" name="search-outline" class="search_icon"></ion-icon>
-                    <input type="text" name="search" id="" placeholder="フリーワード検索">
-                </div>
+    <div class="search">
+        <div class="searchbox">
+            <form action="{% url 'top:index' %}" method="get">
+                <ion-icon name="search-outline" class="search_icon"></ion-icon>
+                <input type="search" name="search" id="search_here" placeholder="フリーワード検索" />
             </form>
-        </div> -->
-    </header>
-    {% endblock %}
-
-    <body>
-    {% block contents %}
-        {% block header %}
-
-        <div class="search">
-            <div class="searchbox">
-                <form action="{% url 'top:index' %}" method="get">
-                    <ion-icon name="search-outline" class="search_icon"></ion-icon>
-                    <input
-                        type="search"
-                        name="search"
-                        id="search_here"
-                        placeholder="フリーワード検索"
-                        value="{{request.GET.query}}"
-                    />
-                </form>
-            </div>
         </div>
-        {% endblock %}
+    </div>
 
-        
-        
-        <main>
-            <div class="main">
-                <!-- 都道府県（チェックボックス） -->
-                <div class="checkboxies">
-                    <div class="search_checkboxies">
-                        <div class="area">
-                            <div class="abstract_area">北海道・東北</div>
-                            <div class="prefecture">
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label>北海道<input id="" type="checkbox" name="" /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>青森<input id="" type="checkbox" name="" /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>秋田<input id="" type="checkbox" name="" /></label>
-                                    </div>
+    {% endblock %}
+    <main>
+        <div class="main">
+            <!-- 都道府県（チェックボックス） -->
+            <div class="checkboxies">
+                <div class="search_checkboxies">
+                    <div class="area">
+                        <div class="abstract_area">北海道・東北</div>
+                        <div class="prefecture">
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>北海道<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="北海道" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label>山形<input id="" type="checkbox" name="" /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>宮城<input id="" type="checkbox" name="" /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>福島<input id="" type="checkbox" name="" /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>青森<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="青森" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>秋田<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="秋田" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>山形<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="山形" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>宮城<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="宮城" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>福島<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="福島" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>岩手<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="岩手" /></label>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="area">
-                            <div class="abstract_area">中部</div>
-                            <div class="prefecture">
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >愛知<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >岐阜<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >静岡<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                    <div class="area">
+                        <div class="abstract_area">中部</div>
+                        <div class="prefecture">
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>愛知<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="愛知" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >三重<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >新潟<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >山梨<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>岐阜<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="岐阜" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >長野<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >石川<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >富山<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>静岡<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="静岡" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >福井<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>三重<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="三重" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>新潟<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="新潟" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>山梨<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="山梨" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>長野<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="長野" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>石川<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="石川" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>富山<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="富山" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>福井<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="福井" /></label>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="area">
-                            <div class="abstract_area">関東</div>
-                            <div class="prefecture">
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >東京<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >神奈川<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >埼玉<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                    <div class="area">
+                        <div class="abstract_area">関東</div>
+                        <div class="prefecture">
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>東京<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="東京" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >千葉<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >栃木<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >茨城<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>神奈川<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="神奈川" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >群馬<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>埼玉<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="埼玉" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>千葉<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="千葉" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>栃木<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="栃木" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>茨城<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="茨城" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>群馬<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="群馬" /></label>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="area">
-                            <div class="abstract_area">関西</div>
-                            <div class="prefecture">
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >大阪<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >兵庫<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >京都<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                    <div class="area">
+                        <div class="abstract_area">関西</div>
+                        <div class="prefecture">
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>大阪<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="大阪" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >滋賀<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >奈良<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >和歌山<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>兵庫<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="兵庫" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>京都<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="京都" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>滋賀<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="滋賀" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>奈良<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="奈良" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>和歌山<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="和歌山" /></label>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="area">
-                            <div class="abstract_area">中国・四国</div>
-                            <div class="prefecture">
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >岡山<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >広島<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >鳥取<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                    <div class="area">
+                        <div class="abstract_area">中国・四国</div>
+                        <div class="prefecture">
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>岡山<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="岡山" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >島根<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >山口<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >香川<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>広島<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="広島" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >徳島<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >愛媛<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >高知<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>鳥取<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="鳥取" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>島根<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="島根" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>山口<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="山口" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>香川<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="香川" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>徳島<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="徳島" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>愛媛<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="愛媛" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>高知<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="高知" /></label>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="area">
-                            <div class="abstract_area">九州・沖縄</div>
-                            <div class="prefecture">
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >福岡<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >佐賀<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >長崎<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                    <div class="area">
+                        <div class="abstract_area">九州・沖縄</div>
+                        <div class="prefecture">
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>福岡<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="福岡" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >熊本<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >大分<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >宮崎<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>佐賀<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="佐賀" /></label>
                                 </div>
-                                <div class="three_checkboxies">
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >鹿児島<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label for=""
-                                            >沖縄<input id="" type="checkbox" name=""
-                                        /></label>
-                                    </div>
+                                <div class="checkbox">
+                                    <label>長崎<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="長崎" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>熊本<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="熊本" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>大分<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="大分" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>宮崎<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="宮崎" /></label>
+                                </div>
+                            </div>
+                            <div class="three_checkboxies">
+                                <div class="checkbox">
+                                    <label>鹿児島<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="鹿児島" /></label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>沖縄<input id="" type="checkbox" class="prefectures"
+                                            onclick="checkedbox(this.checked, this.value)" value="沖縄" /></label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- 店舗一覧 -->
-                <div class="contents" id="box">
-                {% if not queryset %}
-                    {% for store in stores %}
-                    <a class="content" href="{% url 'top:detail' store.pk %}">
-                        <img src="/media/{{store.photo1}}" alt="dinner" />
-                        <span class="text">
-                            <h3 class="title">{{store.store_name}}</h3>
-                            <div class="detail">{{store.about}}</div>
-                        </span>
-                    </a>
-                    {% empty %}
-                    <p>aaa</p>
-                    {% endfor %}
-                {% endif %}
-                </div>
             </div>
-    {% endblock %}
 
-            <!-- 店舗の検索機能 -->
-            {% block scripts %}
-            <script>
-                const data = "{{ qs_json }}";
-                console.log(data);
+            <!-- 店舗一覧 -->
+            <div class="contents" id="box">
+                {% if not queryset %} {% for store in stores %}
+                <a class="content" href="{% url 'top:detail' store.pk %}">
+                    <img src="/media/{{store.photo1}}" alt="dinner" />
+                    <span class="text">
+                        <h3 class="title">{{store.store_name}}</h3>
+                        <div class="detail">{{store.about | truncatechars:100}}</div>
+                    </span>
+                </a>
+                {% empty %}
+                <p>nothing</p>
+                {% endfor %} {% endif %}
+            </div>
+        </div>
+        {% endblock %}
 
-                const rdata = JSON.parse(data.replace(/&quot;/g, '"'));
-                console.log(rdata);
+        <!-- 店舗の検索機能 -->
+        {% block scripts %}
+        <script>
+            const data = "{{ qs_json }}";
 
-                const input = document.getElementById("search_here");
-                console.log(input);
+            const rdata = JSON.parse(data.replace(/&quot;/g, '"').replace(/\r/g, '"'))
+            // const rdata = data.replace(/&quot;/g, '"')
+            console.log(rdata)
+            let checkedboxies = [];
+            const checkboxies = document.getElementsByClassName("prefectures");
+            const checkboxiesArr = Array.from(checkboxies);
+            let checkedPrefs = [];
+            let checkedPrefArr = [];
+            let checkedAll = [];
 
-                let inputedArr = [];
+            // チェックボックス
+            function checkedbox(checked, value) {
+                if (checked) {
+                    // チェックボックスにチェックされたとき
+                    checkedboxies.push(value);
 
-                input.addEventListener("keyup", (e) => {
-                    box.innerHTML = "";
-                    inputedArr = rdata.filter((query) =>
-                        query["store_name"].includes(e.target.value)
-                    );
-                    console.log(inputedArr);
-
-                    if (inputedArr.length > 0) {
-                        box.innerHTML += "";
-                        inputedArr.map((item) => {
-                            box.innerHTML +=
-                                "<a class='content' href='{% url `top:detail`" +
-                                item["id"] +
-                                "%}'>" +
-                                "<img src='/media/" +
-                                item["photo1"] +
-                                "'" +
-                                "alt='dinner' />" +
-                                `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
-                            console.log(item["photo1"]);
-                        });
-                    } else {
-                        box.innerHTML = "No Results found..";
+                    checkedPrefs = rdata.filter((query) => {
+                        return query['adress1'].includes(value)
+                    })
+                    for (let i = 0; i < checkedPrefs.length; i++) {
+                        checkedPrefArr.push(checkedPrefs[i])
                     }
-                });
-            </script>
-            {% endblock %}
-        </main>
-    </body>
+                } else {
+                    // チェックボックスを外されたとき
+                    if (checkedboxies.includes(value)) {
+                        // 
+                        checkedboxies.splice(checkedboxies.indexOf(value, checkedboxies.filter((value) => checkedboxies.includes(value))).length);
+                        for (let i = 0; i < checkedPrefArr.length; i++) {
+                            if (checkedPrefArr[i]['adress1'] == value) {
+                                checkedPrefArr.splice(checkedPrefArr.indexOf(checkedPrefArr[i], i))
+                            }
+                        }
+                    }
+                }
+
+
+                // console.log(checkedPrefArr)
+                if (checkedPrefArr.length > 0) {
+                    // 選択されたチェックボックスに該当するオブジェクトが存在するときそれらを表示する
+                    box.innerHTML = "";
+                    checkedPrefArr.map((item) => {
+                        let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
+                        const aTag = `<a class="content" href=${sampleTag1}>`;
+                        box.innerHTML +=
+                            aTag +
+                            "<img src='/media/" +
+                            item["photo1"] +
+                            "'" +
+                            "alt='dinner' />" +
+                            `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
+                    });
+                    box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
+                } else if (checkedboxies.length < 1) {
+                    // チェックボックスを全て外されたときに全表示させる
+                    box.innerHTML = "";
+                    checkedAll = rdata
+                    checkedAll.map((item) => {
+                        let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
+                        const aTag = `<a class="content" href=${sampleTag1}>`;
+                        box.innerHTML +=
+                            aTag +
+                            "<img src='/media/" +
+                            item["photo1"] +
+                            "'" +
+                            "alt='dinner' />" +
+                            `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
+                    });
+                    box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
+                } else {
+                    // 選択されたチェックボックスに該当するオブジェクトが無かった時「No Results found..」を表示
+                    console.log(checkedboxies.length < 1)
+                    box.innerHTML = "No Results found..";
+                }
+            }
+
+            // 検索フォーム
+            const input = document.getElementById("search_here");
+            let inputStoreNameArr = [];
+
+            window.document.onkeydown = function (e) {
+                // 検索フォームにテキストを入力してEnterを押しても、無効化する
+                if (e.key === 'Enter') {
+                    console.log('you pushed Enter')
+                    return false;
+                } else {
+                    console.log('you did not push Enter')
+                }
+            }
+
+            input.addEventListener("keyup", (e) => {
+                box.innerHTML = "";
+                inputStoreNameArr = rdata.filter((query) =>
+                    query["store_name"].includes(e.target.value)
+                );
+                inputStoreDescArr = rdata.filter((query) =>
+                    query["about"].includes(e.target.value)
+                );
+
+                let inputAll = inputStoreNameArr.concat(inputStoreDescArr);
+
+                if (inputAll.length > 0) {
+                    box.innerHTML = "";
+                    inputAll.map((item) => {
+                        // djangoが「script」内のテンプレートタグに反応してエラーが出ている可能性あり
+                        // let aTag1 =
+                        //     "'\{\% url " + '\"top:detail\" ' + item["store_id"] + " \%\}'";
+
+                        let sampleTag1 = window.location.href + 'topdetail/' + item['store_id'] + '/'
+                        const aTag = `<a class="content" href=${sampleTag1}>`;
+
+                        box.innerHTML +=
+                            aTag +
+                            "<img src='/media/" +
+                            item["photo1"] +
+                            "'" +
+                            "alt='dinner' />" +
+                            `<span class="text"><h3 class="title">${item["store_name"]}</h3><div class="detail">${item["about"]}</div></span></a>`;
+
+                        console.log(sampleTag1)
+                    });
+                    box.innerHTML = box.innerHTML.replace(/&quot;/g, "");
+                    console.log(box.innerHTML);
+                } else {
+                    box.innerHTML = "No Results found..";
+                }
+            });
+        </script>
+        {% endblock %}
+    </main>
+</body>
+
 </html>
+{% endautoescape %}

@@ -20,3 +20,6 @@ from .bo_custom_select_view import CustomSelectView
 from .bo_myaccount_update_view import CompAccountUpdateView
 from .bo_mymenu_update_view import CompMenuUpdateView
 from .bo_reservation_listall import CompReservationListAllView
+from .bo_custom_perfect import CustomPerfectView
+from .bo_delete import DeleteForm
+from .bo_delete_perfect import DeletePerfectView

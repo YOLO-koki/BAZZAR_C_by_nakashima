@@ -15,7 +15,81 @@
             <div class = "main">
                  <div class = "form_area"> 
                      {% csrf_token %}
-                     {{ form.as_p }}
+                     <div class = "menu1">
+                        <h2>一品目</h2>
+                        <p><label for = "id_menu_name1">メニュー名：</label>
+                            <input type = "text" name = "menu_name1" required id = "id_menu_name1"></textarea>
+                        </p>
+                        <p><label for = "id_size1">サイズ：</label>
+                            <input type = "text" name = "size1" required id = "id_size1"></textarea>
+                        </p>
+                        <p><label for = "id_price1">値段：</label>
+                            <input type = "number" name = "price1" required id = "id_price1"></textarea>
+                        </p>
+                        <p><label for = "id_photo1">写真：</label>
+                            <input type = "file" name = "photo1" accept ="image/*" id = "id_photo1"></textarea>
+                        </p>
+                        <p><label for = "about1">紹介文：</label>
+                            <textarea name = "about1" cols = "40" row = "10" required id = "about1" maxlength="75"></textarea>
+                        </p>
+                     </div>
+
+                     <div class = "menu2">
+                        <h2>二品目</h2>
+                        <p><label for = "id_menu_name2">メニュー名：</label>
+                            <input type = "text" name = "menu_name2" required id = "id_menu_name2"></textarea>
+                        </p>
+                        <p><label for = "id_size2">サイズ：</label>
+                            <input type = "text" name = "size2" required id = "id_size2"></textarea>
+                        </p>
+                        <p><label for = "id_price2">値段：</label>
+                            <input type = "number" name = "price2" required id = "id_price2"></textarea>
+                        </p>
+                        <p><label for = "id_photo2">写真：</label>
+                            <input type = "file" name = "photo2" accept ="image/*" id = "id_photo2"></textarea>
+                        </p>
+                        <p><label for = "about2">紹介文：</label>
+                            <textarea name = "about2" cols = "40" row = "10" required id = "about2" maxlength="75"></textarea>
+                        </p>
+                     </div>
+
+                     <div class = "menu3">
+                        <h2>三品目</h2>
+                        <p><label for = "id_menu_name3">メニュー名：</label>
+                            <input type = "text" name = "menu_name3" required id = "id_menu_name3"></textarea>
+                        </p>
+                        <p><label for = "id_size3">サイズ：</label>
+                            <input type = "text" name = "size3" required id = "id_size3"></textarea>
+                        </p>
+                        <p><label for = "id_price3">値段：</label>
+                            <input type = "number" name = "price3" required id = "id_price3"></textarea>
+                        </p>
+                        <p><label for = "id_photo3">写真：</label>
+                            <input type = "file" name = "photo3" accept ="image/*" id = "id_photo3"></textarea>
+                        </p>
+                        <p><label for = "about3">紹介文：</label>
+                            <textarea name = "about3" cols = "40" row = "10" required id = "about3" maxlength="75"></textarea>
+                        </p>
+                     </div>
+
+                     <div class = "menu4">
+                        <h2>四品目</h2>
+                        <p><label for = "id_menu_name4">メニュー名：</label>
+                            <input type = "text" name = "menu_name4" required id = "id_menu_name4"></textarea>
+                        </p>
+                        <p><label for = "id_size4">サイズ：</label>
+                            <input type = "text" name = "size4" required id = "id_size4"></textarea>
+                        </p>
+                        <p><label for = "id_price4">値段：</label>
+                            <input type = "number" name = "price4" required id = "id_price4"></textarea>
+                        </p>
+                        <p><label for = "id_photo4">写真：</label>
+                            <input type = "file" name = "photo4" accept ="image/*" id = "id_photo4"></textarea>
+                        </p>
+                        <p><label for = "about4">紹介文：</label>
+                            <textarea name = "about4" cols = "40" row = "10" required id = "about4" maxlength="75"></textarea>
+                        </p>
+                     </div>
                      <div id="fbtn">
                      <button type="submit" name = "submitbutton">　登録　</button>
                      </div>
