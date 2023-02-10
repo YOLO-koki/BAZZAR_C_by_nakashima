@@ -11,6 +11,10 @@ django = "*"
 pillow = "*"
 pdfkit = "*"
 
+python3-openid = "*"
+django-bootstrap4 = "*"
+django-bootstrap-datepicker-plus = "*"
+
 [dev-packages]
 autopep8 = "*"
 flake8 = "*"

@@ -72,4 +72,4 @@ def change_to_pdf(request):
     config = pdfkit.configuration(wkhtmltopdf=r'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
     pdfkit.from_url(url, 'reservationList.pdf', configuration=config)
     print('DONE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-    return redirect(to='accounts:mypage')
+    return redirect(to='comp:reservation_list')

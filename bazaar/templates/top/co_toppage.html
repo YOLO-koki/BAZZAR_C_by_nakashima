@@ -3,9 +3,7 @@
 <!DOCTYPE html>
 {% autoescape off %}
 <html lang="ja">
-
-{% block title %}トップページ{% endblock %}
- {% block head %}
+{% block title %}トップページ{% endblock %} {% block head %}
 
 <head>
     <link rel="stylesheet" href="{% static 'css/top/style_co_toppage.css' %}" />
@@ -37,7 +35,6 @@
                                 <div class="checkbox">
                                     <label>北海道<input id="" type="checkbox" class="prefectures"
                                             onclick="checkedbox(this.checked, this.value)" value="北海道" /></label>
-
                                 </div>
                                 <div class="checkbox">
                                     <label>青森<input id="" type="checkbox" class="prefectures"
@@ -293,7 +290,6 @@
                 </div>
             </div>
 
-
             <!-- 店舗一覧 -->
             <div class="contents" id="box">
                 {% if not queryset %} {% for store in stores %}
@@ -301,24 +297,24 @@
                     <img src="/media/{{store.photo1}}" alt="dinner" />
                     <span class="text">
                         <h3 class="title">{{store.store_name}}</h3>
-                        <div class="detail">{{store.about}}</div>
+                        <div class="detail">{{store.about | truncatechars:100}}</div>
                     </span>
                 </a>
                 {% empty %}
-                <p>aaa</p>
+                <p>nothing</p>
                 {% endfor %} {% endif %}
             </div>
         </div>
         {% endblock %}
-        
 
         <!-- 店舗の検索機能 -->
         {% block scripts %}
         <script>
             const data = "{{ qs_json }}";
 
-            const rdata = JSON.parse(data.replace(/&quot;/g, '"'));
-            console.log(rdata);
+            const rdata = JSON.parse(data.replace(/&quot;/g, '"').replace(/\r/g, '"'))
+            // const rdata = data.replace(/&quot;/g, '"')
+            console.log(rdata)
             let checkedboxies = [];
             const checkboxies = document.getElementsByClassName("prefectures");
             const checkboxiesArr = Array.from(checkboxies);
@@ -389,6 +385,8 @@
                     console.log(checkedboxies.length < 1)
                     box.innerHTML = "No Results found..";
                 }
+
+                return checkedPrefArr;
             }
 
             // 検索フォーム
@@ -398,7 +396,10 @@
             window.document.onkeydown = function (e) {
                 // 検索フォームにテキストを入力してEnterを押しても、無効化する
                 if (e.key === 'Enter') {
+                    console.log('you pushed Enter')
                     return false;
+                } else {
+                    console.log('you did not push Enter')
                 }
             }
 
