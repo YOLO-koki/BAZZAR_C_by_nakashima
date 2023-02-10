@@ -24,7 +24,10 @@ class UserReservationView(LoginRequiredMixin,ListView):
         
         store_id = reservation.values_list('store_id_id')
         store_name = Store.objects.filter(store_id__in = store_id)
+        # store_name = Store.objects.select_related('store_id').get(store_id = store_id)
+        #reservation = reservation.annotate()
         context['reservation'] = reservation
+        # context['reservation'] = store_name
         context['store_name'] = store_name
         
         return context
