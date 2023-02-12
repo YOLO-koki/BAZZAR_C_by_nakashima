@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'bootstrap_datepicker_plus',
     #'mathfilters',
+    'wkhtmltopdf',
 ]
 
 MIDDLEWARE = [
@@ -150,5 +151,8 @@ BOOTSTRAP4 = {
     'include_jquery': True,
 }
 
-
+WKHTMLTOPDF_CMD='/usr/local/bin/wkhtmltopdf'
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'enable-local-file-access': True,
+}
 

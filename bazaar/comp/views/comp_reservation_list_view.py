@@ -5,7 +5,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from  datetime import date,datetime,timedelta
-import pdfkit
 
 # class CompReservationListView(TemplateView):
 #     template_name: str = 'comp/bo_reservation_list.html'
@@ -66,10 +65,3 @@ class CompReservationListView(LoginRequiredMixin,ListView):
         user = request.user.store_id
         store_id = user.store_id
         return store_id
-    
-def change_to_pdf(request):
-    url = 'http://127.0.0.1:8000/comp/reservation_list/'
-    config = pdfkit.configuration(wkhtmltopdf=r'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
-    pdfkit.from_url(url, 'reservationList.pdf', configuration=config)
-    print('DONE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-    return redirect(to='comp:reservation_list')
