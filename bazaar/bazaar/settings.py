@@ -151,7 +151,10 @@ BOOTSTRAP4 = {
     'include_jquery': True,
 }
 
-WKHTMLTOPDF_CMD='/usr/local/bin/wkhtmltopdf'
+# mac環境
+# WKHTMLTOPDF_CMD='/usr/local/bin/wkhtmltopdf'
+# win環境
+WKHTMLTOPDF_CMD='C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
 WKHTMLTOPDF_CMD_OPTIONS = {
     'enable-local-file-access': True,
 }
