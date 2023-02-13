@@ -13,7 +13,7 @@ from  datetime import date,datetime,timedelta
 class CompReservationListView(LoginRequiredMixin,ListView):
     model = Reservation
     #context_object_name = "reservation_list"
-    template_name: str = 'comp/bo_reservation_list.html'
+    template_name: str = 'bo_reservation_list.html'
 
     def get_context_data(self, **kwargs):
         context = super(CompReservationListView, self).get_context_data(**kwargs)
