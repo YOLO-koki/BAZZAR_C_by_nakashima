@@ -36,8 +36,8 @@
                     <p><a href="{% url 'comp:reservation_list'  %}">予約一覧</a></p>
 
 
-                        {% if not registration_store %}
-                            {% if not registration_menu %}
+                        {% if not registration_menu %}
+                            {% if not registration_store %}
 
                                 <p><a href="{% url 'comp:customselect' request.user.userid %}">店舗情報の登録</a></p>
 
