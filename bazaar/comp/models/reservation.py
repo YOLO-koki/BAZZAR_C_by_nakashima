@@ -32,30 +32,30 @@ class Reservation(models.Model):
     ]
    df="選択してください"
    hour=[
-      ("１時","１時"),
-      ("2時","2時"),
-      ("3時","3時"),
-      ("4時","4時"),
-      ("5時","5時"),
-      ("6時","6時"),
-      ("7時","7時"),
-      ("8時","8時"),
-      ("9時","9時"),
-      ("10時","10時"),
-      ("11時","11時"),
-      ("12時","12時"),
-      ("13時","13時"),
-      ("14時","14時"),
-      ("15時","15時"),
-      ("16時","16時"),
-      ("17時","17時"),
-      ("18時","18時"),
-      ("19時","19時"),
-      ("20時","20時"),
-      ("21時","21時"),
-      ("22時","22時"),
-      ("23時","23時"),
-      ("24時","24時"),
+      (1,1),
+      (2,2),
+      (3,3),
+      (4,4),
+      (5,5),
+      (6,6),
+      (7,7),
+      (8,8),
+      (9,9),
+      (10,10),
+      (11,11),
+      (12,12),
+      (13,13),
+      (14,14),
+      (15,15),
+      (16,16),
+      (17,17),
+      (18,18),
+      (19,19),
+      (20,20),
+      (21,21),
+      (22,22),
+      (23,23),
+      (24,24),
     ]
    minute=[
       ("00分","00分"),
@@ -71,10 +71,13 @@ class Reservation(models.Model):
    menu4=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー4',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_4')
    menu5=models.ForeignKey(Menu,to_field='id',verbose_name='メニュー5',on_delete=models.PROTECT,blank=True,null=True,related_name='menu_5')
    reservation_name=models.CharField(verbose_name='予約者名',max_length=20,null=True,blank=True)
-   reservation_mail=models.CharField(verbose_name='予約者メールアドレス',max_length=40,null=True,blank=True)
-   reservation_day=models.DateField(verbose_name='予約希望日',default=timezone.now)
+   reservation_mail=models.EmailField(verbose_name='予約者メールアドレス',max_length=40,null=True,blank=True)
+   reservation_day=models.CharField(verbose_name='予約希望日',max_length=20)
    reservation_phone=models.CharField(verbose_name='予約者電話番号',max_length=11,null=True,blank=True)
-   reservation_hour=models.CharField(verbose_name='予約希望時間',max_length=3,choices=hour,default="選択してください")
-   reservation_minute=models.CharField(verbose_name="", max_length=3,choices=minute ,default="選択してください")
+   reservation_hour=models.IntegerField(verbose_name='予約時間',max_length=3)
    nop=models.IntegerField(verbose_name='予約人数')
-   
+
+   def __str__(self):
+                                                                      
+     st= str(self.reservation_hour) + str(self.reservation_name)
+     return st

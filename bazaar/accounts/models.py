@@ -100,6 +100,9 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     ]
 
     objects = CustomUserManager()
+    
+    def __str__(self):
+        return self.username
 
     class Meta():
         verbose_name_plural = 'CustomUser'

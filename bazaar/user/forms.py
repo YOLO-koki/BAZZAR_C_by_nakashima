@@ -71,28 +71,12 @@ class ReservationForm(forms.ModelForm):
    
     class Meta:
         model= Reservation
-        exclude = ["store_id","user_id","menu1","menu2","menu3","menu4","menu5"]
-        widgets={
-             'reservation_day': DatePickerInput(
-                format='%Y-%m-%d',
-                options={
-                    'locale': 'ja',
-                    'dayViewHeaderFormat': 'YYYY年 MMMM',
-                }
-            ),
-        }
+        exclude = ["user_id","menu1","menu2","menu3","menu4","menu5","store_id","reservation_day","reservation_hour"]
 
+        
 class ReservationLoginForm(forms.ModelForm):
    
     class Meta:
         model= Reservation
         exclude = ["store_id","user_id","reservation_name","reservation_phone","reservation_mail","menu1","menu2","menu3","menu4","menu5"]
-        widgets={
-             'reservation_day': DatePickerInput(
-                format='%Y-%m-%d',
-                options={
-                    'locale': 'ja',
-                    'dayViewHeaderFormat': 'YYYY年 MMMM',
-                }
-            ),
-        }
+      

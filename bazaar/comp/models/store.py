@@ -30,30 +30,30 @@ class Store(models.Model):
     ]
     df="選択してください"
     hour=[
-      ("１時","１時"),
-      ("2時","2時"),
-      ("3時","3時"),
-      ("4時","4時"),
-      ("5時","5時"),
-      ("6時","6時"),
-      ("7時","7時"),
-      ("8時","8時"),
-      ("9時","9時"),
-      ("10時","10時"),
-      ("11時","11時"),
-      ("12時","12時"),
-      ("13時","13時"),
-      ("14時","14時"),
-      ("15時","15時"),
-      ("16時","16時"),
-      ("17時","17時"),
-      ("18時","18時"),
-      ("19時","19時"),
-      ("20時","20時"),
-      ("21時","21時"),
-      ("22時","22時"),
-      ("23時","23時"),
-      ("24時","24時"),
+      (1,1),
+      (2,2),
+      (3,3),
+      (4,4),
+      (5,5),
+      (6,6),
+      (7,7),
+      (8,8),
+      (9,9),
+      (10,10),
+      (11,11),
+      (12,12),
+      (13,13),
+      (14,14),
+      (15,15),
+      (16,16),
+      (17,17),
+      (18,18),
+      (19,19),
+      (20,20),
+      (21,21),
+      (22,22),
+      (23,23),
+      (24,24),
     ]
     minute=[
       ("00分","00分"),
@@ -124,11 +124,8 @@ class Store(models.Model):
     #seatが店全体の席数。seat_reservationableが時間ごとに予約可能な席数
 
     seat=models.IntegerField(verbose_name='席数',validators=[MinValueValidator(0)])
-    seat_reservationable=models.IntegerField(verbose_name='予約可能な席数',validators=[MinValueValidator(0)])
-    bussiness_hours_start=models.CharField(verbose_name='営業開始',max_length=3,choices=hour,default="選択してください")
-    start_minute=models.CharField(verbose_name="",max_length=3,choices=minute,default="選択してください")
-    bussiness_hours_end=models.CharField(verbose_name='営業終了',max_length=3,choices=hour,default=df)
-    end_minute=models.CharField(verbose_name="", max_length=3,choices=minute ,default="選択してください")
+    bussiness_hours_start=models.IntegerField(verbose_name='営業開始',max_length=3,choices=hour,default="選択してください")
+    bussiness_hours_end=models.IntegerField(verbose_name='営業終了',max_length=3,choices=hour,default=df)
     holiday1=models.CharField(verbose_name="定休日1" ,max_length=4,choices=date,default=cel)
     holiday2=models.CharField(verbose_name="定休日2" ,max_length=4,choices=date,default=none)
     holiday3=models.CharField(verbose_name="定休日3" ,max_length=4,choices=date,default=none)
@@ -144,6 +141,9 @@ class Store(models.Model):
     photo10=models.ImageField(upload_to="media",verbose_name='写真10',blank=True,null=True)
     about=models.TextField(verbose_name='紹介文',max_length=300)
 
+    def __str__(self):
+        return self.store_name
+   
 
     # class Meta:
     #     constraints = [
