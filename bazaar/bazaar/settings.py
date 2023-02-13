@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'bootstrap_datepicker_plus',
     #'mathfilters',
+    'wkhtmltopdf',
 ]
 
 MIDDLEWARE = [
@@ -195,4 +196,11 @@ PUBLIC_HOLIDAYS = [
 ]
 
 
+# mac環境
+# WKHTMLTOPDF_CMD='/usr/local/bin/wkhtmltopdf'
+# win環境
+WKHTMLTOPDF_CMD='C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'enable-local-file-access': True,
+}
 

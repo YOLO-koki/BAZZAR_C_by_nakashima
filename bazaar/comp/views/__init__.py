@@ -23,3 +23,4 @@ from .bo_reservation_listall import CompReservationListAllView
 from .bo_custom_perfect import CustomPerfectView
 from .bo_delete import DeleteForm
 from .bo_delete_perfect import DeletePerfectView
+from .bo_html_to_pdf import HTMLtoPDF

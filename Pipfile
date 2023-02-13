@@ -9,10 +9,11 @@ dev =  "python manage.py runserver"
 [packages]
 django = "*"
 pillow = "*"
-
+pdfkit = "*"
 python3-openid = "*"
 django-bootstrap4 = "*"
 django-bootstrap-datepicker-plus = "*"
+django-wkhtmltopdf = "*"
 
 [dev-packages]
 autopep8 = "*"
