@@ -4,16 +4,26 @@
 }
 
 .list_all {
-    /* background-color: #0cf;
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.list_all a {
+    background-color: #0cf;
     cursor: pointer;
     color: black;
     border-radius: 5px;
     text-decoration: none;
-    padding-top: 15px;
+    /* padding-top: 15px;
     padding-bottom: 15px;
     margin-right: 8%;
-    margin-left: 82%;
+    margin-left: 82%; */
     text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 
     width: 130px;
     height: 50px;
@@ -21,13 +31,10 @@
     cursor: pointer;
     color: white;
     border-radius: 20px;
-    border: none; */
+    border: none;
 
-    display: flex;
-    justify-content: space-around;
-    width: 80vw;
-    margin: 0 auto;
 }
+
 
 .list_area {
     /* border: solid 2px blue; */
